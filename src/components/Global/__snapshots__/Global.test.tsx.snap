@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Global /> tests Should match with the component snapshot 1`] = `
+<DocumentFragment>
+  Hello World
+</DocumentFragment>
+`;

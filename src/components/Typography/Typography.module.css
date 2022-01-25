@@ -1,0 +1,23 @@
+.regular {
+  font-weight: var(--font-weight-primary);
+}
+
+.bold {
+  font-weight: var(--font-weight-secondary);
+}
+
+.background {
+  color: var(--color-background);
+}
+
+.text {
+  color: var(--color-text);
+}
+
+.primary {
+  color: var(--color-primary);
+}
+
+.secondary {
+  color: var(--color-secondary);
+}
