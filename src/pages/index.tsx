@@ -4,12 +4,17 @@ import Image from "next/image";
 import { Typography } from "../components/Typography/Typography";
 import styles from "../styles/Home.module.css";
 
-function Home() {
+const Home: NextPage = function () {
   return (
-    <Typography className={styles.title} weight="bold" color="background">
-      Hello World
+    <Typography
+      style={{ fontSize: "8rem" }}
+      weight="bold"
+      tagName="h1"
+      color="background"
+    >
+      React Template Next
     </Typography>
   );
-}
+};
 
 export default Home;
