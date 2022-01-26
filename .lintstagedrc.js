@@ -1,15 +1,20 @@
 const path = require('path');
+const _ = require('lodash');
 
-const buildEslintCommand = (filenames) =>
-  `next lint --fix --file ${filenames
-    .map((f) => path.relative(process.cwd(), f))
-    .join(' --file ')}`;
+function getChangedFiles(filenames) {
+  return _.map(filenames, (f) => path.relative(process.cwd(), f));
+}
 
-const runTestsCommand = (filenames) =>
-  `yarn run jest --file ${filenames
-    .map((f) => path.relative(process.cwd(), f))
-    .join(' --file ')}`;
+function buildEslintCommand(filenames) {
+  return `next lint --fix --file ${getChangedFiles(filenames).join(
+    ' --file '
+  )}`;
+}
+
+function buildJestCommand(filenames) {
+  return `yarn test --findRelatedTests ${getChangedFiles(filenames)}`;
+}
 
 module.exports = {
-  '*.{js,jsx,ts,tsx}': [buildEslintCommand, runTestsCommand],
+  '*.{js,jsx,ts,tsx}': [buildEslintCommand, buildJestCommand],
 };

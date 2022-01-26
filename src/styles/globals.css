@@ -1,13 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-@import "~modern-normalize";
-
 :root {
   --color-text: #222222;
   --color-background: #ffffff;
   --color-primary: #80ced7;
   --color-secondary: #9ad1d4;
-  --font-primary: "Roboto";
-  --font-secondary: "Roboto";
+  --font-primary: 'Noto Sans';
+  --font-secondary: 'Noto Sans';
   --font-weight-primary: 400;
   --font-weight-secondary: 700;
   --fs-xs: 1.6rem;
