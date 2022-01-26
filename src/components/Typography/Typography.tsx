@@ -1,20 +1,20 @@
-import styles from "./Typography.module.css";
-import { TypographyProps } from "../../types/client";
-import classNames from "classnames";
+import styles from './Typography.module.css';
+import { TypographyProps } from '../../types/client';
+import classNames from 'classnames';
 
 function Typography(props: TypographyProps) {
   const {
-    tagName = "p",
+    tagName = 'p',
     className,
-    weight = "regular",
-    color = "text",
+    weight = 'regular',
+    color = 'text',
     ...rest
   } = props;
   const Tag = tagName as keyof JSX.IntrinsicElements;
   return (
     <Tag
       className={classNames(
-        "typography",
+        'typography',
         styles[weight],
         styles[color],
         className

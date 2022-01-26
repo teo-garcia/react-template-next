@@ -6,7 +6,9 @@ exports[`<Layout /> tests Should match with the component snapshot 1`] = `
     class="layout"
   >
     <header />
-    <main>
+    <main
+      class="main"
+    >
       Hello World
     </main>
     <footer />

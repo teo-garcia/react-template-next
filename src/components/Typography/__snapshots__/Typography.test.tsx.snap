@@ -3,7 +3,7 @@
 exports[`<Typography /> tests Should match with the component snapshot 1`] = `
 <DocumentFragment>
   <p
-    class="typography typography--regular typography--text"
+    class="typography regular text"
   >
     Hello World
   </p>

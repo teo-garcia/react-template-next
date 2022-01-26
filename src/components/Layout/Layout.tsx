@@ -1,5 +1,5 @@
-import styles from "./Layout.module.css";
-import { LayoutProps } from "../../types/client";
+import styles from './Layout.module.css';
+import { LayoutProps } from '../../types/client';
 
 function Layout(props: LayoutProps) {
   const { children } = props;
