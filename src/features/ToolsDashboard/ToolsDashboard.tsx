@@ -1,5 +1,5 @@
 import styles from './ToolsDashboard.module.css';
-import { Typography } from '../../components/Typography/Typography';
+import { Typography } from '@components/Typography/Typography';
 import { FaReact, FaTools } from 'react-icons/fa';
 
 const tools = ['React', 'Next', 'Typescript', 'Jest', 'Playwright', 'Lodash'];

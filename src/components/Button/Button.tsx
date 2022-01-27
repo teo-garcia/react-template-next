@@ -1,6 +1,6 @@
 import styles from './Button.module.css';
 import classNames from 'classnames';
-import { ButtonProps } from '../../types/client';
+import type { ButtonProps } from '@utils/types/client';
 
 function Button(props: ButtonProps) {
   const { className } = props;

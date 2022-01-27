@@ -1,4 +1,4 @@
-import { GlobalProps } from '../../types/client';
+import { GlobalProps } from '@utils/types/client';
 
 function Global(props: GlobalProps) {
   const { children } = props;

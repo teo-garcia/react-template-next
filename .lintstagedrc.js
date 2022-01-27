@@ -6,15 +6,23 @@ function getChangedFiles(filenames) {
 }
 
 function buildEslintCommand(filenames) {
-  return `next lint --fix --file ${getChangedFiles(filenames).join(
+  return `yarn lint --fix --file ${getChangedFiles(filenames).join(
     ' --file '
   )}`;
 }
 
 function buildJestCommand(filenames) {
-  return `yarn test --findRelatedTests ${getChangedFiles(filenames)}`;
+  return `yarn test:unit --findRelatedTests ${getChangedFiles(filenames)}`;
+}
+
+function buildPlaywrightCommand() {
+  return 'yarn run playwright test';
 }
 
 module.exports = {
-  '*.{js,jsx,ts,tsx}': [buildEslintCommand, buildJestCommand],
+  '*.{js,jsx,ts,tsx}': [
+    buildEslintCommand,
+    buildJestCommand,
+    buildPlaywrightCommand,
+  ],
 };

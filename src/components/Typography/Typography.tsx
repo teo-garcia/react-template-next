@@ -1,5 +1,5 @@
 import styles from './Typography.module.css';
-import { TypographyProps } from '../../types/client';
+import { TypographyProps } from '@utils/types/client';
 import classNames from 'classnames';
 
 function Typography(props: TypographyProps) {
