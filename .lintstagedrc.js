@@ -15,14 +15,6 @@ function buildJestCommand(filenames) {
   return `yarn test:unit --findRelatedTests ${getChangedFiles(filenames)}`;
 }
 
-function buildPlaywrightCommand() {
-  return 'yarn run playwright test';
-}
-
 module.exports = {
-  '*.{js,jsx,ts,tsx}': [
-    buildEslintCommand,
-    buildJestCommand,
-    buildPlaywrightCommand,
-  ],
+  '*.{js,jsx,ts,tsx}': [buildEslintCommand, buildJestCommand],
 };
