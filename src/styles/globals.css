@@ -1,17 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+
 :root {
-  --color-text: #222222;
-  --color-background: #ffffff;
-  --color-primary: #80ced7;
-  --color-secondary: #9ad1d4;
-  --font-primary: 'Noto Sans';
-  --font-secondary: 'Noto Sans';
+  --color-text:  #000000;
+  --color-background:  #FFFFFF;
+  --color-neutral: #BEBEBE;
+  --color-primary: #6200EA;
+  --color-secondary: #7C4DFF;
+  --font-primary: 'Ubuntu';
+  --font-secondary: 'Ubuntu';
   --font-regular: 400;
   --font-bold: 700;
   --font-xs: 1.6rem;
-  --font-s: 2rem;
-  --font-m: 2.6rem;
-  --font-l: 3rem;
-  --font-xl: 4rem;
+  --font-s: 1.8rem;
+  --font-m: 3rem;
+  --font-l: 4rem;
+  --font-xl: 5rem;
   --font-xxl: 6rem;
 }
 
@@ -20,17 +23,24 @@
 *::after {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
   font-size: 10px;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: var(--font-primary);
-  font-weight: var(--font-weight-primary);
-  background-color: var(--color-primary);
+  font-weight: var(--font-regular);
+  background-color: var(--color-background);
   color: var(--color-text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
 h1,
@@ -39,6 +49,25 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-family-secondary);
-  font-weight: var(--font-weight-secondary);
+  font-family: var(--font-secondary);
+  font-weight: var(--font-bold);
+  color: var(--color-primary);
 }
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+button {
+  border: none;
+}
+
+/* #root {
+  isolation: isolate;
+  height: 100%;
+} */

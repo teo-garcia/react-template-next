@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+ */
 import { render, waitFor } from '@testing-library/react';
 import Seo from './Seo';
 
