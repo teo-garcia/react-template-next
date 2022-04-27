@@ -16,5 +16,5 @@ function buildJestCommand(filenames) {
 }
 
 module.exports = {
-  '*.{js,jsx,ts,tsx}': [buildEslintCommand, buildJestCommand],
+  '*.{js,jsx,ts,tsx}': [buildJestCommand],
 };
