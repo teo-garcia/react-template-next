@@ -25,4 +25,4 @@ function ToolsDashboard() {
   );
 }
 
-export { ToolsDashboard };
+export default ToolsDashboard;

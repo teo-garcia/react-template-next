@@ -1,6 +1,6 @@
 import { Meta, Story } from '@storybook/react';
 import { SeoProps } from '@utils/types/client';
-import { Seo } from './Seo';
+import Seo from './Seo';
 
 export default {
   title: 'Seo',

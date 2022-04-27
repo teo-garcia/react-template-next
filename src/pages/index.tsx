@@ -1,15 +1,12 @@
 import type { NextPage } from 'next';
-import { Seo } from '@components/Seo/Seo';
-import { ToolsDashboard } from '@features/ToolsDashboard/ToolsDashboard';
+import Seo from '@components/Seo/Seo';
 
 const Home: NextPage = function () {
+  console.info('What happen');
+
   return (
     <>
-      <Seo
-        title="Home"
-        description="Discover the power of creating your template projects"
-      />
-      <ToolsDashboard />
+      <Seo title="Home" description="Lorem ipsum dolor sit amet" />
     </>
   );
 };
