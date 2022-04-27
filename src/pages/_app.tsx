@@ -1,5 +1,4 @@
 import '@styles/globals.css';
-import 'modern-normalize/modern-normalize.css';
 import 'primitivex/dist/primitivex.cjs.production.min.css';
 import type { AppProps } from 'next/app';
 import { Layout } from 'primitivex';
