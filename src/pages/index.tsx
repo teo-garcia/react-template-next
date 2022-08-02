@@ -1,5 +1,5 @@
 import type { NextPage } from 'next';
-import useSWR, { Fetcher } from 'swr';
+import useSWR from 'swr';
 import Seo from '@components/Seo/Seo';
 
 const fetcher = (info: RequestInfo, init: RequestInit) =>
@@ -11,6 +11,7 @@ const Home: NextPage = function () {
   return (
     <>
       <Seo title="Home" description="Lorem ipsum dolor sit amet" />
+      <h1>Hello World</h1>
     </>
   );
 };
