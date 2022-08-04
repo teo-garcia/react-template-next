@@ -1,8 +1,11 @@
 {
   "name": "react-template-next",
+  "version": "1.0.0",
   "license": "MIT",
   "private": true,
   "scripts": {
+    "dev": "yarn dev:web",
+    "build": "yarn build:web",
     "build:sb": "build-storybook",
     "build:web": "next build",
     "dev:sb": "start-storybook -p 6006",
@@ -16,7 +19,7 @@
     "classnames": "^2.3.1",
     "lodash": "^4.17.21",
     "next": "12.2.3",
-    "primitivex": "^0.1.6",
+    "primitivex": "^1.0.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.4.0",

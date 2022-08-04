@@ -6,3 +6,7 @@ export type SeoProps = {
   ogDescription?: string;
   ogImage?: string;
 };
+
+export type BannerProps = {
+  title?: string;
+};

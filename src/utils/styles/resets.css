@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
 
 :root {
-  --color-text:  #000000;
-  --color-background:  #FFFFFF;
-  --color-neutral: #BEBEBE;
-  --color-primary: #6200EA;
-  --color-secondary: #7C4DFF;
+  --color-text: #212121;
+  --color-background: #FFFFFF;
+  --color-neutral: #90A4AE;
+  --color-primary: #7C4DFF;
+  --color-secondary: #AA00FF;
   --font-primary: 'Ubuntu';
   --font-secondary: 'Ubuntu';
   --font-regular: 400;
@@ -14,8 +14,8 @@
   --font-s: 1.8rem;
   --font-m: 3rem;
   --font-l: 4rem;
-  --font-xl: 5rem;
-  --font-xxl: 6rem;
+  --font-xl: 6rem;
+  --font-xxl: 8rem;
 }
 
 *,
@@ -66,8 +66,3 @@ input, button, textarea, select {
 button {
   border: none;
 }
-
-/* #root {
-  isolation: isolate;
-  height: 100%;
-} */

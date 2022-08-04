@@ -1,5 +1,5 @@
-import '@styles/globals.css';
-import 'primitivex/dist/primitivex.cjs.production.min.css';
+import '@utils/styles/resets.css';
+import 'primitivex/dist/primitivex.css';
 import type { AppProps } from 'next/app';
 import { Layout } from 'primitivex';
 

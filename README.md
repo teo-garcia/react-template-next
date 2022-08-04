@@ -69,3 +69,4 @@ To run E2E tests use
 - Add demo in the README.md
 - Configure ESLint plugins properly
 - Fix linting process
+- Data fetching & features architecture

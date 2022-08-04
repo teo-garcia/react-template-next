@@ -1,0 +1,32 @@
+.container {
+  background: linear-gradient(225deg, var(--color-primary), var(--color-secondary));
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: var(--font-xl);
+  animation: slideIn 750ms ease-out forwards;
+  transform: translateY(100vh);
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: var(--font-xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: var(--font-xxl);
+  }
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateY(0);
+  }
+}

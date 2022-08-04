@@ -1,17 +1,18 @@
 import type { NextPage } from 'next';
+import Head from 'next/head';
 import useSWR from 'swr';
-import Seo from '@components/Seo/Seo';
+import { Seo } from 'primitivex';
+import Banner from '@components/Banner/Banner';
 
 const fetcher = (info: RequestInfo, init: RequestInit) =>
   fetch(info, init).then((res) => res.json());
 
 const Home: NextPage = function () {
-  const { data, error } = useSWR('api/hello', fetcher);
-
+  const { data } = useSWR('api', fetcher);
   return (
     <>
-      <Seo title="Home" description="Lorem ipsum dolor sit amet" />
-      <h1>Hello World</h1>
+      <Seo component={Head} title="Home | NextJS" />
+      <Banner title={data?.title} />
     </>
   );
 };
