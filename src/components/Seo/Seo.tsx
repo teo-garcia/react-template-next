@@ -1,5 +1,5 @@
-import Head from 'next/head';
-import { SeoProps } from '@utils/types/client';
+import Head from 'next/head'
+import { SeoProps } from 'lib/types/client'
 
 function Seo(props: SeoProps) {
   const {
@@ -8,7 +8,7 @@ function Seo(props: SeoProps) {
     ogTitle = '',
     ogDescription = '',
     ogImage = '',
-  } = props;
+  } = props
   return (
     <>
       <Head>
@@ -21,7 +21,7 @@ function Seo(props: SeoProps) {
         <meta property="og:image" content={ogImage} />
       </Head>
     </>
-  );
+  )
 }
 
-export default Seo;
+export default Seo

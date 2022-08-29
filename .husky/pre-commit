@@ -1,9 +1,5 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-# Lint the codebase
-yarn run lint
-
-# Run unit tests
-yarn run test:unit
+yarn lint-staged
 

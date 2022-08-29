@@ -1,3 +1,18 @@
 module.exports = {
-  extends: ["next/core-web-vitals", "prettier", "plugin:testing-library/react", "plugin:storybook/recommended"]
-};
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'next/core-web-vitals',
+    'plugin:jsx-a11y/recommended',
+    'plugin:jest/recommended',
+    'plugin:testing-library/react',
+    'plugin:prettier/recommended',
+  ],
+  plugins: [
+    '@typescript-eslint',
+    'react',
+    'react-hooks',
+    'jsx-a11y',
+    'prettier',
+  ],
+}

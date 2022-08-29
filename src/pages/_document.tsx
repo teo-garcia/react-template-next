@@ -4,13 +4,13 @@ import Document, {
   Main,
   NextScript,
   DocumentContext,
-} from 'next/document';
-import Links from '@components/Links/Links';
+} from 'next/document'
+import Links from '@components/Links/Links'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
-    const initialProps = await Document.getInitialProps(ctx);
-    return { ...initialProps };
+    const initialProps = await Document.getInitialProps(ctx)
+    return { ...initialProps }
   }
 
   render() {
@@ -24,8 +24,8 @@ class MyDocument extends Document {
           <NextScript />
         </body>
       </Html>
-    );
+    )
   }
 }
 
-export default MyDocument;
+export default MyDocument
