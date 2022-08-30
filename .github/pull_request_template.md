@@ -9,7 +9,7 @@
 - [ ] Client 💅
 - [ ] Server ⚡️
 - [ ] Unit Testing 🧪
-- [ ] Unit Testing 🤖
+- [ ] E2E Testing 🤖
 
 ## How to test it (If required):
 
