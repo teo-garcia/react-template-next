@@ -1,19 +1,11 @@
 {
   "name": "react-template-next",
-  "version": "1.0.0",
-  "license": "MIT",
   "private": true,
-  "scripts": {
-    "dev": "yarn dev:web",
-    "build": "yarn build:web",
-    "build:web": "next build",
-    "dev:web": "next dev",
-    "start:web": "next start",
-    "test:e2e": "yarn build:web && concurrently \"yarn start:web\" \"npx playwright test\"",
-    "test:unit": "jest",
-    "lint:css": "stylelint **/*.css",
-    "lint:js": "eslint src/**/*.{ts,tsx}"
+  "version": "1.0.0",
+  "engines": {
+    "node": "^16"
   },
+  "license": "MIT",
   "dependencies": {
     "classnames": "^2.3.1",
     "next": "12.2.3",
@@ -51,5 +43,16 @@
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-recommended": "^9.0.0",
     "typescript": "4.7.4"
+  },
+  "scripts": {
+    "dev": "yarn dev:web",
+    "build": "yarn build:web",
+    "dev:web": "next dev",
+    "build:web": "next build",
+    "start:web": "next start",
+    "test:unit": "jest",
+    "test:e2e": "yarn build:web && concurrently \"yarn start:web\" \"npx playwright test\"",
+    "lint:css": "stylelint **/*.css",
+    "lint:js": "eslint src/**/*.{ts,tsx}"
   }
 }
