@@ -43,14 +43,14 @@ A faster way to start using Next with Typescript.
 
 ## Commands
 
-| **Command** | **Description**                  |
-| ----------- | -------------------------------- |
-| dev         | Run `dev:web`.                   |
-| build       | Run `build:web`.                 |
-| dev:web     | Run Next in DEV mode.            |
-| build:web   | Run Next in PROD mode.           |
-| start:web   | Run Next server (build required) |
-| test:unit   | Run Jest                         |
-| test:e2e    | Run Playwright                   |
-| lint:css    | Lint CSS files.                  |
-| lint:js     | Lint JS files.                   |
+| **Command** | **Description**                    |
+| ----------- | ---------------------------------- |
+| dev         | Run `dev:web`.                     |
+| build       | Run `build:web`.                   |
+| dev:web     | Run `next` in DEV mode.            |
+| build:web   | Run `next` in PROD mode.           |
+| start:web   | Run `next` server (build required) |
+| test:unit   | Run `jest`                         |
+| test:e2e    | Run `playwright`                   |
+| lint:css    | Lint CSS files.                    |
+| lint:js     | Lint JS files.                     |
