@@ -1,10 +1,9 @@
 ![README.md banner](./README.png)
 
-# React Template Next
-
 ![Package License](https://img.shields.io/github/license/teo-garcia/react-template-next)
-
 ![Package Version](https://img.shields.io/github/package-json/v/teo-garcia/react-template-next)
+
+# React Template Next
 
 A faster way to start using Next with Typescript.
 
