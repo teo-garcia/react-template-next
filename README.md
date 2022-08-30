@@ -35,6 +35,7 @@ A faster way to start using Next with Typescript.
 ## Features
 
 - Next 12.
+- React 18.
 - Typescript 4.
 - Linting with ESLint + Stylelint + Prettier.
 - Git Hooks with Husky + Lint Staged.
@@ -47,8 +48,8 @@ A faster way to start using Next with Typescript.
 | ----------- | ---------------------------------- |
 | dev         | Run `dev:web`.                     |
 | build       | Run `build:web`.                   |
-| dev:web     | Run `next` in DEV mode.            |
-| build:web   | Run `next` in PROD mode.           |
+| dev:web     | Run `next` in `DEV` mode.          |
+| build:web   | Run `next` in `PROD` mode.         |
 | start:web   | Run `next` server (build required) |
 | test:unit   | Run `jest`                         |
 | test:e2e    | Run `playwright`                   |
