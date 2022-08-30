@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+@import 'https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap';
 
 :root {
   --color-text: #212121;
-  --color-background: #FFFFFF;
-  --color-neutral: #90A4AE;
-  --color-primary: #7C4DFF;
-  --color-secondary: #AA00FF;
+  --color-background: #fff;
+  --color-neutral: #90a4ae;
+  --color-primary: #7c4dff;
+  --color-secondary: #a0f;
   --font-primary: 'Ubuntu';
   --font-secondary: 'Ubuntu';
   --font-regular: 400;
@@ -30,7 +30,8 @@ html {
   font-size: 10px;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -54,12 +55,19 @@ h6 {
   color: var(--color-primary);
 }
 
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 

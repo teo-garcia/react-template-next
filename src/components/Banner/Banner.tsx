@@ -1,6 +1,5 @@
 import styles from './Banner.module.css'
 import { Box, Typography } from 'primitivex'
-
 import type { BannerProps } from 'lib/types/client'
 
 function Banner(props: BannerProps) {

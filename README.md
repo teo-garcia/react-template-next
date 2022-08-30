@@ -1,72 +1,56 @@
-# React Template Next JS
+![Package License](https://img.shields.io/github/license/teo-garcia/react-template-next)
+![Package Version](https://img.shields.io/github/package-json/v/teo-garcia/react-template-next)
 
-A quick starter for Next JS applications and friends
+![README.md banner](./README.png)
 
+# React Template Next
 
-## Authors
+A faster way to start using Next with Typescript.
 
-- [@teo-garcia](https://www.github.com/teo-garcia)
+## Requirements
 
+- `Node 14+`
+- `Git 2+`
 
-## Demo
+## Installation
 
-Insert gif or link to demo
-
-
-## Features
-
-- Next JS 12
-- Typescript Support
-- ESLint, Prettier, Husky, Lint Staged
-- Jest & RTL + Playwright
-
-
-## Run Locally
-
-Clone the project
+1. Copy the repo or use the `gh` tool:
 
 ```bash
-  git clone https://github.com/teo-garcia/react-template-next
+  gh repo create my-project --private --clone --template teo-garcia/react-template-next
 ```
 
-Go to the project directory
-
-```bash
-  cd react-template-next
-```
-
-Install dependencies using yarn
+2. Install the dependencies:
 
 ```bash
   yarn
 ```
 
-Start the next server
+3. Run the project:
 
 ```bash
-  yarn dev:web
+  yarn dev
 ```
 
+## Features
 
-## Running Tests
+- Next 12.
+- Typescript 4.
+- Linting with ESLint + Stylelint + Prettier.
+- Git Hooks with Husky + Lint Staged.
+- Unit Testing with Jest + RTL.
+- E2E Testing with Playwright.
 
-To run unit tests use
+## Commands
 
-```bash
-  yarn test:unit
-```
-
-To run E2E tests use
-
-```bash
-  yarn test:e2e
-```
-
-
-## Roadmap
-
-- Upgrade Storybook to support React 18
-- Add demo in the README.md
-- Configure ESLint plugins properly
-- Fix linting process
-- Data fetching & features architecture
+| **Command** | **Description**                  |
+| ----------- | -------------------------------- |
+| dev         | Run `dev:web`.                   |
+| build       | Run `build:web`.                 |
+| dev:web     | Run Next in DEV mode.            |
+| build:web   | Run Next in PROD mode.           |
+| start:web   | Run Next server (build required) |
+| test:unit   | Run Jest                         |
+| test:e2e    | Run Playwright                   |
+| lint:css    | Lint CSS files.                  |
+| lint:js     | Lint JS files.                   |

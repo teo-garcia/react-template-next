@@ -8,7 +8,6 @@
     "build": "yarn build:web",
     "build:web": "next build",
     "dev:web": "next dev",
-    "lint": "next lint",
     "start:web": "next start",
     "test:e2e": "yarn build:web && concurrently \"yarn start:web\" \"npx playwright test\"",
     "test:unit": "jest",

@@ -16,7 +16,6 @@
       "@features/*": ["features/*"],
       "@styles/*": ["lib/styles/*"],
       "@tools/*": ["lib/tools/*"],
-      "@types/*": ["lib/types/*"]
     },
     "resolveJsonModule": true,
     "skipLibCheck": true,
