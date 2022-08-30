@@ -1,5 +1,9 @@
 .container {
-  background: linear-gradient(225deg, var(--color-primary), var(--color-secondary));
+  background: linear-gradient(
+    225deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
   height: 100%;
   display: flex;
   justify-content: center;

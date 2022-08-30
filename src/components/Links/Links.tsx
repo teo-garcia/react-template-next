@@ -9,7 +9,7 @@ function Links() {
         rel="stylesheet"
       />
     </>
-  );
+  )
 }
 
-export default Links;
+export default Links
