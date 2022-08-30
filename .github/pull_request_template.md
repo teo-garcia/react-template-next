@@ -10,6 +10,8 @@
 - [ ] Server ⚡️
 - [ ] Unit Testing 🧪
 - [ ] E2E Testing 🤖
+- [ ] Tooling 🛠
+- [ ] Config 📚
 
 ## How to test it (If required):
 
