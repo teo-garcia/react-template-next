@@ -1,13 +1,13 @@
 import 'primitivex/dist/primitivex.css'
-import '@styles/resets.css'
+import '@lib/styles/resets.css'
 import type { AppProps } from 'next/app'
-import { Layout } from 'primitivex'
+import Providers from '@components/Providers/Providers'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
+    <Providers>
       <Component {...pageProps} />
-    </Layout>
+    </Providers>
   )
 }
 

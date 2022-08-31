@@ -14,8 +14,7 @@
     "paths": {
       "@components/*": ["components/*"],
       "@features/*": ["features/*"],
-      "@styles/*": ["lib/styles/*"],
-      "@tools/*": ["lib/tools/*"],
+      "@lib/*": ["lib/*"],
     },
     "resolveJsonModule": true,
     "skipLibCheck": true,

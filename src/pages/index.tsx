@@ -1,19 +1,23 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import useSWR from 'swr'
-import { Seo } from 'primitivex'
+import { Layout, Seo } from 'primitivex'
+import { useQuery } from '@tanstack/react-query'
+
 import Banner from '@components/Banner/Banner'
 
-const fetcher = (info: RequestInfo, init: RequestInit) =>
-  fetch(info, init).then((res) => res.json())
+const fetcher = () =>
+  fetch('http://localhost:3000/api')
+    .then((res) => res.json())
+    .then((res) => res)
 
 const Home: NextPage = function () {
-  const { data } = useSWR('api', fetcher)
+  const { data } = useQuery(['test'], fetcher)
+
   return (
-    <>
+    <Layout>
       <Seo component={Head} title="Home | NextJS" />
       <Banner title={data?.title} />
-    </>
+    </Layout>
   )
 }
 

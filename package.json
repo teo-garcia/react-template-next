@@ -1,19 +1,20 @@
 {
   "name": "react-template-next",
   "private": true,
-  "version": "1.0.0",
+  "version": "1.0.1",
   "engines": {
     "node": "^16"
   },
   "license": "MIT",
   "dependencies": {
+    "@tanstack/react-query": "^4.2.3",
+    "@tanstack/react-query-devtools": "^4.2.3",
     "classnames": "^2.3.1",
     "next": "12.2.3",
     "primitivex": "^1.0.13",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-icons": "^4.4.0",
-    "swr": "^1.3.0"
+    "react-icons": "^4.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",

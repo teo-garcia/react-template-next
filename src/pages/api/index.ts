@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import type { BannerProps } from 'lib/types/client'
+import type { BannerProps } from '@lib/types/client'
 
 export default function handler(
   _req: NextApiRequest,
