@@ -1,5 +1,5 @@
 import styles from './Banner.module.css'
-import { Box, Typography } from 'primitivex'
+import { Box, Typography } from 'primitive-jsx'
 import type { BannerProps } from '@lib/types/client'
 
 function Banner(props: BannerProps) {

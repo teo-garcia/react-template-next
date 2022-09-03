@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { Layout, Seo } from 'primitivex'
+import { Layout, Seo } from 'primitive-jsx'
 import { useQuery } from '@tanstack/react-query'
 
 import Banner from '@components/Banner/Banner'

@@ -4678,10 +4678,10 @@ pretty-format@^29.0.0, pretty-format@^29.0.1:
     ansi-styles "^5.0.0"
     react-is "^18.0.0"
 
-primitivex@^1.0.13:
-  version "1.0.13"
-  resolved "https://registry.yarnpkg.com/primitivex/-/primitivex-1.0.13.tgz#9f285ecbeda4fddd00aab850c8cd694b64e92085"
-  integrity sha512-kblg1CJy4CQpIWcZhL3Gf2ArMQyCAWGOm2m98oBMWCfSWPcNMm1XiLFDZWTbuYStA2CVixAW9lLvgXR0VqtotQ==
+primitive-jsx@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/primitive-jsx/-/primitive-jsx-1.1.1.tgz#58d9aaac421fe220418f24b10186e6243a8b61c1"
+  integrity sha512-M9GisvTqrDkPS+TZWIG+RSnRKn2K7Y14y4Yyg/5IPw7e5wKn0taabC0CITIw9fPeVlBH6oeUijC8a+MCzhrkRA==
   dependencies:
     classnames "^2.3.1"
 
