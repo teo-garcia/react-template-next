@@ -1,8 +1,9 @@
-const nextJest = require('next/jest');
+/* eslint-disable @typescript-eslint/no-var-requires */
+const nextJest = require('next/jest')
 
 const createJestConfig = nextJest({
   dir: './',
-});
+})
 
 // Add any custom config to be passed to Jest
 const customJestConfig = {
@@ -10,6 +11,6 @@ const customJestConfig = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
   testEnvironment: 'jsdom',
   testPathIgnorePatterns: ['<rootDir>/src/e2e'],
-};
+}
 
-module.exports = createJestConfig(customJestConfig);
+module.exports = createJestConfig(customJestConfig)

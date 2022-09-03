@@ -11,7 +11,7 @@ A faster way to start using Next with Typescript.
 
 - `Node 16+`
 - `Git 2+`
-- `Yarn 2`
+- `Yarn 1`
 
 ## Installation
 
