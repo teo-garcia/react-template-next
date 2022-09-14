@@ -11,7 +11,7 @@ const fetcher = () =>
     .then((res) => res)
 
 const Home: NextPage = function () {
-  const { data } = useQuery(['test'], fetcher)
+  const { data } = useQuery(['mock query'], fetcher)
 
   return (
     <Layout>
