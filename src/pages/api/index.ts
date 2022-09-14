@@ -6,7 +6,5 @@ export default function handler(
   _req: NextApiRequest,
   res: NextApiResponse<BannerProps>
 ) {
-  res
-    .status(200)
-    .json({ title: `NextJS Template @${packageInfo.version}.} ⚡️` })
+  res.status(200).json({ title: `NextJS Template @${packageInfo.version} ⚡️` })
 }

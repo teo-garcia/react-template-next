@@ -6,7 +6,7 @@ import { useQuery } from '@tanstack/react-query'
 import Banner from '@components/Banner/Banner'
 
 const fetcher = () =>
-  fetch('http://localhost:3000/api')
+  fetch('/api')
     .then((res) => res.json())
     .then((res) => res)
 
