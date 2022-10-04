@@ -10,7 +10,7 @@ const fetcher = () =>
     .then((res) => res.json())
     .then((res) => res)
 
-const Home: NextPage = function () {
+const Home: NextPage = () => {
   const { data } = useQuery(['mock query'], fetcher)
 
   return (
