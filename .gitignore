@@ -39,3 +39,6 @@ yarn-error.log*
 # secrets
 .env
 .vscode
+/test-results/
+/playwright-report/
+/playwright/.cache/
