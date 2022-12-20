@@ -1,7 +1,7 @@
 'use client'
 
 import styles from './Banner.module.css'
-import { Box, Typography } from 'primitive-jsx'
+import { Box, Text } from 'primitive-jsx'
 import { useQuery } from '@tanstack/react-query'
 
 const fetcher = () =>
@@ -16,9 +16,9 @@ function Banner() {
   const { title } = data
   return (
     <Box tag="article" className={styles.container}>
-      <Typography color="background" weight="bold" className={styles.title}>
+      <Text color="background" weight="bold" className={styles.title}>
         {title}
-      </Typography>
+      </Text>
     </Box>
   )
 }
