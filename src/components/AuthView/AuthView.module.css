@@ -1,0 +1,55 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.signInButton {
+  font-size: var(--font-s);
+  padding: 8px 32px;
+}
+
+.userInfo {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 36px 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: var(--font-xxl);
+  text-align: center;
+}
+
+.userDetails {
+  display: flex;
+  flex-flow: column;
+  gap: 16px 0;
+}
+
+.profilePic {
+  border-radius: 16px;
+  margin: 0 auto;
+}
+
+.subtitle {
+  font-size: var(--font-xl);
+  text-align: center;
+}
+
+.detail {
+  font-size: var(--font-l);
+  display: flex;
+  flex-flow: column;
+}
+
+.signOutButton {
+  margin-top: 64px;
+  font-size: var(--font-xs);
+  margin-left: auto;
+}

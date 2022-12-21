@@ -1,7 +1,7 @@
 import { Layout } from 'primitive-jsx'
 import Banner from '@components/Banner/Banner'
 
-const Home = () => {
+const HomePage = () => {
   return (
     <Layout>
       <Banner />
@@ -9,4 +9,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default HomePage
