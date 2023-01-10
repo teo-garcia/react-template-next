@@ -15,7 +15,7 @@ const Providers = (props: ProvidersProps) => {
     <SessionProvider>
       <QueryClientProvider client={queryClient}>
         {children}
-        <ReactQueryDevtools initialIsOpen />
+        <ReactQueryDevtools />
       </QueryClientProvider>
     </SessionProvider>
   )
