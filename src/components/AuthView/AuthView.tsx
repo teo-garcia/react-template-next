@@ -3,7 +3,7 @@ import styles from './AuthView.module.css'
 import { signIn, signOut, useSession } from 'next-auth/react'
 import { Box, Button, Text } from 'primitive-jsx'
 import Image from 'next/image'
-import type { Session } from 'next-auth'
+import type { SignedOnViewProps } from '@lib/types/client'
 
 const AuthView = () => {
   const { data: session } = useSession()
@@ -21,8 +21,6 @@ const AuthView = () => {
     </Box>
   )
 }
-
-type SignedOnViewProps = Partial<Session>
 
 const SignedOnView = (props: SignedOnViewProps) => {
   const { user } = props
@@ -53,7 +51,10 @@ const SignedOnView = (props: SignedOnViewProps) => {
           weight="bold"
           className={styles.detail}
         >
-          Name: <Text tag="span">{user?.name}</Text>
+          Name:{' '}
+          <Text tag="span" color="text">
+            {user?.name}
+          </Text>
         </Text>
         <Text
           tag="h3"
@@ -61,7 +62,10 @@ const SignedOnView = (props: SignedOnViewProps) => {
           weight="bold"
           className={styles.detail}
         >
-          Email: <Text tag="span">{user?.email}</Text>
+          Email:{' '}
+          <Text tag="span" color="text">
+            {user?.email}
+          </Text>
         </Text>
       </Box>
       <Button
