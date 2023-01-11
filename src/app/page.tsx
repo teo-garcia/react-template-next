@@ -1,5 +1,5 @@
 import { Layout } from 'primitive-jsx'
-import Banner from '@components/Banner/Banner'
+import { Banner } from '@components/Banner/Banner'
 
 const HomePage = () => {
   return (
