@@ -3,6 +3,8 @@
 import styles from './Banner.module.css'
 import { Box, Text } from 'primitive-jsx'
 import { useQuery } from '@tanstack/react-query'
+import classNames from 'classnames'
+import { FaReact } from 'react-icons/fa'
 
 const fetcher = () =>
   fetch('/api')
@@ -15,8 +17,17 @@ function Banner() {
 
   const { title } = data
   return (
-    <Box tag="article" className={styles.container}>
-      <Text color="background" weight="bold" className={styles.title}>
+    <Box
+      tag="section"
+      className={classNames(
+        'h-100vh d-flex fd-column ai-center jc-center',
+        styles.container
+      )}
+    >
+      <FaReact className={classNames('c-background', styles.icon)} />
+      <Text
+        className={classNames('ta-center c-background fw-bold', styles.title)}
+      >
         {title}
       </Text>
     </Box>

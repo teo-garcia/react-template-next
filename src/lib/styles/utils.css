@@ -1,0 +1,132 @@
+/* CSS Utilities  */
+.w-100vw {
+  width: 100vw;
+}
+
+.w-100pc {
+  width: 100%;
+}
+
+.h-100vh {
+  height: 100vh;
+}
+
+.h-100pc {
+  height: 100%;
+}
+
+.ta-left {
+  text-align: left;
+}
+
+.ta-center {
+  text-align: center;
+}
+
+.ta-right {
+  text-align: right;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+.debug {
+  border: 2px solid red;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+.fw-wrap {
+  flex-wrap: wrap;
+}
+
+.fd-row {
+  flex-direction: row;
+}
+
+.fd-column {
+  flex-direction: column;
+}
+
+.bc-primary {
+  background-color: var(--color-primary);
+}
+
+.bc-secondary {
+  background-color: var(--color-secondary);
+}
+
+.bc-background {
+  background-color: var(--color-background);
+}
+
+.bc-text {
+  background-color: var(--color-text);
+}
+
+.bc-neutral {
+  background-color: var(--color-neutral);
+}
+
+.c-primary {
+  color: var(--color-primary);
+}
+
+.c-secondary {
+  color: var(--color-secondary);
+}
+
+.c-background {
+  color: var(--color-background);
+}
+
+.c-text {
+  color: var(--color-text);
+}
+
+.c-neutral {
+  color: var(--color-neutral);
+}
+
+.fs-xs {
+  font-size: var(--font-xs);
+}
+
+.fs-s {
+  font-size: var(--font-s);
+}
+
+.fs-m {
+  font-size: var(--font-m);
+}
+
+.fs-l {
+  font-size: var(--font-l);
+}
+
+.fs-xl {
+  font-size: var(--font-xl);
+}
+
+.fs-xxl {
+  font-size: var(--font-xxl);
+}
+
+.fw-regular {
+  font-weight: var(--font-regular);
+}
+
+.fw-bold {
+  font-weight: var(--font-bold);
+}
+
+.wrapper {
+  grid-column: 1 / -1;
+}

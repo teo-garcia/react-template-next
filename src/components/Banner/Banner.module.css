@@ -4,26 +4,47 @@
     var(--color-primary),
     var(--color-secondary)
   );
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  gap: 32px 0;
 }
 
 .title {
-  font-size: var(--font-xl);
   animation: slideIn 750ms ease-out forwards;
   transform: translateY(100vh);
-  text-align: center;
+  font-size: var(--font-l);
+  width: 300px;
+}
+
+.icon {
+  animation: rotate infinite linear 7000ms;
+  width: 100px;
+  height: 100px;
 }
 
 @media (min-width: 768px) {
   .title {
     font-size: var(--font-xl);
+    width: 500px;
+  }
+
+  .icon {
+    width: 150px;
+    height: 150px;
   }
 }
 
 @media (min-width: 1024px) {
+  .title {
+    font-size: var(--font-xl);
+    width: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .icon {
+    width: 200px;
+    height: 200px;
+  }
+
   .title {
     font-size: var(--font-xxl);
   }
@@ -32,5 +53,15 @@
 @keyframes slideIn {
   to {
     transform: translateY(0);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
   }
 }

@@ -1,0 +1,18 @@
+/* CSS Variables */
+:root {
+  --color-text: #212121;
+  --color-background: #fff;
+  --color-neutral: #90a4ae;
+  --color-primary: #7c4dff;
+  --color-secondary: #a0f;
+  --font-primary: 'Ubuntu';
+  --font-secondary: 'Ubuntu';
+  --font-regular: 400;
+  --font-bold: 700;
+  --font-xs: 1.8rem;
+  --font-s: 2rem;
+  --font-m: 3rem;
+  --font-l: 6rem;
+  --font-xl: 8rem;
+  --font-xxl: 10rem;
+}
