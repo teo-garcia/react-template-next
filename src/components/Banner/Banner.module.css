@@ -8,8 +8,6 @@
 }
 
 .title {
-  animation: slideIn 750ms ease-out forwards;
-  transform: translateY(100vh);
   font-size: var(--font-l);
   width: 300px;
 }
@@ -50,17 +48,7 @@
   }
 }
 
-@keyframes slideIn {
-  to {
-    transform: translateY(0);
-  }
-}
-
 @keyframes rotate {
-  from {
-    transform: rotate(0deg);
-  }
-
   to {
     transform: rotate(360deg);
   }

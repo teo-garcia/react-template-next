@@ -3,7 +3,7 @@
 import styles from './Banner.module.css'
 import { Box, Text } from 'primitive-jsx'
 import { useQuery } from '@tanstack/react-query'
-import classNames from 'classnames'
+import clsx from 'clsx'
 import { FaReact } from 'react-icons/fa'
 
 const fetcher = () =>
@@ -19,15 +19,13 @@ function Banner() {
   return (
     <Box
       tag="section"
-      className={classNames(
+      className={clsx(
         'h-100vh d-flex fd-column ai-center jc-center',
         styles.container
       )}
     >
-      <FaReact className={classNames('c-background', styles.icon)} />
-      <Text
-        className={classNames('ta-center c-background fw-bold', styles.title)}
-      >
+      <FaReact className={clsx('c-background', styles.icon)} />
+      <Text className={clsx('ta-center c-background fw-bold', styles.title)}>
         {title}
       </Text>
     </Box>
