@@ -1,4 +1,4 @@
-import { AuthView } from '@components/AuthView/AuthView'
+import { AuthView } from '@features/AuthView/AuthView'
 
 const AuthPage = () => {
   return <AuthView />
