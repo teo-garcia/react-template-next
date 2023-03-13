@@ -1,7 +1,6 @@
 'use client'
 
 import styles from './Banner.module.css'
-import { Box, Text } from 'primitive-jsx'
 import { useQuery } from '@tanstack/react-query'
 import clsx from 'clsx'
 import { FaReact } from 'react-icons/fa'
@@ -17,18 +16,17 @@ function Banner() {
 
   const { title } = data
   return (
-    <Box
-      tag="section"
+    <section
       className={clsx(
         'h-100vh d-flex fd-column ai-center jc-center bc-primary',
         styles.container
       )}
     >
       <FaReact className={clsx('c-secondary', styles.icon)} />
-      <Text className={clsx('ta-center c-secondary fw-bold', styles.title)}>
+      <h1 className={clsx('ta-center c-secondary fw-bold', styles.title)}>
         {title}
-      </Text>
-    </Box>
+      </h1>
+    </section>
   )
 }
 

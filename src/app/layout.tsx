@@ -1,4 +1,3 @@
-import 'primitive-jsx/dist/primitive-jsx.css'
 import '@lib/styles/theme.css'
 import '@lib/styles/resets.css'
 import '@lib/styles/utils.css'
