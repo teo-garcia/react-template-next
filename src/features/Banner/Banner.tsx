@@ -20,12 +20,12 @@ function Banner() {
     <Box
       tag="section"
       className={clsx(
-        'h-100vh d-flex fd-column ai-center jc-center',
+        'h-100vh d-flex fd-column ai-center jc-center bc-primary',
         styles.container
       )}
     >
-      <FaReact className={clsx('c-background', styles.icon)} />
-      <Text className={clsx('ta-center c-background fw-bold', styles.title)}>
+      <FaReact className={clsx('c-secondary', styles.icon)} />
+      <Text className={clsx('ta-center c-secondary fw-bold', styles.title)}>
         {title}
       </Text>
     </Box>

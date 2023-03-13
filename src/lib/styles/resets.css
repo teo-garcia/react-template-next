@@ -21,7 +21,7 @@ body {
   font-weight: var(--font-regular);
   background-color: var(--color-background);
   color: var(--color-text);
-  line-height: 1.5;
+  line-height: 1.2;
   -webkit-font-smoothing: antialiased;
 }
 

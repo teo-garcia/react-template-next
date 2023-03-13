@@ -1,46 +1,41 @@
 .container {
-  background: linear-gradient(
-    225deg,
-    var(--color-primary),
-    var(--color-secondary)
-  );
-  gap: 32px 0;
+  gap: 48px 0;
+  text-align: center;
 }
 
 .title {
-  font-size: var(--font-l);
-  width: 300px;
+  font-size: var(--font-m);
+  width: 250px;
 }
 
 .icon {
   animation: rotate infinite linear 7000ms;
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
 }
 
 @media (min-width: 768px) {
   .title {
-    font-size: var(--font-xl);
-    width: 500px;
+    font-size: var(--font-m);
+    width: auto;
   }
 
   .icon {
-    width: 150px;
-    height: 150px;
+    width: 175px;
+    height: 175px;
   }
 }
 
 @media (min-width: 1024px) {
   .title {
     font-size: var(--font-xl);
-    width: auto;
   }
 }
 
 @media (min-width: 1200px) {
   .icon {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
   }
 
   .title {
