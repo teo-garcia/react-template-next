@@ -41,7 +41,7 @@ const getPlopGenerators = (type) => {
         type: 'input',
         name: 'name',
         message: `What is the name of the new ${type}? 🚀`,
-        validate: (value) => !!value || 'Name is required',
+        validate: (value) => !!value || 'Name is required ℹ️',
       },
     ],
     actions: getActionsByType(type),
