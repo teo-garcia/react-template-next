@@ -14,3 +14,5 @@ export type SeoProps = {
   ogTitle?: string
   title: string
 }
+
+export type ThemeMode = 'light' | 'dark'

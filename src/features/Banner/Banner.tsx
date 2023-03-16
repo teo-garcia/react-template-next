@@ -18,12 +18,12 @@ function Banner() {
   return (
     <section
       className={clsx(
-        'h-100vh d-flex fd-column ai-center jc-center bc-primary',
+        'h-100vh d-flex fd-column ai-center jc-center bc-background',
         styles.container
       )}
     >
-      <FaReact className={clsx('c-secondary', styles.icon)} />
-      <h1 className={clsx('ta-center c-secondary fw-bold', styles.title)}>
+      <FaReact className={clsx('c-primary', styles.icon)} />
+      <h1 className={clsx('ta-center c-primary fw-bold', styles.title)}>
         {title}
       </h1>
     </section>

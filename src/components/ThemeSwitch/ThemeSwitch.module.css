@@ -1,0 +1,21 @@
+.button {
+  background-color: transparent;
+  border: 2px solid var(--color-neutral);
+  padding: 8px;
+  border-radius: 8px;
+  position: fixed;
+  top: 16px;
+  right: 16px;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+}
+
+@media (min-width: 1024px) {
+  .button {
+    top: 32px;
+    right: 64px;
+  }
+}

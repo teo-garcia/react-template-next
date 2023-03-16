@@ -5,6 +5,7 @@ import { Ubuntu } from 'next/font/google'
 import Providers from '@components/Providers/Providers'
 import type { Metadata } from 'next'
 import type { PropsWithChildren } from 'react'
+import { ThemeSwitch } from '@components/ThemeSwitch/ThemeSwitch'
 
 const metadata: Metadata = {
   title: {
@@ -24,7 +25,10 @@ const Layout = (props: PropsWithChildren) => {
     <html lang="en">
       <body>
         <Providers>
-          <main className={ubuntu.className}>{children}</main>
+          <main className={ubuntu.className}>
+            <ThemeSwitch />
+            {children}
+          </main>
         </Providers>
       </body>
     </html>

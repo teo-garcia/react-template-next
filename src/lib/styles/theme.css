@@ -1,10 +1,5 @@
 /* CSS Variables */
 :root {
-  --color-text: #000000;
-  --color-background: #ffffff;
-  --color-neutral: #d2d2d2;
-  --color-primary: #87ceeb;
-  --color-secondary: #1a2e43;
   --font-primary: 'Ubuntu';
   --font-secondary: 'Ubuntu';
   --font-regular: 400;
@@ -16,3 +11,90 @@
   --font-xl: 10rem;
   --font-xxl: 12rem;
 }
+
+body[data-theme='light'] {
+  --color-text: #333333;
+  --color-background: #f5f7fa;
+  --color-neutral: #09111d;
+  --color-primary: #4a90e2;
+  --color-secondary: #003057;
+}
+
+body[data-theme='dark'] {
+  --color-text: #f5f7fa;
+  --color-background: #333333;
+  --color-neutral: #a9b1bc;
+  --color-primary: #4a90e2;
+  --color-secondary: #1680d7;
+}
+
+/* TODO: Remove this commented code */
+/* Light */
+/* --color-text: #333333;
+  --color-background: #f5f7fa;
+  --color-neutral: #d1d9e6;
+  --color-primary: #ff9933;
+  --color-secondary: #cc6600; */
+
+/* Dark */
+/* --color-text: #f5f7fa;
+  --color-background: #333333;
+  --color-neutral: #a9b1bc;
+  --color-primary: #ffcc66;
+  --color-secondary: #ff9933; */
+
+/* Light */
+/* --color-text: #333333;
+  --color-background: #f5f7fa;
+  --color-neutral: #d1d9e6;
+  --color-primary: #5ac16d;
+  --color-secondary: #34623f; */
+
+/* Dark */
+/* --color-text: #f5f7fa;
+  --color-background: #333333;
+  --color-neutral: #a9b1bc;
+  --color-primary: #79db96;
+  --color-secondary: #4a8f5e; */
+
+/* Light */
+/* --color-text: #333333;
+  --color-background: #f5f7fa;
+  --color-neutral: #d1d9e6;
+  --color-primary: #3cb371;
+  --color-secondary: #006633; */
+
+/* Dark */
+/* --color-text: #f5f7fa;
+  --color-background: #333333;
+  --color-neutral: #a9b1bc;
+  --color-primary: #4caf50;
+  --color-secondary: #8bc34a; */
+
+/* Light */
+/* --color-text: #333333;
+  --color-background: #f5f7fa;
+  --color-neutral: #d1d9e6;
+  --color-primary: #e89e3b;
+  --color-secondary: #8c5f1c; */
+
+/* Dark */
+/* --color-text: #f5f7fa;
+  --color-background: #333333;
+  --color-neutral: #a9b1bc;
+  --color-primary: #ffb459;
+  --color-secondary: #b47e2b; */
+
+/* Light */
+/* --color-text: #333333;
+  --color-background: #f5f7fa;
+  --color-neutral: #d1d9e6;
+  --color-primary: #ff9800;
+  --color-secondary: #a84d00; */
+
+/* Dark */
+/* --color-text: #f5f7fa;
+  --color-background: #333333;
+  --color-neutral: #a9b1bc;
+  --color-primary: #ffab40;
+  --color-secondary: #ff5722; */
