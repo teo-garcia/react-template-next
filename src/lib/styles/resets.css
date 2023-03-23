@@ -24,7 +24,6 @@ body {
   color: var(--color-text);
   line-height: 1.2;
   -webkit-font-smoothing: antialiased;
-  transition: all 5000ms ease-out;
 }
 
 h1,
