@@ -7,11 +7,17 @@ import clsx from 'clsx'
 import type { ThemeMode } from '@lib/types/client'
 
 const ThemeSwitch = () => {
-  const [theme, setTheme] = useState<ThemeMode>('light')
+  const [theme, setTheme] = useState<ThemeMode>(() => {
+    if (typeof window !== 'undefined') {
+      return (window.localStorage.getItem('theme') as ThemeMode) || 'light'
+    }
+    return 'light'
+  })
   const nextTheme = theme === 'light' ? 'dark' : 'light'
 
   useEffect(() => {
     document.body.dataset.theme = theme
+    window.localStorage.setItem('theme', theme)
   }, [theme])
 
   const onClick = () => {

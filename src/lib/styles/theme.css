@@ -15,7 +15,7 @@
 body[data-theme='light'] {
   --color-text: #333333;
   --color-background: #f5f7fa;
-  --color-neutral: #09111d;
+  --color-neutral: #a9b1bc;
   --color-primary: #4a90e2;
   --color-secondary: #003057;
 }
@@ -24,8 +24,8 @@ body[data-theme='dark'] {
   --color-text: #f5f7fa;
   --color-background: #333333;
   --color-neutral: #a9b1bc;
-  --color-primary: #4a90e2;
-  --color-secondary: #1680d7;
+  --color-primary: #579def;
+  --color-secondary: #75a5cc;
 }
 
 /* TODO: Remove this commented code */
