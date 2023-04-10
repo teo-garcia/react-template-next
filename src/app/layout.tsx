@@ -35,5 +35,5 @@ const Layout = (props: PropsWithChildren) => {
   )
 }
 
-export { metadata }
+// export { metadata }
 export default Layout
