@@ -12,6 +12,7 @@ const fetcher = () =>
 
 function Banner() {
   const { data, isLoading } = useQuery(['mock query'], fetcher)
+
   if (isLoading) return null
 
   const { title } = data

@@ -8,7 +8,7 @@ const NotFoundBanner = () => {
       <section
         className={clsx(
           styles.section,
-          'h-100vh d-flex fd-column jc-center ai-center'
+          'section h-100vh d-flex fd-column jc-center ai-center'
         )}
       >
         <FaInfoCircle className={clsx(styles.icon, 'c-primary')} />
