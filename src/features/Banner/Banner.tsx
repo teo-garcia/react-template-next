@@ -10,7 +10,7 @@ const fetcher = () =>
     .then((res) => res.json())
     .then((res) => res)
 
-function Banner() {
+const Banner = () => {
   const { data, isLoading } = useQuery(['mock query'], fetcher)
 
   if (isLoading) return null
