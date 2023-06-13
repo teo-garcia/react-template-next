@@ -31,7 +31,7 @@ const ThemeSwitch = () => {
       aria-label={`Theme switcher, current mode: ${theme}`}
     >
       {theme === 'light' ? (
-        <FaMoon className={clsx(styles.icon, 'c-text')} />
+        <FaMoon className={clsx(styles.icon, 'c-background')} />
       ) : (
         <FaSun className={clsx(styles.icon, 'c-text')} />
       )}
