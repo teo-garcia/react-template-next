@@ -1,6 +1,4 @@
-import '@lib/styles/theme.css'
-import '@lib/styles/resets.css'
-import '@lib/styles/utils.css'
+import '@lib/styles/globals.css'
 import { Ubuntu } from 'next/font/google'
 import Providers from '@components/Providers/Providers'
 import type { Metadata } from 'next'
@@ -35,5 +33,5 @@ const Layout = (props: PropsWithChildren) => {
   )
 }
 
-// export { metadata }
+export { metadata }
 export default Layout

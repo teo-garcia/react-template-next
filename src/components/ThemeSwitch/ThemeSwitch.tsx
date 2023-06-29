@@ -1,39 +1,37 @@
 'use client'
 
-import styles from './ThemeSwitch.module.css'
 import { useEffect, useState } from 'react'
 import { FaSun, FaMoon } from 'react-icons/fa'
-import clsx from 'clsx'
 import type { ThemeMode } from '@lib/types/client'
 
 const ThemeSwitch = () => {
-  const [theme, setTheme] = useState<ThemeMode>(() => {
-    if (typeof window !== 'undefined') {
-      return (window.localStorage.getItem('theme') as ThemeMode) || 'light'
-    }
-    return 'light'
-  })
+  const [theme, setTheme] = useState(
+    typeof window !== 'undefined'
+      ? (window.localStorage.getItem('theme') as ThemeMode)
+      : 'light'
+  )
   const nextTheme = theme === 'light' ? 'dark' : 'light'
 
   useEffect(() => {
-    document.body.dataset.theme = theme
+    document.body.classList.remove(nextTheme)
+    document.body.classList.add(theme)
     window.localStorage.setItem('theme', theme)
-  }, [theme])
+  }, [theme, nextTheme])
 
-  const onClick = () => {
+  const handleClick = () => {
     setTheme(nextTheme)
   }
 
   return (
     <button
-      className={clsx(styles.button, 'bc-secondary')}
-      onClick={onClick}
+      className="fixed right-4 top-4 rounded-lg border border-slate-200 p-2 md:right-8 md:top-8"
+      onClick={handleClick}
       aria-label={`Theme switcher, current mode: ${theme}`}
     >
       {theme === 'light' ? (
-        <FaMoon className={clsx(styles.icon, 'c-background')} />
+        <FaMoon className="h-7 w-7 text-white" />
       ) : (
-        <FaSun className={clsx(styles.icon, 'c-text')} />
+        <FaSun className="h-7 w-7 text-white" />
       )}
     </button>
   )
