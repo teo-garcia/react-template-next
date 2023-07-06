@@ -7,7 +7,7 @@ import type { ThemeMode } from '@lib/types/client'
 const ThemeSwitch = () => {
   const [theme, setTheme] = useState(
     typeof window !== 'undefined'
-      ? (window.localStorage.getItem('theme') as ThemeMode)
+      ? window.localStorage.getItem('theme') || 'light'
       : 'light'
   )
   const nextTheme = theme === 'light' ? 'dark' : 'light'

@@ -40,15 +40,15 @@ describe('<ThemeSwitch /> tests', () => {
 
   test('It should attach the theme property into the body dataset', async () => {
     render(<ThemeSwitch />)
-    expect(document.body.dataset.theme).toBe('light')
+    await expect(document.body).toHaveClass('light')
     await user.click(
       screen.getByLabelText(/theme switcher, current mode: light/i)
     )
-    expect(document.body.dataset.theme).toBe('dark')
+    await expect(document.body).toHaveClass('dark')
     await user.click(
       screen.getByLabelText(/theme switcher, current mode: dark/i)
     )
-    expect(document.body.dataset.theme).toBe('light')
+    await expect(document.body).toHaveClass('light')
   })
 
   test('It should attach the theme property into the localStorage theme property', async () => {
