@@ -1,13 +1,13 @@
 'use client'
 
+import { ThemeMode } from '@lib/types/client'
 import { useEffect, useState } from 'react'
 import { FaSun, FaMoon } from 'react-icons/fa'
-import type { ThemeMode } from '@lib/types/client'
 
 const ThemeSwitch = () => {
-  const [theme, setTheme] = useState(
+  const [theme, setTheme] = useState<ThemeMode>(
     typeof window !== 'undefined'
-      ? window.localStorage.getItem('theme') || 'light'
+      ? (window.localStorage.getItem('theme') as ThemeMode) || 'light'
       : 'light'
   )
   const nextTheme = theme === 'light' ? 'dark' : 'light'
