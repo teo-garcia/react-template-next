@@ -1,0 +1,44 @@
+name: Packages Update 🤖
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 0/2' # Every other Sunday at midnight (UTC time)
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code 🤖
+        uses: actions/checkout@v3
+
+      - name: Setup Node 🤖
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Update dependencies 🤖
+        run: npx npm-check-updates -u
+
+      - name: Install dependencies 🤖
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install
+
+      - name: Run unit tests 🤖
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: test:unit
+
+      - name: Commit changes 🤖
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git commit -am "chore: Dependencies Update - $(date +'%Y-%m-%d')"
+
+      - name: Push changes 🤖
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
