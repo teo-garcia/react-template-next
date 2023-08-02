@@ -22,8 +22,8 @@
     "lint:js": "eslint src/**/*.{ts,tsx}"
   },
   "dependencies": {
-    "@tanstack/react-query": "^4.32.0",
-    "@tanstack/react-query-devtools": "^4.32.0",
+    "@tanstack/react-query": "^4.32.1",
+    "@tanstack/react-query-devtools": "^4.32.1",
     "clsx": "^2.0.0",
     "next": "13.4.12",
     "react": "18.2.0",
@@ -40,7 +40,7 @@
     "@testing-library/react": "^14.0.0",
     "@testing-library/user-event": "^14.4.3",
     "@types/node": "20.4.5",
-    "@types/react": "18.2.17",
+    "@types/react": "18.2.18",
     "@typescript-eslint/eslint-plugin": "^6.2.1",
     "@typescript-eslint/parser": "^6.2.1",
     "autoprefixer": "^10.4.14",
