@@ -1,4 +1,4 @@
-name: Packages Update 🤖
+name: Dependencies Update 🤖
 
 on:
   workflow_dispatch:
@@ -35,7 +35,7 @@ jobs:
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
-          git commit -am "chore: Dependencies Update - $(date +'%Y-%m-%d')"
+          git commit -am "chore: Dependencies Update 🤖"
 
       - name: Push changes 🤖
         uses: ad-m/github-push-action@master
