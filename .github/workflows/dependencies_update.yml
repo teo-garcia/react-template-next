@@ -3,7 +3,7 @@ name: Dependencies Update 🤖
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 * * 0/2' # Every other Sunday at midnight (UTC time)
+    - cron: '0 0 */15 * *'
 
 jobs:
   update:
