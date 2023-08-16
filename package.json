@@ -17,7 +17,7 @@
     "create:component": "plop component",
     "create:feature": "plop feature",
     "test:unit": "jest",
-    "test:e2e": "yarn build:web && concurrently \"yarn start:web\" \"yarn playwright test\"",
+    "test:e2e": "concurrently \"yarn dev\" \"yarn playwright test\"",
     "lint:css": "stylelint **/*.css",
     "lint:js": "eslint src/**/*.{ts,tsx}"
   },
@@ -60,6 +60,7 @@
     "jest": "^29.6.2",
     "jest-environment-jsdom": "^29.6.2",
     "lint-staged": "^13.2.3",
+    "msw": "^1.2.3",
     "plop": "^3.1.2",
     "postcss": "^8.4.27",
     "prettier": "^3.0.1",
@@ -71,5 +72,8 @@
     "tailwindcss": "^3.3.3",
     "typescript": "5.1.6",
     "webpack": "^5.88.2"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }

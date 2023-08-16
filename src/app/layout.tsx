@@ -21,9 +21,9 @@ const Layout = (props: PropsWithChildren) => {
   const { children } = props
   return (
     <html lang="en">
-      <body>
+      <body className={ubuntu.className}>
         <Providers>
-          <main className={ubuntu.className}>
+          <main>
             <ThemeSwitch />
             {children}
           </main>
