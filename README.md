@@ -5,7 +5,7 @@
 
 # React Template Next
 
-A faster way to start using Next with Typescript.
+Start building modern web applications using React and Next.js.
 
 ## Requirements
 
@@ -15,10 +15,10 @@ A faster way to start using Next with Typescript.
 
 ## Installation
 
-1. Copy the repo or use the `gh` tool:
+1. Get the template using `npx degit`:
 
 ```bash
-  gh repo create my-project --private --clone --template teo-garcia/react-template-next
+  npx degit teo-garcia/react-template-next my_project
 ```
 
 2. Install the dependencies:
@@ -33,26 +33,30 @@ A faster way to start using Next with Typescript.
   yarn dev
 ```
 
-## Features
+## Tools
 
-- Next 12.
+- Next 13.
 - React 18.
+- Tailwind 3.
 - Typescript 4.
-- Linting with ESLint + Stylelint + Prettier.
-- Git Hooks with Husky + Lint Staged.
-- Unit Testing with Jest + RTL.
-- E2E Testing with Playwright.
+- ESLint 8 + Prettier 3.
+- Husky 8 + Lint Staged 13.
+- Jest 29 + Testing Library React 14.
+- Playwright 1.
+- MSW 1.
 
 ## Commands
 
-| **Command** | **Description**                                 |
-| ----------- | ----------------------------------------------- |
-| dev         | Run `dev:web`.                                  |
-| build       | Run `build:web`.                                |
-| dev:web     | Run `next` in `DEV` mode.                       |
-| build:web   | Run `next` in `PROD` mode.                      |
-| start:web   | Run `next` server (build required).             |
-| test:unit   | Run `jest`.                                     |
-| test:e2e    | Run `build:web`, `start:web`, and `playwright`. |
-| lint:css    | Lint CSS files.                                 |
-| lint:js     | Lint JS files.                                  |
+| **Command**             | **Description**                                 |
+| ----------------------- | ----------------------------------------------- |
+| dev                     | Run `dev:web`.                                  |
+| build                   | Run `build:web`.                                |
+| dev:web                 | Run `next` in `DEV` mode.                       |
+| build:web               | Run `next` in `PROD` mode.                      |
+| start:web               | Run `next` server (build required).             |
+| test:unit               | Run `jest`.                                     |
+| test:e2e                | Run `dev`, and `playwright`.                    |
+| lint:css                | Lint CSS files.                                 |
+| lint:js                 | Lint JS files.                                  |
+| create:component <name> | Creates a component at `src/components/<name>`. |
+| create:feature <name>   | Creates a component at `src/features/<name>`.   |
