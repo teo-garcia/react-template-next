@@ -18,7 +18,6 @@
     "create:feature": "plop feature",
     "test:unit": "jest",
     "test:e2e": "concurrently \"yarn dev\" \"yarn playwright test\"",
-    "lint:css": "stylelint **/*.css",
     "lint:js": "eslint src/**/*.{ts,tsx}"
   },
   "dependencies": {
