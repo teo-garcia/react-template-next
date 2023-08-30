@@ -4,5 +4,4 @@ module.exports = {
     'yarn lint:js --fix',
     'yarn test:unit --passWithNoTests',
   ],
-  '**/*.css': ['yarn lint:css --fix'],
 }
