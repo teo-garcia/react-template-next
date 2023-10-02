@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  experimental: { appDir: true, typedRoutes: true },
+  experimental: { typedRoutes: true },
   images: {
-    domains: ['avatars.githubusercontent.com'],
+    domains: [],
   },
 }
 
