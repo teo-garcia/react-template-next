@@ -8,7 +8,10 @@ const fetcher = () =>
     .then((res) => res)
 
 const Banner = () => {
-  const { data, isLoading } = useQuery(['mock query'], fetcher)
+  const { data, isLoading } = useQuery({
+    queryKey: ['mock query'],
+    queryFn: fetcher,
+  })
 
   if (isLoading) return null
 
