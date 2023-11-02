@@ -1,9 +1,9 @@
-import '@lib/styles/globals.css'
+import 'lib/styles/globals.css'
 import { Ubuntu } from 'next/font/google'
-import Providers from '@components/Providers/Providers'
+import Providers from 'components/Providers/Providers'
 import type { Metadata } from 'next'
 import type { PropsWithChildren } from 'react'
-import { ThemeSwitch } from '@components/ThemeSwitch/ThemeSwitch'
+import { ThemeSwitch } from 'components/ThemeSwitch/ThemeSwitch'
 
 const metadata: Metadata = {
   title: {
@@ -17,7 +17,7 @@ const ubuntu = Ubuntu({
   weight: ['400', '700'],
 })
 
-const Layout = (props: PropsWithChildren) => {
+const Layout = async (props: PropsWithChildren) => {
   const { children } = props
   return (
     <html lang="en">

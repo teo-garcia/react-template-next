@@ -1,6 +1,6 @@
 'use client'
 
-import { ThemeMode } from '@lib/types/client'
+import { ThemeMode } from 'lib/types/client'
 import { useEffect, useState } from 'react'
 import { FaSun, FaMoon } from 'react-icons/fa'
 

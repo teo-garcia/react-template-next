@@ -20,7 +20,7 @@ jobs:
       - name: Setup Node 🤖
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
 
       - name: Install dependencies 🤖
         uses: borales/actions-yarn@v4
@@ -48,7 +48,7 @@ jobs:
       - name: Setup Node 🚀
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
 
       - name: Install Vercel CLI 🚀
         uses: borales/actions-yarn@v4

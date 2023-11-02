@@ -1,8 +1,8 @@
 import '@testing-library/jest-dom'
-import { server } from './src/mocks/server'
+// import { server } from './src/lib/mocks/node'
 
-beforeAll(() => server.listen())
+// beforeAll(() => server.listen())
 
-afterEach(() => server.resetHandlers())
+// afterEach(() => server.resetHandlers())
 
-afterAll(() => server.close())
+// afterAll(() => server.close())

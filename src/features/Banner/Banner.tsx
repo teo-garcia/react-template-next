@@ -1,21 +1,16 @@
 'use client'
-import { useQuery } from '@tanstack/react-query'
+import { useHealthcheck } from 'lib/hooks/useHealthcheck'
 import { FaReact } from 'react-icons/fa'
 
-const fetcher = () =>
-  fetch('/api')
-    .then((res) => res.json())
-    .then((res) => res)
+export type BannerProps = {
+  title: string
+}
 
-const Banner = () => {
-  const { data, isLoading } = useQuery({
-    queryKey: ['mock query'],
-    queryFn: fetcher,
-  })
+const Banner = (props: BannerProps) => {
+  const { title } = props
 
-  if (isLoading) return null
+  useHealthcheck()
 
-  const { title } = data
   return (
     <section className="flex h-screen flex-col items-center justify-center gap-y-16 bg-blue-500 transition-colors duration-500 ease-in-out dark:bg-zinc-900">
       <FaReact className="h-48 w-48 animate-[spin_5s_linear_infinite] text-white dark:text-blue-500 xl:h-64 xl:w-64" />

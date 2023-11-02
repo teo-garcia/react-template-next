@@ -2,7 +2,7 @@
 /* tslint:disable */
 
 /**
- * Mock Service Worker (2.0.1).
+ * Mock Service Worker (2.0.2).
  * @see https://github.com/mswjs/msw
  * - Please do NOT modify this file.
  * - Please do NOT serve this file on production.
@@ -141,7 +141,7 @@ async function handleRequest(event, requestId) {
             headers: Object.fromEntries(responseClone.headers.entries()),
           },
         },
-        [responseBody],
+        [responseBody]
       )
     })()
   }
@@ -237,7 +237,7 @@ async function getResponse(event, client, requestId) {
         keepalive: request.keepalive,
       },
     },
-    [requestBuffer],
+    [requestBuffer]
   )
 
   switch (clientMessage.type) {
@@ -267,7 +267,7 @@ function sendToClient(client, message, transferrables = []) {
 
     client.postMessage(
       message,
-      [channel.port2].concat(transferrables.filter(Boolean)),
+      [channel.port2].concat(transferrables.filter(Boolean))
     )
   })
 }

@@ -1,12 +1,12 @@
-import { Banner } from '@features/Banner/Banner'
+import { Banner } from 'features/Banner/Banner'
 import type { Metadata } from 'next'
 
 const metadata: Metadata = {
-  title: 'Home | Next 13',
+  title: 'Home | RTN',
 }
 
 const HomePage = () => {
-  return <Banner />
+  return <Banner title="React Template Next" />
 }
 
 export { metadata }

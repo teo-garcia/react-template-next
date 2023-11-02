@@ -9,7 +9,7 @@ Start building modern web applications using React and Next.js.
 
 ## Requirements
 
-- `Node 16+`
+- `Node 18+`
 - `Git 2+`
 - `Yarn 1`
 
