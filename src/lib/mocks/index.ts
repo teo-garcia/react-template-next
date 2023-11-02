@@ -1,5 +1,11 @@
+import { isProduction, isServer } from 'lib/misc/config'
+
 const setupMSW = async () => {
-  if (typeof window === 'undefined') {
+  if (isProduction()) {
+    return
+  }
+
+  if (isServer()) {
     const { server } = await import('./node')
     server.listen({ onUnhandledRequest: 'bypass' })
   } else {
