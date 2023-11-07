@@ -1,10 +1,3 @@
-/**
- * Returns an array of actions that can be used to generate files
- * based on the specified type.
- *
- * @param {string} type - The type of the component to generate.
- * @returns {Array<Object>} - An array of actions that can be used to generate files.
- */
 const getActionsByType = (type) => {
   const dirName = `${type}s`
   return [
@@ -26,13 +19,6 @@ const getActionsByType = (type) => {
   ]
 }
 
-/**
- * Returns an object that represents a generator for creating a new
- * React component of the specified type.
- *
- * @param {string} type - The type of the component to generate.
- * @returns {Object} - An object that represents a generator.
- */
 const getPlopGenerators = (type) => {
   return {
     description: `Create a new React ${type} 🚀`,

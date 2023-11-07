@@ -1,23 +1,28 @@
 'use client'
 
-import React from 'react'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-import type { ProvidersProps } from 'lib/types/client'
+import type { ProvidersProps } from 'lib/misc/types'
 import { ViewportInfo } from 'components/ViewportInfo/ViewportInfo'
-import { setupMSW } from 'lib/mocks'
-const isDEV = process.env.NODE_ENV === 'development'
-const queryClient = new QueryClient()
+import { useEffect } from 'react'
+import { isDevelopment } from 'lib/misc/config'
 
-setupMSW()
+const queryClient = new QueryClient()
 
 const Providers = (props: ProvidersProps) => {
   const { children } = props
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('../../lib/mocks').then(({ setupMSWBrowser }) => setupMSWBrowser())
+    }
+  }, [])
+
   return (
     <QueryClientProvider client={queryClient}>
       {children}
       <ReactQueryDevtools buttonPosition="bottom-left" />
-      {isDEV && <ViewportInfo />}
+      {isDevelopment() && <ViewportInfo />}
     </QueryClientProvider>
   )
 }
