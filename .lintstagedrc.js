@@ -1,7 +1,7 @@
 module.exports = {
   '**/*.{js,jsx,ts,tsx}': [
-    'yarn prettier --write',
-    'yarn lint:js --fix',
-    'yarn test:unit --passWithNoTests',
+    'pnpm prettier --write',
+    'pnpm lint:js --fix',
+    'pnpm test:unit --passWithNoTests',
   ],
 }

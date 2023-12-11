@@ -1,7 +1,7 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-yarn tsc --noEmit
+pnpm tsc --noEmit
 
-yarn lint-staged
+pnpm lint-staged
 

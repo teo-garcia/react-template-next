@@ -21,15 +21,17 @@ jobs:
       - name: Update dependencies 🤖
         run: npx npm-check-updates -u
 
-      - name: Install dependencies 🤖
-        uses: borales/actions-yarn@v4
+      - name: Setup pnpm 🤖
+        uses: pnpm/action-setup@v2
         with:
-          cmd: install
+          version: 8
+          run_install: false
 
-      - name: Run unit tests 🤖
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: test:unit
+      - name: Install dependencies 🤖
+        run: pnpm install
+
+      - name: Install dependencies 🤖
+        run: pnpm test:unit
 
       - name: Check for changes 🤖
         id: check_changes

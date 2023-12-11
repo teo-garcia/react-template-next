@@ -7,9 +7,9 @@
   },
   "license": "MIT",
   "scripts": {
-    "dev": "yarn dev:web",
-    "build": "yarn build:web",
-    "start": "yarn start:web",
+    "dev": "pnpm dev:web",
+    "build": "pnpm build:web",
+    "start": "pnpm start:web",
     "dev:web": "next dev",
     "dev:web:turbo": "next dev --turbo",
     "build:web": "next build",
@@ -17,7 +17,7 @@
     "create:component": "plop component",
     "create:feature": "plop feature",
     "test:unit": "jest",
-    "test:e2e": "concurrently \"yarn dev\" \"yarn playwright test\"",
+    "test:e2e": "concurrently \"pnpm dev\" \"pnpm playwright test\"",
     "lint:js": "eslint src/**/*.{ts,tsx}"
   },
   "dependencies": {

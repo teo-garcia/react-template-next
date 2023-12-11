@@ -11,7 +11,7 @@ Start building modern web applications using React and Next.js.
 
 - `Node 18+`
 - `Git 2+`
-- `Yarn 1`
+- `pnpm 8`
 
 ## Installation
 
@@ -24,13 +24,13 @@ Start building modern web applications using React and Next.js.
 2. Install the dependencies:
 
 ```bash
-  yarn
+  pnpm install
 ```
 
 3. Run the project:
 
 ```bash
-  yarn dev
+  pnpm dev
 ```
 
 ## Tools

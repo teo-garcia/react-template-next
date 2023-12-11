@@ -22,20 +22,20 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install dependencies 🤖
-        uses: borales/actions-yarn@v4
+      - name: Setup pnpm 🤖
+        uses: pnpm/action-setup@v2
         with:
-          cmd: install
+          version: 8
+          run_install: false
+
+      - name: Install dependencies 🤖
+        run: pnpm install
 
       - name: Build the code 🤖
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: build:web
+        run: pnpm build:web
 
       - name: Run unit tests 🤖
-        uses: borales/actions-yarn@v4
-        with:
-          cmd: test:unit
+        run: pnpm test:unit
 
   CD:
     needs: CI
@@ -50,10 +50,17 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install Vercel CLI 🚀
-        uses: borales/actions-yarn@v4
+      - name: Setup pnpm 🚀
+        uses: pnpm/action-setup@v2
         with:
-          cmd: add vercel@latest
+          version: 8
+          run_install: false
+
+      - name: Install dependencies 🚀
+        run: pnpm install
+
+      - name: Install Vercel CLI 🚀
+        run: pnpm add vercel@latest
 
       - name: Pull Vercel Environment Information 🚀
         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
