@@ -1,5 +1,5 @@
 import 'lib/styles/globals.css'
-import { Ubuntu } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import Providers from 'components/Providers/Providers'
 import type { Metadata } from 'next'
 import type { PropsWithChildren } from 'react'
@@ -7,27 +7,27 @@ import { ThemeSwitch } from 'components/ThemeSwitch/ThemeSwitch'
 
 const metadata: Metadata = {
   title: {
-    default: 'Next 13 | Home',
-    template: '%s | Next 13',
+    default: 'Home',
+    template: '%s | RTN',
   },
 }
 
-const ubuntu = Ubuntu({
+const inter = Inter({
   subsets: ['latin'],
-  weight: ['400', '700'],
+  weight: ['400', '600', '700'],
 })
 
 const Layout = async (props: PropsWithChildren) => {
   const { children } = props
   return (
     <html lang="en">
-      <body className={ubuntu.className}>
-        <Providers>
-          <main>
+      <body className={inter.className}>
+        <div className="bg-primary text-black transition-colors duration-500 ease-in-out dark:bg-black dark:text-white">
+          <Providers>
             <ThemeSwitch />
-            {children}
-          </main>
-        </Providers>
+            <main>{children}</main>
+          </Providers>
+        </div>
       </body>
     </html>
   )
