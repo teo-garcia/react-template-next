@@ -4,6 +4,7 @@ import Providers from 'components/Providers/Providers'
 import type { Metadata } from 'next'
 import type { PropsWithChildren } from 'react'
 import { ThemeSwitch } from 'components/ThemeSwitch/ThemeSwitch'
+import { ViewportInfo } from 'components/ViewportInfo/ViewportInfo'
 
 const metadata: Metadata = {
   title: {
@@ -25,6 +26,7 @@ const Layout = async (props: PropsWithChildren) => {
         <div className="bg-primary text-black transition-colors duration-500 ease-in-out dark:bg-black dark:text-white">
           <Providers>
             <ThemeSwitch />
+            <ViewportInfo />
             <main>{children}</main>
           </Providers>
         </div>

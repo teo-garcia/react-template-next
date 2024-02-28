@@ -11,6 +11,9 @@ dependencies:
   '@tanstack/react-query-devtools':
     specifier: ^5.24.1
     version: 5.24.1(@tanstack/react-query@5.24.1)(react@18.2.0)
+  client-only:
+    specifier: ^0.0.1
+    version: 0.0.1
   clsx:
     specifier: ^2.1.0
     version: 2.1.0
