@@ -1,12 +1,25 @@
 import { act, render, fireEvent, screen } from '@testing-library/react'
 import { ViewportInfo } from './ViewportInfo'
+import { isDevelopment } from 'lib/misc/config'
+
+jest.mock('lib/misc/config', () => {
+  return {
+    ...jest.requireActual,
+    isDevelopment: jest.fn(),
+  }
+})
 
 describe('<ViewportInfo /> tests', () => {
+  const isDevelopmentMock = isDevelopment as jest.Mock
+
+  beforeAll(() => {
+    isDevelopmentMock.mockReturnValue(true)
+  })
+
   test('It should render initial width and height', () => {
     render(<ViewportInfo />)
     const initialWidth = window.innerWidth
     const initialHeight = window.innerHeight
-
     expect(
       screen.getByText(`${initialWidth} x ${initialHeight}`)
     ).toBeInTheDocument()
@@ -25,5 +38,16 @@ describe('<ViewportInfo /> tests', () => {
     fireEvent(window, new Event('resize'))
 
     expect(screen.getByText(`${newWidth} x ${newHeight}`)).toBeInTheDocument()
+  })
+
+  test('It should not render in production mode', () => {
+    isDevelopmentMock.mockReturnValue(false)
+
+    render(<ViewportInfo />)
+    const initialWidth = window.innerWidth
+    const initialHeight = window.innerHeight
+    expect(
+      screen.queryByText(`${initialWidth} x ${initialHeight}`)
+    ).not.toBeInTheDocument()
   })
 })
