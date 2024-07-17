@@ -19,7 +19,7 @@ jobs:
           node-version: 18
 
       - name: Update dependencies 🤖
-        run: npx npm-check-updates -u
+        run: npx npm-check-updates -u --reject "/eslint|@typescript-eslint|@next\/eslint-plugin-next/"
 
       - name: Setup pnpm 🤖
         uses: pnpm/action-setup@v2
