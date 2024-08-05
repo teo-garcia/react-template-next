@@ -1,8 +1,9 @@
 'use client'
 
-import type { ThemeMode } from 'lib/misc/types'
 import { useEffect, useState } from 'react'
 import { FaSun, FaMoon } from 'react-icons/fa'
+
+import type { ThemeMode } from 'lib/misc/types'
 
 const ThemeSwitch = () => {
   const [theme, setTheme] = useState<ThemeMode>(
@@ -29,9 +30,9 @@ const ThemeSwitch = () => {
       aria-label={`Theme switcher, current mode: ${theme}`}
     >
       {theme === 'light' ? (
-        <FaMoon className="h-7 w-7 text-black" />
+        <FaMoon className="size-7 text-black" />
       ) : (
-        <FaSun className="h-7 w-7 text-white" />
+        <FaSun className="size-7 text-white" />
       )}
     </button>
   )

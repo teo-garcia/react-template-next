@@ -18,15 +18,15 @@ jobs:
         with:
           node-version: 18
 
-      - name: Update dependencies 🤖
-        run: npx npm-check-updates -u --reject "/eslint|@typescript-eslint|@next\/eslint-plugin-next/"
-
       - name: Setup pnpm 🤖
         uses: pnpm/action-setup@v2
         with:
           version: 8
           run_install: false
 
+      - name: Update dependencies 🤖
+        run: pnpm dlx npm-check-updates -u --target minor"
+  
       - name: Install dependencies 🤖
         run: pnpm install --no-frozen-lockfile
 

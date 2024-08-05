@@ -1,6 +1,8 @@
 import { act, render, fireEvent, screen } from '@testing-library/react'
-import { ViewportInfo } from './ViewportInfo'
+
 import { isDevelopment } from 'lib/misc/config'
+
+import { ViewportInfo } from './ViewportInfo'
 
 jest.mock('lib/misc/config', () => {
   return {

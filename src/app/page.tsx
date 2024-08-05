@@ -1,4 +1,5 @@
 import { Banner } from 'features/Banner/Banner'
+
 import type { Metadata } from 'next'
 
 const metadata: Metadata = {
