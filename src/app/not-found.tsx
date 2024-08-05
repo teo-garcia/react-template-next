@@ -1,6 +1,7 @@
 'use client'
 
 import { NotFoundBanner } from 'features/NotFoundBanner/NotFoundBanner'
+
 import type { Metadata } from 'next'
 
 const metadata: Metadata = {

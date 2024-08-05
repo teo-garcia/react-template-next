@@ -2,8 +2,9 @@
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-import type { ProvidersProps } from 'lib/misc/types'
 import { useEffect } from 'react'
+
+import type { ProvidersProps } from 'lib/misc/types'
 
 const queryClient = new QueryClient()
 

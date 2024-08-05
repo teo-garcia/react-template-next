@@ -1,4 +1,5 @@
 import { render } from '@testing-library/react'
+
 import { NotFoundBanner } from './NotFoundBanner'
 
 describe('<NotFoundBanner /> tests', () => {
