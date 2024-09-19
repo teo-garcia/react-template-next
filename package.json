@@ -17,7 +17,7 @@
     "create:component": "plop component",
     "create:feature": "plop feature",
     "test:unit": "jest",
-    "test:e2e": "concurrently \"pnpm dev\" \"pnpm playwright test\"",
+    "test:e2e": "pnpm playwright test --ui",
     "lint:js": "eslint src/**/*.{ts,tsx}"
   },
   "dependencies": {

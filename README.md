@@ -1,4 +1,4 @@
-![README.md banner](./README.png)
+<!-- ![README.md banner](./README.png) -->
 
 ![Package License](https://img.shields.io/github/license/teo-garcia/react-template-next)
 ![Package Version](https://img.shields.io/github/package-json/v/teo-garcia/react-template-next)
