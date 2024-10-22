@@ -1,53 +1,53 @@
-name: Dependencies Update 🤖
+# name: Dependencies Update 🤖
 
-on:
-  workflow_dispatch:
-  schedule:
-    - cron: '0 0 1 * *'
+# on:
+#   workflow_dispatch:
+#   schedule:
+#     - cron: '0 0 1 * *'
 
-jobs:
-  update:
-    runs-on: ubuntu-latest
+# jobs:
+#   update:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code 🤖
-        uses: actions/checkout@v3
+#     steps:
+#       - name: Checkout code 🤖
+#         uses: actions/checkout@v3
 
-      - name: Setup Node 🤖
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+#       - name: Setup Node 🤖
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: 18
 
-      - name: Setup pnpm 🤖
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-          run_install: false
+#       - name: Setup pnpm 🤖
+#         uses: pnpm/action-setup@v2
+#         with:
+#           version: 8
+#           run_install: false
 
-      - name: Update dependencies 🤖
-        run: pnpm dlx npm-check-updates -u --target minor
-  
-      - name: Install dependencies 🤖
-        run: pnpm install --no-frozen-lockfile
+#       - name: Update dependencies 🤖
+#         run: pnpm dlx npm-check-updates -u --target minor
 
-      - name: Install dependencies 🤖
-        run: pnpm test:unit
+#       - name: Install dependencies 🤖
+#         run: pnpm install --no-frozen-lockfile
 
-      - name: Check for changes 🤖
-        id: check_changes
-        run: |
-          if [[ -n "$(git status --porcelain)" ]]; then
-            echo "Changes found!"
-            echo ::set-output name=has_changes::true
-          else
-            echo "No changes found!"
-            echo ::set-output name=has_changes::false
-          fi
+#       - name: Install dependencies 🤖
+#         run: pnpm test:unit
 
-      - name: Commit and Push changes 🤖
-        if: steps.check_changes.outputs.has_changes == 'true'
-        run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-          git commit -am "chore: Dependencies Update 🤖"
-          git push
+#       - name: Check for changes 🤖
+#         id: check_changes
+#         run: |
+#           if [[ -n "$(git status --porcelain)" ]]; then
+#             echo "Changes found!"
+#             echo ::set-output name=has_changes::true
+#           else
+#             echo "No changes found!"
+#             echo ::set-output name=has_changes::false
+#           fi
+
+#       - name: Commit and Push changes 🤖
+#         if: steps.check_changes.outputs.has_changes == 'true'
+#         run: |
+#           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+#           git config --global user.name "github-actions[bot]"
+#           git commit -am "chore: Dependencies Update 🤖"
+#           git push
