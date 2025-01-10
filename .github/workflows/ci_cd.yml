@@ -1,72 +1,72 @@
-name: CI/CD 🤖🚀
+# name: CI/CD 🤖🚀
 
-on:
-  push:
-    branches:
-      - main
-  workflow_run:
-    workflows: ['Dependencies Update 🤖']
-    types:
-      - completed
+# on:
+#   push:
+#     branches:
+#       - main
+#   workflow_run:
+#     workflows: ['Dependencies Update 🤖']
+#     types:
+#       - completed
 
-jobs:
-  CI:
-    runs-on: ubuntu-latest
+# jobs:
+#   CI:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout to the branch 🤖
-        uses: actions/checkout@v3
+#     steps:
+#       - name: Checkout to the branch 🤖
+#         uses: actions/checkout@v3
 
-      - name: Setup Node 🤖
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+#       - name: Setup Node 🤖
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: 18
 
-      - name: Setup pnpm 🤖
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-          run_install: false
+#       - name: Setup pnpm 🤖
+#         uses: pnpm/action-setup@v2
+#         with:
+#           version: 8
+#           run_install: false
 
-      - name: Install dependencies 🤖
-        run: pnpm install
+#       - name: Install dependencies 🤖
+#         run: pnpm install
 
-      - name: Build the code 🤖
-        run: pnpm build:web
+#       - name: Build the code 🤖
+#         run: pnpm build:web
 
-      - name: Run unit tests 🤖
-        run: pnpm test:unit
+#       - name: Run unit tests 🤖
+#         run: pnpm test:unit
 
-  CD:
-    needs: CI
-    runs-on: ubuntu-latest
+#   CD:
+#     needs: CI
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout to the branch 🚀
-        uses: actions/checkout@v3
+#     steps:
+#       - name: Checkout to the branch 🚀
+#         uses: actions/checkout@v3
 
-      - name: Setup Node 🚀
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+#       - name: Setup Node 🚀
+#         uses: actions/setup-node@v3
+#         with:
+#           node-version: 18
 
-      - name: Setup pnpm 🚀
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-          run_install: false
+#       - name: Setup pnpm 🚀
+#         uses: pnpm/action-setup@v2
+#         with:
+#           version: 8
+#           run_install: false
 
-      - name: Install dependencies 🚀
-        run: pnpm install
+#       - name: Install dependencies 🚀
+#         run: pnpm install
 
-      - name: Install Vercel CLI 🚀
-        run: pnpm add vercel@latest
+#       - name: Install Vercel CLI 🚀
+#         run: pnpm add vercel@latest
 
-      - name: Pull Vercel Environment Information 🚀
-        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+#       - name: Pull Vercel Environment Information 🚀
+#         run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
 
-      - name: Build Project Artifacts 🚀
-        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+#       - name: Build Project Artifacts 🚀
+#         run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
 
-      - name: Deploy Project Artifacts to Vercel 🚀
-        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+#       - name: Deploy Project Artifacts to Vercel 🚀
+#         run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}

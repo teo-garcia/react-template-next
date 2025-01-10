@@ -8,8 +8,8 @@
  * - Please do NOT serve this file on production.
  */
 
-const PACKAGE_VERSION = '2.3.5'
-const INTEGRITY_CHECKSUM = '26357c79639bfa20d64c0efca2a87423'
+const PACKAGE_VERSION = '2.7.0'
+const INTEGRITY_CHECKSUM = '00729d72e3b82faf54ca8b9621dbb96f'
 const IS_MOCKED_RESPONSE = Symbol('isMockedResponse')
 const activeClientIds = new Set()
 
@@ -62,7 +62,12 @@ self.addEventListener('message', async function (event) {
 
       sendToClient(client, {
         type: 'MOCKING_ENABLED',
-        payload: true,
+        payload: {
+          client: {
+            id: client.id,
+            frameType: client.frameType,
+          },
+        },
       })
       break
     }
@@ -140,7 +145,7 @@ async function handleRequest(event, requestId) {
             headers: Object.fromEntries(responseClone.headers.entries()),
           },
         },
-        [responseClone.body]
+        [responseClone.body],
       )
     })()
   }
@@ -154,6 +159,10 @@ async function handleRequest(event, requestId) {
 // communicate with during the response resolving phase.
 async function resolveMainClient(event) {
   const client = await self.clients.get(event.clientId)
+
+  if (activeClientIds.has(event.clientId)) {
+    return client
+  }
 
   if (client?.frameType === 'top-level') {
     return client
@@ -183,12 +192,26 @@ async function getResponse(event, client, requestId) {
   const requestClone = request.clone()
 
   function passthrough() {
-    const headers = Object.fromEntries(requestClone.headers.entries())
+    // Cast the request headers to a new Headers instance
+    // so the headers can be manipulated with.
+    const headers = new Headers(requestClone.headers)
 
-    // Remove internal MSW request header so the passthrough request
-    // complies with any potential CORS preflight checks on the server.
-    // Some servers forbid unknown request headers.
-    delete headers['x-msw-intention']
+    // Remove the "accept" header value that marked this request as passthrough.
+    // This prevents request alteration and also keeps it compliant with the
+    // user-defined CORS policies.
+    const acceptHeader = headers.get('accept')
+    if (acceptHeader) {
+      const values = acceptHeader.split(',').map((value) => value.trim())
+      const filteredValues = values.filter(
+        (value) => value !== 'msw/passthrough',
+      )
+
+      if (filteredValues.length > 0) {
+        headers.set('accept', filteredValues.join(', '))
+      } else {
+        headers.delete('accept')
+      }
+    }
 
     return fetch(requestClone, { headers })
   }
@@ -229,7 +252,7 @@ async function getResponse(event, client, requestId) {
         keepalive: request.keepalive,
       },
     },
-    [requestBuffer]
+    [requestBuffer],
   )
 
   switch (clientMessage.type) {
@@ -259,7 +282,7 @@ function sendToClient(client, message, transferrables = []) {
 
     client.postMessage(
       message,
-      [channel.port2].concat(transferrables.filter(Boolean))
+      [channel.port2].concat(transferrables.filter(Boolean)),
     )
   })
 }
