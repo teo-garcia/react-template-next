@@ -829,157 +829,6 @@ export default function GlobalError({
 
 Error handling in Next.js is essential for building robust applications that gracefully manage both expected errors and uncaught exceptions. This section covers handling errors in Server and Client Components, as well as creating custom error boundaries and global error handling.
 
-#### 5.1 Handling Expected Errors
-
-Expected errors occur during normal application operation, such as validation errors or failed requests. These should be explicitly handled and communicated to the client.
-
-##### 5.1.1 Server Actions
-
-Use the `useActionState` hook to manage Server Function states and handle expected errors without using `try/catch`.
-
-```tsx
-// app/actions.ts
-'use server'
-
-export async function createPost(prevState: any, formData: FormData) {
-  const title = formData.get('title')
-  const content = formData.get('content')
-
-  const res = await fetch('https://api.vercel.app/posts', {
-    method: 'POST',
-    body: { title, content },
-  })
-  const json = await res.json()
-
-  if (!res.ok) {
-    return { message: 'Failed to create post' }
-  }
-}
-
-// app/ui/form.tsx
-;('use client')
-import { useActionState } from 'react'
-import { createPost } from '@/app/actions'
-
-const initialState = { message: '' }
-
-export function Form() {
-  const [state, formAction, pending] = useActionState(createPost, initialState)
-
-  return (
-    <form action={formAction}>
-      <label htmlFor="title">Title</label>
-      <input type="text" id="title" name="title" required />
-      <label htmlFor="content">Content</label>
-      <textarea id="content" name="content" required />
-      {state?.message && <p aria-live="polite">{state.message}</p>}
-      <button disabled={pending}>Create Post</button>
-    </form>
-  )
-}
-```
-
-##### 5.1.2 Server Components
-
-In Server Components, conditionally render error messages or redirect based on the response.
-
-```tsx
-// app/page.tsx
-export default async function Page() {
-  const res = await fetch('https://...')
-  const data = await res.json()
-
-  if (!res.ok) {
-    return 'There was an error.'
-  }
-
-  return '...'
-}
-```
-
-##### 5.1.3 Not Found Handling
-
-Use the `notFound` function for 404 errors and define a `not-found.js` file for custom 404 UI.
-
-```tsx
-// app/blog/[slug]/page.tsx
-import { getPostBySlug } from '@/lib/posts'
-
-export default function Page({ params }: { params: { slug: string } }) {
-  const post = getPostBySlug(params.slug)
-
-  if (!post) {
-    notFound()
-  }
-
-  return <div>{post.title}</div>
-}
-
-// app/blog/[slug]/not-found.tsx
-export default function NotFound() {
-  return <div>404 - Page Not Found</div>
-}
-```
-
-#### 5.2 Handling Uncaught Exceptions
-
-Uncaught exceptions indicate bugs or issues outside the normal flow. These should be managed with error boundaries.
-
-##### 5.2.1 Nested Error Boundaries
-
-Define `error.js` files to create error boundaries for route segments.
-
-```tsx
-// app/dashboard/error.tsx
-'use client'
-import { useEffect } from 'react'
-
-export default function Error({
-  error,
-  reset,
-}: {
-  error: Error & { digest?: string }
-  reset: () => void
-}) {
-  useEffect(() => {
-    console.error(error)
-  }, [error])
-
-  return (
-    <div>
-      <h2>Something went wrong!</h2>
-      <button onClick={() => reset()}>Try again</button>
-    </div>
-  )
-}
-```
-
-##### 5.2.2 Global Error Handling
-
-Use `global-error.js` for application-wide error boundaries. This replaces the root layout in case of an error.
-
-```tsx
-// app/global-error.tsx
-'use client'
-
-export default function GlobalError({
-  error,
-  reset,
-}: {
-  error: Error & { digest?: string }
-  reset: () => void
-}) {
-  return (
-    <html>
-      <body>
-        <h2>Something went wrong!</h2>
-        <button onClick={() => reset()}>Try again</button>
-      </body>
-    </html>
-  )
-}
-```
-
 ## 2. Routing
 
 ### 2.1 Layouts and Pages
@@ -1246,3 +1095,392 @@ Scroll position is preserved, and cached segments are reused during backward and
 ##### 7. Routing Between `pages/` and `app/`
 
 Next.js manages routing transitions between `pages/` and `app/` directories during incremental migration.
+
+### 2.3 Error Handling
+
+Error handling in Next.js ensures your application can gracefully manage both expected errors and uncaught exceptions. This section outlines approaches for handling these errors effectively.
+
+#### 2.3.1 Handling Expected Errors
+
+Expected errors, such as validation errors or failed requests, are a normal part of application operation and should be handled explicitly.
+
+##### Server Actions
+
+Use the `useActionState` hook to manage Server Action states and handle expected errors by returning meaningful error messages.
+
+```tsx
+// app/actions.ts
+'use server'
+
+import { redirect } from 'next/navigation'
+
+export async function createUser(prevState: any, formData: FormData) {
+  const res = await fetch('https://...')
+  const json = await res.json()
+
+  if (!res.ok) {
+    return { message: 'Please enter a valid email' }
+  }
+
+  redirect('/dashboard')
+}
+
+// app/ui/signup.tsx
+;('use client')
+
+import { useActionState } from 'react'
+import { createUser } from '@/app/actions'
+
+const initialState = { message: '' }
+
+export function Signup() {
+  const [state, formAction, pending] = useActionState(createUser, initialState)
+
+  return (
+    <form action={formAction}>
+      <label htmlFor="email">Email</label>
+      <input type="text" id="email" name="email" required />
+      <p aria-live="polite">{state?.message}</p>
+      <button disabled={pending}>Sign up</button>
+    </form>
+  )
+}
+```
+
+##### Server Components
+
+When fetching data in Server Components, use the response to conditionally render an error message or redirect users.
+
+```tsx
+// app/page.tsx
+export default async function Page() {
+  const res = await fetch(`https://...`)
+  const data = await res.json()
+
+  if (!res.ok) {
+    return 'There was an error.'
+  }
+
+  return '...'
+}
+```
+
+#### 2.3.2 Uncaught Exceptions
+
+Uncaught exceptions indicate unexpected issues or bugs. These are handled using error boundaries.
+
+##### Using Error Boundaries
+
+Define `error.tsx` files to create error boundaries for handling uncaught exceptions in specific routes.
+
+```tsx
+// app/dashboard/error.tsx
+'use client'
+
+import { useEffect } from 'react'
+
+export default function Error({
+  error,
+  reset,
+}: {
+  error: Error & { digest?: string }
+  reset: () => void
+}) {
+  useEffect(() => {
+    console.error(error)
+  }, [error])
+
+  return (
+    <div>
+      <h2>Something went wrong!</h2>
+      <button onClick={() => reset()}>Try again</button>
+    </div>
+  )
+}
+```
+
+##### Handling Global Errors
+
+For application-wide error handling, use `global-error.js` at the root of your app.
+
+```tsx
+// app/global-error.tsx
+'use client'
+
+export default function GlobalError({
+  error,
+  reset,
+}: {
+  error: Error & { digest?: string }
+  reset: () => void
+}) {
+  return (
+    <html>
+      <body>
+        <h2>Something went wrong!</h2>
+        <button onClick={() => reset()}>Try again</button>
+      </body>
+    </html>
+  )
+}
+```
+
+- Handle expected errors in Server Actions using `useActionState`.
+- Use error boundaries (`error.tsx` or `global-error.js`) for uncaught exceptions.
+- Provide meaningful fallback UI for improved user experience.
+
+### 2.4 Loading UI and Streaming
+
+Next.js provides tools for creating meaningful loading states and leveraging streaming to optimize the user experience. This section explains how to use `loading.js` for instant loading UI and `<Suspense>` for streaming components.
+
+#### 2.4.1 Instant Loading States
+
+An instant loading state shows fallback UI, such as skeletons or spinners, while the content of a route segment loads. This improves the perceived responsiveness of the application.
+
+##### Using `loading.js`
+
+Create a `loading.js` file inside a folder to define a loading state for a route segment.
+
+```tsx
+// app/dashboard/loading.tsx
+export default function Loading() {
+  return <LoadingSkeleton />
+}
+```
+
+`loading.js` automatically wraps the `page.js` file and any children in a `<Suspense>` boundary, ensuring shared layouts remain interactive while new content loads.
+
+**Good to know:**
+
+- Navigation is immediate, even with server-side routing.
+- Navigation is interruptible, allowing users to navigate to another route before the current one finishes loading.
+
+#### 2.4.2 Streaming with Suspense
+
+Streaming allows you to send HTML chunks progressively from the server to the client. It works seamlessly with React's `<Suspense>` to provide a better user experience by prioritizing critical content.
+
+##### Example with `<Suspense>`
+
+```tsx
+// app/dashboard/page.tsx
+import { Suspense } from 'react'
+import { PostFeed, Weather } from './Components'
+
+export default function Posts() {
+  return (
+    <section>
+      <Suspense fallback={<p>Loading feed...</p>}>
+        <PostFeed />
+      </Suspense>
+      <Suspense fallback={<p>Loading weather...</p>}>
+        <Weather />
+      </Suspense>
+    </section>
+  )
+}
+```
+
+**Benefits of `<Suspense>`:**
+
+- **Streaming Server Rendering:** Progressively renders HTML chunks from the server to the client.
+- **Selective Hydration:** React prioritizes hydration based on user interaction, ensuring a smoother experience.
+
+#### 2.4.3 How Streaming Works
+
+Streaming improves performance by breaking down the page's HTML into smaller chunks. These chunks are sent progressively, allowing parts of the page to be displayed sooner without waiting for all data to load.
+
+**Key Advantages:**
+
+- Reduces Time to First Byte (TTFB) and First Contentful Paint (FCP).
+- Improves Time to Interactive (TTI), especially on slower devices.
+
+Streaming works well with React's component model, as components can be prioritized and streamed independently.
+
+#### 2.4.4 SEO Considerations
+
+- Next.js ensures that data fetching inside `generateMetadata` completes before streaming starts, guaranteeing proper `<head>` tags in the first response.
+- Streaming does not impact SEO as it is server-rendered. Use tools like Google's Rich Results Test to verify how your page appears to web crawlers.
+
+- Use `loading.js` for instant loading states that enhance user feedback.
+- Utilize `<Suspense>` to stream prioritized components progressively.
+- Leverage streaming to improve performance metrics like TTFB, FCP, and TTI.
+
+### 2.5 Redirecting
+
+Next.js provides several methods to handle redirects, enabling dynamic and static routing based on your application's needs. This section covers various redirect options and their use cases.
+
+#### 2.5.1 `redirect` Function
+
+The `redirect` function allows you to navigate users to another URL. It is commonly used in Server Components, Server Actions, and Route Handlers after mutations or events.
+
+```tsx
+// app/actions.ts
+'use server'
+
+import { redirect } from 'next/navigation'
+import { revalidatePath } from 'next/cache'
+
+export async function createPost(id: string) {
+  try {
+    // Perform database mutation
+  } catch (error) {
+    // Handle errors
+  }
+
+  revalidatePath('/posts') // Update cached posts
+  redirect(`/post/${id}`) // Navigate to the new post page
+}
+```
+
+**Good to know:**
+
+- Returns a 307 (Temporary Redirect) status code by default.
+- When used in Server Actions, it returns a 303 (See Other) status code.
+- Accepts absolute URLs for external links.
+- Should be called outside of `try/catch` blocks as it throws internally.
+
+#### 2.5.2 `permanentRedirect` Function
+
+The `permanentRedirect` function is used for permanent URL changes, returning a 308 (Permanent Redirect) status code.
+
+```tsx
+// app/actions.ts
+'use server'
+
+import { permanentRedirect } from 'next/navigation'
+import { revalidateTag } from 'next/cache'
+
+export async function updateUsername(username: string) {
+  try {
+    // Perform database mutation
+  } catch (error) {
+    // Handle errors
+  }
+
+  revalidateTag('username') // Update cached references
+  permanentRedirect(`/profile/${username}`) // Navigate to the updated profile
+}
+```
+
+**Good to know:**
+
+- Useful for canonical URL changes.
+- Can be used for external links.
+
+#### 2.5.3 Using `useRouter` Hook
+
+The `useRouter` hook is ideal for client-side redirects within event handlers.
+
+```tsx
+// app/page.tsx
+'use client'
+
+import { useRouter } from 'next/navigation'
+
+export default function Page() {
+  const router = useRouter()
+
+  return (
+    <button type="button" onClick={() => router.push('/dashboard')}>
+      Dashboard
+    </button>
+  )
+}
+```
+
+**Good to know:** Use `<Link>` for non-programmatic navigation for better performance.
+
+#### 2.5.4 Redirects in `next.config.js`
+
+Static redirects can be defined in the `next.config.js` file. These are pre-determined redirects ideal for restructuring URL paths.
+
+```tsx
+// next.config.ts
+import type { NextConfig } from 'next'
+
+const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        source: '/about',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/blog/:slug',
+        destination: '/news/:slug',
+        permanent: true,
+      },
+    ]
+  },
+}
+
+export default nextConfig
+```
+
+**Good to know:**
+
+- Supports 307 (Temporary) and 308 (Permanent) status codes.
+- Ideal for platforms like Vercel with limits on the number of redirects (e.g., 1,024).
+- Runs before Middleware.
+
+#### 2.5.5 Using `NextResponse.redirect` in Middleware
+
+Middleware enables conditional redirects before a request is completed.
+
+```tsx
+// middleware.ts
+import { NextResponse, NextRequest } from 'next/server'
+import { authenticate } from 'auth-provider'
+
+export function middleware(request: NextRequest) {
+  const isAuthenticated = authenticate(request)
+
+  if (isAuthenticated) {
+    return NextResponse.next()
+  }
+
+  return NextResponse.redirect(new URL('/login', request.url))
+}
+
+export const config = {
+  matcher: '/dashboard/:path*',
+}
+```
+
+**Good to know:** Middleware runs after `next.config.js` redirects but before rendering.
+
+#### 2.5.6 Managing Redirects at Scale
+
+For large-scale redirects (e.g., 1,000+), consider programmatic solutions using Middleware and a redirect map stored in a database or optimized with a Bloom filter.
+
+##### Example: Redirect Map with Middleware
+
+```tsx
+// middleware.ts
+import { NextResponse, NextRequest } from 'next/server'
+import { get } from '@vercel/edge-config'
+
+type RedirectEntry = {
+  destination: string
+  permanent: boolean
+}
+
+export async function middleware(request: NextRequest) {
+  const pathname = request.nextUrl.pathname
+  const redirectData = await get(pathname)
+
+  if (redirectData) {
+    const { destination, permanent } = JSON.parse(redirectData)
+    const statusCode = permanent ? 308 : 307
+    return NextResponse.redirect(destination, statusCode)
+  }
+
+  return NextResponse.next()
+}
+```
+
+- Use `redirect` and `permanentRedirect` for server-side navigation.
+- Leverage `useRouter` for client-side redirects in event handlers.
+- Define static redirects in `next.config.js` for predictable URL changes.
+- Employ Middleware for dynamic or large-scale redirect management.
