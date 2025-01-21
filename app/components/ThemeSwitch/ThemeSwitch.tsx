@@ -4,10 +4,11 @@ import { useEffect, useState } from 'react'
 import { FaSun, FaMoon } from 'react-icons/fa'
 
 import type { ThemeMode } from 'lib/misc/types'
+import { isServer } from 'lib/misc/config'
 
 const ThemeSwitch = () => {
   const [theme, setTheme] = useState<ThemeMode>(
-    typeof window !== 'undefined'
+    isServer()
       ? (window.localStorage.getItem('theme') as ThemeMode) || 'light'
       : 'light'
   )
@@ -22,6 +23,8 @@ const ThemeSwitch = () => {
   const handleClick = () => {
     setTheme(nextTheme)
   }
+
+  if (isServer()) return null
 
   return (
     <button
