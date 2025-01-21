@@ -1,4 +1,4 @@
-import { Banner } from 'features/Banner/Banner'
+import { Banner } from './features/Banner/Banner'
 
 import type { Metadata } from 'next'
 
