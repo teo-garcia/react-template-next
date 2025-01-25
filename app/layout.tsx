@@ -1,9 +1,9 @@
 import 'lib/styles/globals.css'
 import { Inter } from 'next/font/google'
 
-import Providers from 'components/Providers/Providers'
-import { ThemeSwitch } from 'components/ThemeSwitch/ThemeSwitch'
-import { ViewportInfo } from 'components/ViewportInfo/ViewportInfo'
+import Providers from 'components/providers/providers'
+import { ThemeSwitch } from 'components/theme-switch/theme-switch'
+import { ViewportInfo } from 'components/viewport-info/ViewportInfo'
 
 import type { Metadata } from 'next'
 import type { PropsWithChildren } from 'react'

@@ -1,9 +1,7 @@
 import { act, render, screen } from '@testing-library/react'
-// eslint-disable-next-line import/no-named-as-default
 import userEvent from '@testing-library/user-event'
 
-
-import { ThemeSwitch } from './ThemeSwitch'
+import { ThemeSwitch } from './theme-switch'
 
 describe('<ThemeSwitch /> tests', () => {
   const user = userEvent.setup()

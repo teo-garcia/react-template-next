@@ -4,11 +4,9 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { useEffect } from 'react'
 
-import type { ProvidersProps } from 'lib/misc/types'
-
 const queryClient = new QueryClient()
 
-const Providers = (props: ProvidersProps) => {
+const Providers = (props: { children: React.ReactNode }) => {
   const { children } = props
 
   useEffect(() => {

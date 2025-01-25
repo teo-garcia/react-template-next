@@ -3,17 +3,12 @@ const getActionsByType = (type) => {
   return [
     {
       type: 'add',
-      path: `app/${dirName}/{{pascalCase name}}/{{pascalCase name}}.tsx`,
-      templateFile: 'templates/component.jsx.hbs',
+      path: `app/${dirName}/{{kebabCase name}}/{{kebabCase name}}.tsx`,
+      templateFile: 'templates/component.tsx.hbs',
     },
     {
       type: 'add',
-      path: `app/${dirName}/{{pascalCase name}}/{{pascalCase name}}.module.css`,
-      templateFile: 'templates/component.css.hbs',
-    },
-    {
-      type: 'add',
-      path: `app/${dirName}/{{pascalCase name}}/{{pascalCase name}}.test.tsx`,
+      path: `app/${dirName}/{{kebabCase name}}/{{kebabCase name}}.test.tsx`,
       templateFile: 'templates/component.test.hbs',
     },
   ]

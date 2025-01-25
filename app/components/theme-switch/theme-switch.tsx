@@ -3,16 +3,17 @@
 import { useEffect, useState } from 'react'
 import { FaSun, FaMoon } from 'react-icons/fa'
 
-import type { ThemeMode } from 'lib/misc/types'
-import { isServer } from 'lib/misc/config'
+type ThemeMode = 'light' | 'dark'
 
 const ThemeSwitch = () => {
-  const [theme, setTheme] = useState<ThemeMode>(
-    isServer()
-      ? (window.localStorage.getItem('theme') as ThemeMode) || 'light'
-      : 'light'
-  )
+  const [theme, setTheme] = useState<ThemeMode>('light')
   const nextTheme = theme === 'light' ? 'dark' : 'light'
+
+  useEffect(() => {
+    const savedTheme =
+      (window.localStorage.getItem('theme') as ThemeMode) || 'light'
+    setTheme(savedTheme)
+  }, [])
 
   useEffect(() => {
     document.body.classList.remove(nextTheme)
@@ -23,8 +24,6 @@ const ThemeSwitch = () => {
   const handleClick = () => {
     setTheme(nextTheme)
   }
-
-  if (isServer()) return null
 
   return (
     <button
