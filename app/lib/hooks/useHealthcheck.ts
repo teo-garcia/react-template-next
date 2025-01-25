@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 
-const useHealthcheck = () => {
+export const useHealthcheck = () => {
   return useQuery({
     queryKey: ['healthcheck'],
     queryFn: async () => {
@@ -10,5 +10,3 @@ const useHealthcheck = () => {
     },
   })
 }
-
-export { useHealthcheck }

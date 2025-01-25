@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 
 const queryClient = new QueryClient()
 
-const Providers = (props: { children: React.ReactNode }) => {
+export const Providers = (props: React.PropsWithChildren) => {
   const { children } = props
 
   useEffect(() => {
@@ -22,5 +22,3 @@ const Providers = (props: { children: React.ReactNode }) => {
     </QueryClientProvider>
   )
 }
-
-export default Providers

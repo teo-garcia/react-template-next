@@ -5,7 +5,7 @@ import { TfiRulerAlt2 } from 'react-icons/tfi'
 
 import { isDevelopment } from 'lib/misc/config'
 
-const ViewportInfo = () => {
+export const ViewportInfo = () => {
   const [viewportWidth, setViewportWidth] = useState<number | null>(null)
   const [viewportHeight, setViewportHeight] = useState<number | null>(null)
 
@@ -34,5 +34,3 @@ const ViewportInfo = () => {
     </aside>
   )
 }
-
-export { ViewportInfo }

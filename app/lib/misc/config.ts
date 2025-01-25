@@ -1,17 +1,15 @@
-const isDevelopment = () => {
+export const isDevelopment = () => {
   return process.env.NODE_ENV === 'development'
 }
 
-const isProduction = () => {
+export const isProduction = () => {
   return !isDevelopment()
 }
 
-const isServer = () => {
+export const isServer = () => {
   return typeof window === 'undefined'
 }
 
-const isClient = () => {
+export const isClient = () => {
   return !isServer()
 }
-
-export { isDevelopment, isProduction, isClient, isServer }

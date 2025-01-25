@@ -4,7 +4,7 @@ import { NotFoundBanner } from './features/NotFoundBanner/NotFoundBanner'
 
 import type { Metadata } from 'next'
 
-const metadata: Metadata = {
+export const metadata: Metadata = {
   title: '404| Next 13',
 }
 
@@ -16,5 +16,4 @@ const NotFoundPage = () => {
   )
 }
 
-export { metadata }
 export default NotFoundPage

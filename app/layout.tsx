@@ -1,14 +1,13 @@
 import 'lib/styles/globals.css'
 import { Inter } from 'next/font/google'
 
-import Providers from 'components/providers/providers'
+import { Providers } from 'components/providers/providers'
 import { ThemeSwitch } from 'components/theme-switch/theme-switch'
 import { ViewportInfo } from 'components/viewport-info/ViewportInfo'
 
 import type { Metadata } from 'next'
-import type { PropsWithChildren } from 'react'
 
-const metadata: Metadata = {
+export const metadata: Metadata = {
   title: {
     default: 'Home',
     template: '%s | RTN',
@@ -20,7 +19,7 @@ const inter = Inter({
   weight: ['400', '600', '700'],
 })
 
-const Layout = async (props: PropsWithChildren) => {
+const RootLayout = async (props: React.PropsWithChildren) => {
   const { children } = props
   return (
     <html lang="en">
@@ -37,5 +36,4 @@ const Layout = async (props: PropsWithChildren) => {
   )
 }
 
-export { metadata }
-export default Layout
+export default RootLayout

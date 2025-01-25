@@ -7,7 +7,7 @@ export type BannerProps = {
   title: string
 }
 
-const Banner = (props: BannerProps) => {
+export const Banner = (props: BannerProps) => {
   const { title } = props
 
   useHealthcheck()
@@ -21,5 +21,3 @@ const Banner = (props: BannerProps) => {
     </section>
   )
 }
-
-export { Banner }

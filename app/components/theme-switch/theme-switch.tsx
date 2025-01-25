@@ -5,7 +5,7 @@ import { FaSun, FaMoon } from 'react-icons/fa'
 
 type ThemeMode = 'light' | 'dark'
 
-const ThemeSwitch = () => {
+export const ThemeSwitch = () => {
   const [theme, setTheme] = useState<ThemeMode>('light')
   const nextTheme = theme === 'light' ? 'dark' : 'light'
 
@@ -39,5 +39,3 @@ const ThemeSwitch = () => {
     </button>
   )
 }
-
-export { ThemeSwitch }
