@@ -1,7 +1,7 @@
 'use client'
 import { FaReact } from 'react-icons/fa'
 
-import { useHealthcheck } from 'lib/hooks/useHealthcheck'
+import { useHealthcheck } from '@/lib/hooks/useHealthcheck'
 
 export type BannerProps = {
   title: string

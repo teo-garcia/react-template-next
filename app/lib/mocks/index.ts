@@ -1,4 +1,4 @@
-import { isProduction } from 'lib/misc/config'
+import { isProduction } from '@/lib/misc/config'
 
 export const setupMSWBrowser = async () => {
   if (isProduction()) return

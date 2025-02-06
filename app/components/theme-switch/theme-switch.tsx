@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react'
 import { FaSun, FaMoon } from 'react-icons/fa'
 
+import { Button } from '../ui/button'
+
 type ThemeMode = 'light' | 'dark'
 
 export const ThemeSwitch = () => {
@@ -26,7 +28,7 @@ export const ThemeSwitch = () => {
   }
 
   return (
-    <button
+    <Button
       className="fixed right-4 top-4 rounded-lg border border-black p-2 dark:border-white md:right-8 md:top-8"
       onClick={handleClick}
       aria-label={`Theme switcher, current mode: ${theme}`}
@@ -36,6 +38,6 @@ export const ThemeSwitch = () => {
       ) : (
         <FaSun className="size-7 text-white" />
       )}
-    </button>
+    </Button>
   )
 }
