@@ -1,11 +1,11 @@
 import '@/lib/styles/globals.css'
 import { Inter } from 'next/font/google'
 
-import { Providers } from '@/components/providers/providers'
 import { ThemeSwitch } from '@/components/theme-switch/theme-switch'
-import { ViewportInfo } from '@/components/viewport-info/ViewportInfo'
+import { ViewportInfo } from '@/components/viewport-info/viewport-info'
 
 import type { Metadata } from 'next'
+import { Providers } from './components/providers/providers'
 
 export const metadata: Metadata = {
   title: {
