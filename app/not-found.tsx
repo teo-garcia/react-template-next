@@ -1,6 +1,6 @@
 'use client'
 
-import { NotFoundBanner } from './features/NotFoundBanner/NotFoundBanner'
+import { NotFoundBanner } from './features/not-found-banner/not-found-banner'
 
 import type { Metadata } from 'next'
 

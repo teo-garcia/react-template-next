@@ -13,8 +13,6 @@
     "dev:web": "next dev --turbopack",
     "build:web": "next build",
     "start:web": "next start",
-    "create:component": "plop component",
-    "create:feature": "plop feature",
     "test:unit": "jest",
     "test:e2e": "pnpm playwright test --ui",
     "lint:js": "eslint app/**/*.{ts,tsx}"
@@ -70,7 +68,6 @@
     "jest-environment-jsdom": "^29.7.0",
     "lint-staged": "^15.4.1",
     "msw": "^2.7.0",
-    "plop": "^4.0.1",
     "postcss": "^8.5.1",
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.10",
