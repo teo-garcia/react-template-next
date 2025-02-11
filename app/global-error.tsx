@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect } from 'react'
-import { Button } from './components/ui/button'
 
 export type GlobalErrorProps = {
   error: Error & { digest?: string }
@@ -19,7 +18,7 @@ const GlobalError = (props: GlobalErrorProps) => {
     <html lang="en">
       <body>
         <h2>Something went wrong!</h2>
-        <Button onClick={() => reset()}>Try again</Button>
+        <button onClick={() => reset()}>Try again</button>
       </body>
     </html>
   )

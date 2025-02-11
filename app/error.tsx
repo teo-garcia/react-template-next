@@ -2,12 +2,12 @@
 
 import { useEffect } from 'react'
 
-import { Button } from '@/components/ui/button'
-
-const Error = (props: {
+export type ErrorProps = {
   error: Error & { digest?: string }
   reset: () => void
-}) => {
+}
+
+const Error = (props: ErrorProps) => {
   const { error, reset } = props
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const Error = (props: {
     <html lang="en">
       <body>
         <h2>Something went wrong!</h2>
-        <Button onClick={() => reset()}>Try again</Button>
+        <button onClick={() => reset()}>Try again</button>
       </body>
     </html>
   )

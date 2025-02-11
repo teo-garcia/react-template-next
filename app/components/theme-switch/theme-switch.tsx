@@ -3,42 +3,50 @@
 import { useEffect, useState } from 'react'
 import { FaSun, FaMoon } from 'react-icons/fa'
 
-import { Button } from '../ui/button'
-
 type ThemeMode = 'light' | 'dark'
 
 export const ThemeSwitch = () => {
   const [theme, setTheme] = useState<ThemeMode>('light')
-  const nextTheme = theme === 'light' ? 'dark' : 'light'
 
   useEffect(() => {
-    const savedTheme =
-      (window.localStorage.getItem('theme') as ThemeMode) || 'light'
-    setTheme(savedTheme)
+    const storedTheme = window.localStorage.getItem('theme') as ThemeMode | null
+    if (storedTheme) {
+      setTheme(storedTheme)
+    } else {
+      if (
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      ) {
+        setTheme('dark')
+      }
+    }
   }, [])
 
   useEffect(() => {
-    document.body.classList.remove(nextTheme)
-    document.body.classList.add(theme)
+    document.documentElement.setAttribute('data-prefers-color-scheme', theme)
     window.localStorage.setItem('theme', theme)
-  }, [theme, nextTheme])
+  }, [theme])
+
+  const nextTheme: ThemeMode = theme === 'light' ? 'dark' : 'light'
+
+  const CurrentIcon =
+    theme === 'light' ? (
+      <FaMoon className="h-7 w-7 text-black" />
+    ) : (
+      <FaSun className="h-7 w-7 text-white" />
+    )
 
   const handleClick = () => {
     setTheme(nextTheme)
   }
 
   return (
-    <Button
-      className="fixed right-4 top-4 rounded-lg border border-black p-2 dark:border-white md:right-8 md:top-8 size-10"
+    <button
       onClick={handleClick}
       aria-label={`Theme switcher, current mode: ${theme}`}
-      size="icon"
+      className="fixed right-4 top-4 rounded-lg border border-black dark:border-white p-2 md:right-8 md:top-8"
     >
-      {theme === 'light' ? (
-        <FaMoon className="text-black" />
-      ) : (
-        <FaSun className="text-white" />
-      )}
-    </Button>
+      {CurrentIcon}
+    </button>
   )
 }
