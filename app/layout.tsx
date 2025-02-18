@@ -24,7 +24,7 @@ const RootLayout = async (props: React.PropsWithChildren) => {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="bg-white text-black transition-colors duration-500 ease-in-out dark:bg-black dark:text-white">
+        <div className="bg-white text-black transition-colors duration-100 ease-in-out ">
           <Providers>
             <ThemeSwitch />
             <ViewportInfo />
