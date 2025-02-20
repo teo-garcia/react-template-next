@@ -31,9 +31,9 @@ export const ThemeSwitch = () => {
 
   const CurrentIcon =
     theme === 'light' ? (
-      <FaMoon className="h-7 w-7 text-black" />
+      <FaMoon className="size-5 text-foreground" />
     ) : (
-      <FaSun className="h-7 w-7 text-white" />
+      <FaSun className="size-5 text-background" />
     )
 
   const handleClick = () => {
@@ -44,7 +44,7 @@ export const ThemeSwitch = () => {
     <button
       onClick={handleClick}
       aria-label={`Theme switcher, current mode: ${theme}`}
-      className="fixed right-4 top-4 rounded-lg border border-black dark:border-white p-2 md:right-8 md:top-8"
+      className="fixed right-4 top-4 rounded-lg border border-foreground dark:border-background p-2 md:right-8 md:top-8"
     >
       {CurrentIcon}
     </button>
