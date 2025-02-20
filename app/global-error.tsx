@@ -7,7 +7,7 @@ export type GlobalErrorProps = {
   reset: () => void
 }
 
-const GlobalError = (props: GlobalErrorProps) => {
+export default (props: GlobalErrorProps) => {
   const { error, reset } = props
 
   useEffect(() => {
@@ -24,4 +24,3 @@ const GlobalError = (props: GlobalErrorProps) => {
   )
 }
 
-export default GlobalError

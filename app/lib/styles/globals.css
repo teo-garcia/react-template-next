@@ -3,11 +3,15 @@
 @custom-variant dark (&:is([data-prefers-color-scheme="dark"] *));
 
 @theme inline {
-  --font-sans: Inter, sans-serif;
-  --color-primary: var(--color-blue-600);
-  --color-secondary: var(--color-blue-700);
-  --color-black: var(--color-slate-800);
-  --color-white: var(--color-slate-200);
+  --color-background: var(--color-slate-200);
+  --color-foreground: var(--color-slate-700);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--color-slate-700);
+    --color-foreground: var(--color-slate-200);
+  }
 }
 
 /*
@@ -30,7 +34,7 @@
 
 html,
 body {
-  @apply bg-white dark:bg-black;
+  @apply bg-background dark:bg-foreground;
   @apply transition-colors duration-100;
 
   @media (prefers-color-scheme: dark) {

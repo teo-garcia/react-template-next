@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: '404| Next 13',
 }
 
-const NotFoundPage = () => {
+export default () => {
   return (
     <>
       <NotFoundBanner />
@@ -16,4 +16,3 @@ const NotFoundPage = () => {
   )
 }
 
-export default NotFoundPage

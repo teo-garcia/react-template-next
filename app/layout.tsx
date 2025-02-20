@@ -19,12 +19,12 @@ const inter = Inter({
   weight: ['400', '600', '700'],
 })
 
-const RootLayout = async (props: React.PropsWithChildren) => {
+export default async (props: React.PropsWithChildren) => {
   const { children } = props
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="bg-white text-black transition-colors duration-100 ease-in-out ">
+        <div className="transition-colors duration-100 ease-in-out ">
           <Providers>
             <ThemeSwitch />
             <ViewportInfo />
@@ -36,4 +36,3 @@ const RootLayout = async (props: React.PropsWithChildren) => {
   )
 }
 
-export default RootLayout
