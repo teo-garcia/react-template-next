@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { FaReact } from 'react-icons/fa'
 import { SiNextdotjs } from 'react-icons/si'
 
 export const metadata: Metadata = {
