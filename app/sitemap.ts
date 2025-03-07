@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next'
 
-export default (): MetadataRoute.Sitemap => {
+const getSitemap = (): MetadataRoute.Sitemap => {
   const routes = ['/'].map((route) => ({
     url: `${process.env.NEXT_PUBLIC_URL}${route}`,
     lastModified: new Date().toISOString(),
@@ -9,3 +9,4 @@ export default (): MetadataRoute.Sitemap => {
   return [...routes]
 }
 
+export default getSitemap

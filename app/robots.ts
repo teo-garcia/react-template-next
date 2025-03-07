@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next'
 
-export default (): MetadataRoute.Robots => {
+const getRobots = (): MetadataRoute.Robots => {
   return {
     rules: {
       userAgent: '*',
@@ -11,3 +11,4 @@ export default (): MetadataRoute.Robots => {
   }
 }
 
+export default getRobots

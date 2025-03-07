@@ -2,12 +2,12 @@
 
 import { useEffect } from 'react'
 
-export type GlobalErrorProps = {
+export interface GlobalErrorProps {
   error: Error & { digest?: string }
   reset: () => void
 }
 
-export default (props: GlobalErrorProps) => {
+const GlobalErrorBoundary = (props: GlobalErrorProps) => {
   const { error, reset } = props
 
   useEffect(() => {
@@ -24,3 +24,4 @@ export default (props: GlobalErrorProps) => {
   )
 }
 
+export default GlobalErrorBoundary

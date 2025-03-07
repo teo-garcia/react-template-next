@@ -4,8 +4,9 @@ import { Inter } from 'next/font/google'
 import { ThemeSwitch } from '@/components/theme-switch/theme-switch'
 import { ViewportInfo } from '@/components/viewport-info/viewport-info'
 
+import { GlobalProviders } from './components/global-providers/global-providers'
+
 import type { Metadata } from 'next'
-import { Providers } from './components/providers/providers'
 
 export const metadata: Metadata = {
   title: {
@@ -19,20 +20,22 @@ const inter = Inter({
   weight: ['400', '600', '700'],
 })
 
-export default async (props: React.PropsWithChildren) => {
+const RootLayout = async (props: React.PropsWithChildren) => {
   const { children } = props
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head />
       <body className={inter.className}>
-        <div className="transition-colors duration-100 ease-in-out ">
-          <Providers>
+        <GlobalProviders>
+          <div className="min-h-screen">
             <ThemeSwitch />
             <ViewportInfo />
             <main>{children}</main>
-          </Providers>
-        </div>
+          </div>
+        </GlobalProviders>
       </body>
     </html>
   )
 }
 
+export default RootLayout

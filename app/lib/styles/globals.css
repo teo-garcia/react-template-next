@@ -1,16 +1,16 @@
 @import 'tailwindcss';
 
-@custom-variant dark (&:is([data-prefers-color-scheme="dark"] *));
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
-  --color-background: var(--color-slate-200);
-  --color-foreground: var(--color-slate-700);
+  --color-background: var(--color-gray-200);
+  --color-foreground: var(--color-gray-900);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-background: var(--color-slate-700);
-    --color-foreground: var(--color-slate-200);
+    --color-background: var(--color-gray-900);
+    --color-foreground: var(--color-gray-200);
   }
 }
 
@@ -30,6 +30,10 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
+}
+
+@utility debug {
+  @apply border border-red-500 rounded-sm;
 }
 
 html,

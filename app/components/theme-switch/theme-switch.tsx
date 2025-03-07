@@ -1,52 +1,61 @@
 'use client'
 
+import { Moon, Sun, Laptop } from 'lucide-react'
+import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
-import { FaSun, FaMoon } from 'react-icons/fa'
 
-type ThemeMode = 'light' | 'dark'
+type ThemeMode = 'light' | 'dark' | 'system'
 
 export const ThemeSwitch = () => {
-  const [theme, setTheme] = useState<ThemeMode>('light')
+  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme, resolvedTheme } = useTheme()
 
-  useEffect(() => {
-    const storedTheme = window.localStorage.getItem('theme') as ThemeMode | null
-    if (storedTheme) {
-      setTheme(storedTheme)
-    } else {
-      if (
-        window.matchMedia &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches
-      ) {
-        setTheme('dark')
-      }
+  const getNextTheme = (): ThemeMode => {
+    switch (theme) {
+      case 'light':
+        return 'dark'
+      case 'dark':
+        return 'system'
+      default:
+        return 'light'
     }
-  }, [])
+  }
 
-  useEffect(() => {
-    document.documentElement.setAttribute('data-prefers-color-scheme', theme)
-    window.localStorage.setItem('theme', theme)
-  }, [theme])
-
-  const nextTheme: ThemeMode = theme === 'light' ? 'dark' : 'light'
-
-  const CurrentIcon =
-    theme === 'light' ? (
-      <FaMoon className="size-5 text-foreground" />
-    ) : (
-      <FaSun className="size-5 text-background" />
-    )
+  const getCurrentIcon = () => {
+    switch (theme) {
+      case 'light':
+        return <Sun className="size-4 text-foreground" />
+      case 'dark':
+        return <Moon className="size-4 text-background" />
+      default:
+        return (
+          <Laptop
+            className={`size-4 ${resolvedTheme === 'dark' ? 'text-background' : 'text-foreground'}`}
+          />
+        )
+    }
+  }
 
   const handleClick = () => {
-    setTheme(nextTheme)
+    setTheme(getNextTheme())
+  }
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return null
   }
 
   return (
     <button
       onClick={handleClick}
       aria-label={`Theme switcher, current mode: ${theme}`}
-      className="fixed right-4 top-4 rounded-lg border border-foreground dark:border-background p-2 md:right-8 md:top-8"
+      className="fixed right-4 top-4 rounded-lg border border-foreground dark:border-background p-2 md:right-8 md:top-8 transition-colors duration-200"
+      title={`Current theme: ${theme}. Click to switch to ${getNextTheme()}`}
     >
-      {CurrentIcon}
+      {getCurrentIcon()}
     </button>
   )
 }
