@@ -1,151 +1,149 @@
 # React Template Next (RTN) - Design Document
 
 ## Project Overview
+
 A modern, production-ready Next.js template with TypeScript integration, designed for building scalable web applications. This template provides a solid foundation for developing modern web applications with best practices, comprehensive testing, and performance optimizations built-in.
 
-## Tech Stack
-- **Framework**: Next.js 15.2.1
-- **Language**: TypeScript
-- **React Version**: 19.0.0
-- **Node Version**: >=22
-- **Package Manager**: pnpm
+## Core Technologies
 
-## Core Features
+- Modern React Framework
+- Static & Server-Side Rendering
+- Type-Safe Development
+- Modern Package Management
 
-### 1. Modern Development Setup
-- TypeScript support with strict type checking
-- Next.js App Router architecture for modern routing
-- TurboPack for faster development builds
-- ESM modules support
-- Hot Module Replacement (HMR)
+## Main Features
 
-### 2. UI/UX Features
-- Theme switching capability (light/dark mode)
-- Viewport information display for development
-- Inter font integration
-- Tailwind CSS for modern, utility-first styling
-- Responsive design support
-- Accessibility-first components
+### 1. Development Environment
 
-### 3. Development Tools
-- ESLint configuration for code quality
-  - Custom rules for Next.js
-  - TypeScript-aware linting
-- Jest for unit testing
-  - React Testing Library integration
-  - Custom test utilities
-- Playwright for E2E testing
-  - UI mode for visual testing
-  - Cross-browser testing support
-- React Testing Library for component testing
-  - User-centric testing approach
-  - Accessibility testing
+- Modern JavaScript Features
+- Type Safety
+- Advanced Routing
+- Fast Build System
+- Development Tools Integration
 
-### 4. Data Management
-- React Query integration (@tanstack/react-query)
-  - Efficient data fetching and caching
-  - Server state management
-- React Query DevTools for debugging
-  - Cache inspection
-  - Request monitoring
+### 2. User Interface
 
-### 5. Project Structure
+- Theming System
+- Modern CSS Solution
+- Typography System
+- Responsive Design
+- Accessibility Standards
+
+### 3. Quality Assurance
+
+- Code Quality Tools
+- Unit Testing Framework
+- End-to-End Testing
+- Component Testing
+- Development Utilities
+
+### 4. Data Layer
+
+- Modern Data Fetching
+- State Management
+- Caching Solutions
+- Development Tools
+
+### 5. Project Architecture
+
 ```
 app/
-├── api/              # API routes
-│   └── healthcheck/  # Health check endpoint
-├── components/       # Reusable UI components
-│   ├── global-providers/
-│   ├── theme-switch/
-│   └── viewport-info/
-├── features/        # Feature-specific components
-│   └── not-found-banner/
-├── lib/            # Utilities and hooks
-│   ├── hooks/      # Custom React hooks
-│   ├── misc/       # Miscellaneous utilities
-│   ├── mocks/      # Testing mocks
-│   └── styles/     # Global styles
-└── styles/         # Global styles
+├── api/              # Backend Integration
+├── components/       # UI Building Blocks
+├── features/         # Business Logic
+├── lib/             # Shared Utilities
+└── styles/          # Design System
 ```
 
-### 6. Quality Assurance
-- Unit testing setup with Jest and React Testing Library
-- E2E testing configuration with Playwright
-- Type safety with strict TypeScript configuration
-- Comprehensive error handling
-  - Global error boundary
-  - Not found pages
-  - API error handling
-- Health check endpoint for monitoring
-- Continuous Integration ready
+### 6. Quality Standards
 
-### 7. Performance Optimizations
-- Server-side rendering with Next.js
-- Client-side optimization
-  - Code splitting
-  - Dynamic imports
-- Modern bundling with TurboPack
-- Font optimization
-- Image optimization
+- Testing Infrastructure
+- Type System
+- Error Management
+- System Monitoring
+- Integration Testing
 
-## Key Components
+### 7. Performance
 
-### GlobalProviders
-- Purpose: Manages application-wide state and theme
-- Features:
-  - Theme context provider
-  - React Query provider
-  - Additional global contexts
+- Server-Side Optimizations
+- Client-Side Optimizations
+- Asset Management
+- Resource Optimization
 
-### ThemeSwitch
-- Purpose: Handles theme toggling functionality
-- Features:
-  - Light/dark mode toggle
-  - System preference detection
-  - Persistent theme selection
+## Core Components
 
-### ViewportInfo
-- Purpose: Provides viewport information for development
-- Features:
-  - Current viewport dimensions
-  - Breakpoint detection
-  - Development-only component
+### Application Shell
 
-### NotFoundBanner
-- Purpose: Custom 404 page component
-- Features:
-  - User-friendly error message
-  - Navigation assistance
-  - Consistent branding
+- Global State Management
+- Theme Management
+- Core Providers
 
-## Development Practices
+### User Interface
 
-### Architecture
-- Component-first architecture
-- Separation of concerns
-- Feature-based organization
-- Shared component library
+- Theme Controls
+- Development Tools
+- Error Handling
 
-### Code Quality
-- Test-driven development support
-- Strict TypeScript usage
-- Modern React patterns and hooks
-- Comprehensive error boundaries
+## Development Guidelines
+
+### Architecture Principles
+
+- Component Architecture
+- Code Organization
+- Feature Management
+- Shared Resources
+
+### Quality Standards
+
+- Testing Methodology
+- Type Safety
+- Modern Patterns
+- Error Handling
 
 ### Best Practices
-- Accessibility (WCAG) compliance
-- SEO optimization
-- Performance monitoring
-- Security best practices
 
-## Getting Started
-1. Clone the repository
-2. Install dependencies with `pnpm install`
-3. Run development server with `pnpm dev`
-4. Run tests with `pnpm test:unit` or `pnpm test:e2e`
+- Accessibility
+- Search Engine Optimization
+- Performance
+- Security
 
-## Contributing
+## Quick Start
+
+1. Repository Setup
+2. Dependencies Installation
+3. Development Environment
+4. Testing Suite
+
+## Project Guidelines
+
 Please refer to the CONTRIBUTING.md file for guidelines on how to contribute to this project.
 
+## Future Improvements
+
+### Testing & Development
+
+- Vitest for faster unit testing
+- MSW for API mocking and testing
+- Storybook for component development
+- Playwright for E2E testing
+
+### API & Data Management
+
+- tRPC for type-safe APIs
+- Prisma for database management
+- React Query for server state
+- Zod for runtime type validation
+
+### Developer Experience
+
+- Husky for git hooks
+- Commitlint for consistent commits
+- Release-it for versioning
+- Bundle analyzer for optimization
+- TypeScript project references
+- Docker for containerization
+- Changesets for versioning
+
 ## License
+
 This project is licensed under the MIT License - see the LICENSE.md file for details.
