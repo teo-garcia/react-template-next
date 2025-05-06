@@ -24,13 +24,13 @@ export const ThemeSwitch = () => {
   const getCurrentIcon = () => {
     switch (theme) {
       case 'light':
-        return <Sun className="size-4 text-foreground" />
+        return <Sun className="size-5 text-foreground" />
       case 'dark':
-        return <Moon className="size-4 text-background" />
+        return <Moon className="size-5 text-background" />
       default:
         return (
           <Laptop
-            className={`size-4 ${resolvedTheme === 'dark' ? 'text-background' : 'text-foreground'}`}
+            className={`size-5 ${resolvedTheme === 'dark' ? 'text-background' : 'text-foreground'}`}
           />
         )
     }
