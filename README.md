@@ -44,3 +44,10 @@ Start building modern web applications using React and Next.js.
 - Jest for unit testing and Testing Library React for testing React components.
 - Playwright for end-to-end testing.
 - MSW for API mocking.
+
+## Environment variables
+
+Use `NEXT_PUBLIC_API_BASE_URL` to set a base URL for API requests. The value
+is exported as `apiBaseUrl` from `@/lib/misc/environment` and can be reused
+throughout the codebase. If the variable is not defined, requests fall back to
+relative paths such as `/api/healthcheck`.

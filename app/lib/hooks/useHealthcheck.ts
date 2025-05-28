@@ -1,11 +1,13 @@
 import { useQuery } from '@tanstack/react-query'
 
+import { apiBaseUrl } from '@/lib/misc/environment'
+
 export const useHealthcheck = () => {
   return useQuery({
     queryKey: ['healthcheck'],
     queryFn: async () => {
-      return await fetch('http://localhost:3000/api/healthcheck').then(
-        (response) => response.json()
+      return await fetch(`${apiBaseUrl}/api/healthcheck`).then((response) =>
+        response.json()
       )
     },
   })
