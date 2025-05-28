@@ -41,6 +41,7 @@ Start building modern web applications using React and Next.js.
 - Typescript for static type checking.
 - ESLint for linting and Prettier for code formatting.
 - Husky for Git hooks and Lint Staged for running linters on staged files.
-- Jest for unit testing and Testing Library React for testing React components.
+- Vitest for unit testing alongside Testing Library React.
+- Storybook for UI development and testing with Vitest.
 - Playwright for end-to-end testing.
 - MSW for API mocking.

@@ -36,7 +36,7 @@ export default [
       'next/core-web-vitals',
       'plugin:jsx-a11y/recommended',
       // 'plugin:tailwindcss/recommended',
-      'plugin:jest/recommended',
+      'plugin:vitest/recommended',
       'plugin:testing-library/react',
       'plugin:playwright/playwright-test',
       'plugin:import/errors',

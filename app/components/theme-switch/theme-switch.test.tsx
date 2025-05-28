@@ -1,5 +1,6 @@
 import { act, render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import { describe, beforeEach, afterEach, test, expect } from 'vitest'
 
 import { ThemeSwitch } from './theme-switch'
 
