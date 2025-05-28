@@ -1,6 +1,6 @@
 import { HttpResponse, http } from 'msw'
 
-const healthcheckHandler = http.get('http://localhost:3000/healthcheck', () => {
+const healthcheckHandler = http.get('/api/healthcheck', () => {
   return HttpResponse.json(
     {
       message: 'ok',
