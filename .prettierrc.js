@@ -1,6 +1,4 @@
 module.exports = {
-  trailingComma: 'es5',
-  tabWidth: 2,
-  semi: false,
-  singleQuote: true,
+  ...require('@teo-garcia/prettier-config-shared'),
+  // Add project-specific overrides here
 }
