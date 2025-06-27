@@ -37,7 +37,7 @@
     "@next/eslint-plugin-next": "15.3.4",
     "@playwright/test": "^1.53.1",
     "@tailwindcss/postcss": "^4.1.11",
-    "@teo-garcia/eslint-config-shared": "^0.1.5",
+    "@teo-garcia/eslint-config-shared": "^0.1.6",
     "@teo-garcia/prettier-config-shared": "^0.1.0",
     "@teo-garcia/tsconfig-shared": "^0.1.0",
     "@testing-library/dom": "^10.4.0",

@@ -7,8 +7,8 @@ import { useEffect } from 'react'
 
 import { createNewQueryClient } from '@/lib/misc/react-query'
 
-export const GlobalProviders = (props: React.PropsWithChildren) => {
-  const { children } = props
+export const GlobalProviders = (properties: React.PropsWithChildren) => {
+  const { children } = properties
 
   useEffect(() => {
     if (typeof window !== 'undefined') {

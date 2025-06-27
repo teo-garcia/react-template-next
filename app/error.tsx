@@ -2,13 +2,13 @@
 
 import { useEffect } from 'react'
 
-export type ErrorProps = {
+export interface ErrorProps {
   error: Error & { digest?: string }
   reset: () => void
 }
 
-const Error = (props: ErrorProps) => {
-  const { error, reset } = props
+const Error = (properties: ErrorProps) => {
+  const { error, reset } = properties
 
   useEffect(() => {
     console.error(error)

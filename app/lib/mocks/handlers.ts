@@ -1,4 +1,4 @@
-import { HttpResponse, http } from 'msw'
+import { http, HttpResponse } from 'msw'
 
 const healthcheckHandler = http.get(
   'http://localhost:3000/api/healthcheck',
@@ -7,7 +7,7 @@ const healthcheckHandler = http.get(
       {
         message: 'ok',
         status: 200,
-        data: null,
+        data: undefined,
       },
       { status: 200 }
     )

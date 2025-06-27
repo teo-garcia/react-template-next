@@ -1,6 +1,6 @@
 'use client'
 
-import { Moon, Sun, Laptop } from 'lucide-react'
+import { Laptop, Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
 
@@ -12,27 +12,33 @@ export const ThemeSwitch = () => {
 
   const getNextTheme = (): ThemeMode => {
     switch (theme) {
-      case 'light':
+      case 'light': {
         return 'dark'
-      case 'dark':
+      }
+      case 'dark': {
         return 'system'
-      default:
+      }
+      default: {
         return 'light'
+      }
     }
   }
 
   const getCurrentIcon = () => {
     switch (theme) {
-      case 'light':
+      case 'light': {
         return <Sun className="size-5 text-foreground" />
-      case 'dark':
+      }
+      case 'dark': {
         return <Moon className="size-5 text-background" />
-      default:
+      }
+      default: {
         return (
           <Laptop
             className={`size-5 ${resolvedTheme === 'dark' ? 'text-background' : 'text-foreground'}`}
           />
         )
+      }
     }
   }
 
@@ -45,7 +51,7 @@ export const ThemeSwitch = () => {
   }, [])
 
   if (!mounted) {
-    return null
+    return
   }
 
   return (

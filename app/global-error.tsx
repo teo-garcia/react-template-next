@@ -2,13 +2,13 @@
 
 import { useEffect } from 'react'
 
-export interface GlobalErrorProps {
+export interface GlobalErrorProperties {
   error: Error & { digest?: string }
   reset: () => void
 }
 
-const GlobalErrorBoundary = (props: GlobalErrorProps) => {
-  const { error, reset } = props
+const GlobalErrorBoundary = (properties: GlobalErrorProperties) => {
+  const { error, reset } = properties
 
   useEffect(() => {
     console.error(error)

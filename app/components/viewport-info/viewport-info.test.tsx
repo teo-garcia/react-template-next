@@ -1,4 +1,4 @@
-import { act, render, fireEvent, screen } from '@testing-library/react'
+import { act, fireEvent, render, screen } from '@testing-library/react'
 
 import { isDevelopment } from '@/lib/misc/environment'
 
