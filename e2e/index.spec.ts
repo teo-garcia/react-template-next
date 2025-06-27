@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test'
+import { expect, test } from '@playwright/test'
 
 test.describe('Homepage tests', () => {
   test.beforeEach(async ({ page }) => {
@@ -10,8 +10,8 @@ test.describe('Homepage tests', () => {
   })
 
   test('Page should contain heading', async ({ page }) => {
-    // eslint-disable-next-line
-    const title = page.getByRole('heading', { name: 'React Template Next' })
-    await expect(title).toBeVisible()
+    await expect(
+      page.getByRole('heading', { name: 'React Template Next' })
+    ).toBeVisible()
   })
 })

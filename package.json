@@ -15,7 +15,7 @@
     "start:web": "next start",
     "test:unit": "jest",
     "test:e2e": "pnpm playwright test --ui",
-    "lint:js": "eslint app/**/*.{ts,tsx}",
+    "lint:js": "eslint **/*.{ts,tsx,js}",
     "prepare": "husky"
   },
   "dependencies": {
