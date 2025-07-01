@@ -12,7 +12,8 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "types": ["@vitest/browser/context"]
   },
   "include": [
     "next-env.d.ts",

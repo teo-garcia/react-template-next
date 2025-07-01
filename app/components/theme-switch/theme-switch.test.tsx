@@ -1,80 +1,98 @@
-// Jest environment removed - tests disabled
-// import { act, render, screen } from '@testing-library/react'
-// import userEvent from '@testing-library/user-event'
-// import { ThemeSwitch } from './theme-switch'
+import { render, RenderOptions, screen, waitFor } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+import { ThemeProvider } from 'next-themes'
+import { afterEach, beforeEach, describe, expect, test } from 'vitest'
 
-export {}
+import { ThemeSwitch } from './theme-switch'
 
-// describe.skip('<ThemeSwitch /> tests', () => {
-//   const user = userEvent.setup()
+const AllTheProviders: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  return (
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      {children}
+    </ThemeProvider>
+  )
+}
 
-//   beforeEach(() => {
-//     window.localStorage.clear()
-//   })
+const customRender = (
+  ui: React.ReactNode,
+  options?: Omit<RenderOptions, 'wrapper'>
+) => render(ui, { wrapper: AllTheProviders, ...options })
 
-//   afterEach(() => {
-//     window.localStorage.clear()
-//   })
+describe('<ThemeSwitch /> tests', () => {
+  const user = userEvent.setup()
 
-//   test('It should render localStorage theme value if provided', () => {
-//     window.localStorage.setItem('theme', 'dark')
-//     render(<ThemeSwitch />)
-//     expect(
-//       screen.getByLabelText(/theme switcher, current mode: dark/i)
-//     ).toBeInTheDocument()
-//   })
+  beforeEach(() => {
+    window.localStorage.clear()
+    document.documentElement.className = ''
+  })
 
-//   test('It should render light value if window.localStorage value is not provided', () => {
-//     render(<ThemeSwitch />)
-//     expect(
-//       screen.getByLabelText(/theme switcher, current mode: light/i)
-//     ).toBeInTheDocument()
-//   })
+  afterEach(() => {
+    window.localStorage.clear()
+  })
 
-//   test('It should toggle to dark theme when clicking the button', async () => {
-//     render(<ThemeSwitch />)
+  test('It should render localStorage theme value if provided', async () => {
+    window.localStorage.setItem('theme', 'dark')
+    customRender(<ThemeSwitch />)
+    await waitFor(() => {
+      return expect
+        .element(screen.getByLabelText(/theme switcher, current mode: dark/i))
+        .toBeInTheDocument()
+    })
+  })
 
-//     await act(async () => {
-//       await user.click(
-//         screen.getByLabelText(/theme switcher, current mode: light/i)
-//       )
-//     })
+  test('It should render system value if window.localStorage value is not provided', async () => {
+    customRender(<ThemeSwitch />)
+    await waitFor(() => {
+      return expect
+        .element(screen.getByLabelText(/theme switcher, current mode: system/i))
+        .toBeInTheDocument()
+    })
+  })
 
-//     expect(
-//       screen.getByLabelText(/theme switcher, current mode: dark/i)
-//     ).toBeInTheDocument()
-//   })
+  test('It should toggle to light theme when clicking the button', async () => {
+    customRender(<ThemeSwitch />)
 
-//   test('It should attach the theme property into the body dataset', async () => {
-//     render(<ThemeSwitch />)
-//     await expect(document.body).toHaveClass('light')
-//     await act(async () => {
-//       await user.click(
-//         screen.getByLabelText(/theme switcher, current mode: light/i)
-//       )
-//     })
-//     await expect(document.body).toHaveClass('dark')
-//     await act(async () => {
-//       await user.click(
-//         screen.getByLabelText(/theme switcher, current mode: dark/i)
-//       )
-//     })
-//     await expect(document.body).toHaveClass('light')
-//   })
+    await user.click(
+      await screen.findByLabelText(/theme switcher, current mode: system/i)
+    )
 
-//   test('It should attach the theme property into the localStorage theme property', async () => {
-//     render(<ThemeSwitch />)
-//     await act(async () => {
-//       await user.click(
-//         screen.getByLabelText(/theme switcher, current mode: light/i)
-//       )
-//     })
-//     expect(window.localStorage.getItem('theme')).toBe('dark')
-//     await act(async () => {
-//       await user.click(
-//         screen.getByLabelText(/theme switcher, current mode: dark/i)
-//       )
-//     })
-//     expect(window.localStorage.getItem('theme')).toBe('light')
-//   })
-// })
+    await expect
+      .element(screen.getByLabelText(/theme switcher, current mode: light/i))
+      .toBeInTheDocument()
+  })
+
+  test('It should attach the theme property into the html class', async () => {
+    customRender(<ThemeSwitch />)
+    // system theme is light in test environment
+    await waitFor(async () => {
+      await expect.element(document.documentElement).toHaveClass('light')
+    })
+
+    await user.click(
+      await screen.findByLabelText(/theme switcher, current mode: system/i)
+    )
+    await waitFor(async () => {
+      await expect.element(document.documentElement).toHaveClass('light')
+    })
+    await user.click(
+      screen.getByLabelText(/theme switcher, current mode: light/i)
+    )
+    await waitFor(async () => {
+      await expect.element(document.documentElement).toHaveClass('dark')
+    })
+  })
+
+  test('It should attach the theme property into the localStorage theme property', async () => {
+    customRender(<ThemeSwitch />)
+    await user.click(
+      await screen.findByLabelText(/theme switcher, current mode: system/i)
+    )
+    expect(window.localStorage.getItem('theme')).toBe('light')
+    await user.click(
+      screen.getByLabelText(/theme switcher, current mode: light/i)
+    )
+    expect(window.localStorage.getItem('theme')).toBe('dark')
+  })
+})

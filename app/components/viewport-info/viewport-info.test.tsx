@@ -1,43 +1,45 @@
-// Jest environment removed - tests disabled
-// import { act, fireEvent, render, screen } from '@testing-library/react'
-// import { isDevelopment } from '@/lib/misc/environment'
-// import { ViewportInfo } from './viewport-info'
+import { fireEvent, render, screen } from '@testing-library/react'
+import { describe, expect, test, vi } from 'vitest'
 
-export {}
+import { isDevelopment } from '@/lib/misc/environment'
 
-// Tests disabled - Jest environment removed
-// describe.skip('<ViewportInfo /> tests', () => {
-//   test('It should render initial width and height', () => {
-//     render(<ViewportInfo />)
-//     const initialWidth = window.innerWidth
-//     const initialHeight = window.innerHeight
-//     expect(
-//       screen.getByText(`${initialWidth} x ${initialHeight}`)
-//     ).toBeInTheDocument()
-//   })
+import { ViewportInfo } from './viewport-info'
 
-//   test('It should update width and height on window resize', () => {
-//     render(<ViewportInfo />)
-//     const newWidth = 800
-//     const newHeight = 600
+vi.mock('@/lib/misc/environment')
 
-//     act(() => {
-//       window.innerWidth = newWidth
-//       window.innerHeight = newHeight
-//     })
+describe('<ViewportInfo /> tests', () => {
+  describe('when in development environment', () => {
+    test('It should render initial width and height', () => {
+      vi.mocked(isDevelopment).mockReturnValue(true)
+      render(<ViewportInfo />)
+      const initialWidth = window.innerWidth
+      const initialHeight = window.innerHeight
+      expect(
+        screen.getByText(new RegExp(`${initialWidth}px - ${initialHeight}px`))
+      ).toBeInTheDocument()
+    })
 
-//     fireEvent(window, new Event('resize'))
+    test('It should update width and height on window resize', () => {
+      vi.mocked(isDevelopment).mockReturnValue(true)
+      render(<ViewportInfo />)
+      const newWidth = 800
+      const newHeight = 600
 
-//     expect(screen.getByText(`${newWidth} x ${newHeight}`)).toBeInTheDocument()
-//   })
+      window.innerWidth = newWidth
+      window.innerHeight = newHeight
+      fireEvent(window, new Event('resize'))
 
-//   test('It should not render in production mode', () => {
-//     // This test required mocking which is not available without Jest
-//     render(<ViewportInfo />)
-//     const initialWidth = window.innerWidth
-//     const initialHeight = window.innerHeight
-//     expect(
-//       screen.queryByText(`${initialWidth} x ${initialHeight}`)
-//     ).not.toBeInTheDocument()
-//   })
-// })
+      expect(
+        screen.getByText(new RegExp(`${newWidth}px - ${newHeight}px`))
+      ).toBeInTheDocument()
+    })
+  })
+
+  describe('when in production environment', () => {
+    test('It should not render in production mode', async () => {
+      vi.mocked(isDevelopment).mockReturnValue(false)
+      const { container } = render(<ViewportInfo />)
+      await expect.element(container).toBeEmptyDOMElement()
+    })
+  })
+})
