@@ -1,6 +1,6 @@
-/* eslint-disable */
-/* tslint:disable */
-
+/* eslint-disable unicorn/filename-case */
+/* eslint-disable unicorn/prefer-add-event-listener */
+/* eslint-disable unicorn/prefer-spread */
 /**
  * Mock Service Worker.
  * @see https://github.com/mswjs/msw
@@ -145,7 +145,7 @@ async function handleRequest(event, requestId) {
             headers: Object.fromEntries(responseClone.headers.entries()),
           },
         },
-        [responseClone.body],
+        [responseClone.body]
       )
     })()
   }
@@ -203,7 +203,7 @@ async function getResponse(event, client, requestId) {
     if (acceptHeader) {
       const values = acceptHeader.split(',').map((value) => value.trim())
       const filteredValues = values.filter(
-        (value) => value !== 'msw/passthrough',
+        (value) => value !== 'msw/passthrough'
       )
 
       if (filteredValues.length > 0) {
@@ -252,7 +252,7 @@ async function getResponse(event, client, requestId) {
         keepalive: request.keepalive,
       },
     },
-    [requestBuffer],
+    [requestBuffer]
   )
 
   switch (clientMessage.type) {
@@ -282,7 +282,7 @@ function sendToClient(client, message, transferrables = []) {
 
     client.postMessage(
       message,
-      [channel.port2].concat(transferrables.filter(Boolean)),
+      [channel.port2].concat(transferrables.filter(Boolean))
     )
   })
 }
