@@ -1,10 +1,5 @@
-import nextPlugin from '@next/eslint-plugin-next/dist/index.js'
-import shared from '@teo-garcia/eslint-config-shared'
-import sharedReact from '@teo-garcia/eslint-config-shared/react'
+import nextPlugin from '@next/eslint-plugin-next'
+import base from '@teo-garcia/eslint-config-shared/base'
+import react from '@teo-garcia/eslint-config-shared/react'
 
-export default [
-  ...shared,
-  ...sharedReact,
-  nextPlugin.flatConfig.recommended,
-  // project-specific additions here (if needed)
-]
+export default [...base, ...react, nextPlugin.flatConfig.recommended]

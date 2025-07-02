@@ -7,7 +7,7 @@ export interface ErrorProps {
   reset: () => void
 }
 
-const Error = (properties: ErrorProps) => {
+const ErrorPage = (properties: ErrorProps) => {
   const { error, reset } = properties
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const Error = (properties: ErrorProps) => {
   }, [error])
 
   return (
-    <html lang="en">
+    <html lang='en'>
       <body>
         <h2>Something went wrong!</h2>
         <button onClick={() => reset()}>Try again</button>
@@ -24,4 +24,4 @@ const Error = (properties: ErrorProps) => {
   )
 }
 
-export default Error
+export default ErrorPage

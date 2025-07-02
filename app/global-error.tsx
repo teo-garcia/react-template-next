@@ -15,7 +15,7 @@ const GlobalErrorBoundary = (properties: GlobalErrorProperties) => {
   }, [error])
 
   return (
-    <html lang="en">
+    <html lang='en'>
       <body>
         <h2>Something went wrong!</h2>
         <button onClick={() => reset()}>Try again</button>

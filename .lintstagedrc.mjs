@@ -1,7 +1,4 @@
 export default {
-  '**/*.{js,jsx,ts,tsx}': [
-    'pnpm prettier --write',
-    'pnpm lint:js --fix',
-    'pnpm test',
-  ],
+  '**/*.{js,jsx,ts,tsx}': ['prettier --write', 'eslint --fix'],
+  '**/*.{json,md,yml,yaml}': ['prettier --write'],
 }

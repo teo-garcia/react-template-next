@@ -5,7 +5,7 @@ on:
     branches:
       - main
   workflow_run:
-    workflows: ['Dependencies Update 🤖']
+    workflows: ["Dependencies Update 🤖"]
     types:
       - completed
 

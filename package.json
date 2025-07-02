@@ -1,25 +1,5 @@
 {
-  "name": "react-template-next",
-  "private": false,
-  "version": "0.0.0",
-  "engines": {
-    "node": ">=22"
-  },
-  "license": "MIT",
-  "scripts": {
-    "dev": "pnpm dev:web",
-    "build": "pnpm build:web",
-    "start": "pnpm start:web",
-    "dev:web": "next dev --turbopack",
-    "build:web": "next build",
-    "start:web": "next start",
-    "lint:js": "eslint **/*.{ts,tsx,js}",
-    "test": "vitest",
-    "test:browser": "vitest --browser",
-    "test:ui": "vitest --ui",
-    "coverage": "vitest run --coverage",
-    "prepare": "husky"
-  },
+  "author": "teo-garcia",
   "dependencies": {
     "@tanstack/react-query": "^5.81.2",
     "@tanstack/react-query-devtools": "^5.81.2",
@@ -38,8 +18,8 @@
     "@eslint/js": "^9.29.0",
     "@next/eslint-plugin-next": "15.3.4",
     "@tailwindcss/postcss": "^4.1.11",
-    "@teo-garcia/eslint-config-shared": "^0.1.9",
-    "@teo-garcia/prettier-config-shared": "^0.1.0",
+    "@teo-garcia/eslint-config-shared": "^0.2.5",
+    "@teo-garcia/prettier-config-shared": "^0.2.1",
     "@teo-garcia/tsconfig-shared": "^0.1.0",
     "@teo-garcia/vitest-config-shared": "^0.1.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -57,10 +37,10 @@
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-import": "^2.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-prettier": "^5.5.1",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-tailwindcss": "^3.18.0",
+    "eslint-plugin-sonarjs": "^3.0.4",
+    "eslint-plugin-unicorn": "^59.0.1",
     "globals": "^16.2.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.2",
@@ -74,7 +54,33 @@
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.2.4"
   },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT",
   "msw": {
     "workerDirectory": "public"
-  }
+  },
+  "name": "react-template-next",
+  "private": false,
+  "scripts": {
+    "build": "pnpm build:web",
+    "build:web": "next build",
+    "coverage": "vitest run --coverage",
+    "dev": "pnpm dev:web",
+    "dev:web": "next dev --turbopack",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint:es": "eslint . --fix",
+    "lint:es:check": "eslint .",
+    "lint:ts": "tsc --noEmit",
+    "prepare": "husky",
+    "start": "pnpm start:web",
+    "start:web": "next start",
+    "test": "vitest",
+    "test:browser": "vitest --browser",
+    "test:ui": "vitest --ui"
+  },
+  "type": "module",
+  "version": "0.0.0"
 }

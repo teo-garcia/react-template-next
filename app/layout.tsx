@@ -23,11 +23,11 @@ const inter = Inter({
 const RootLayout = async (properties: React.PropsWithChildren) => {
   const { children } = properties
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang='en' suppressHydrationWarning>
       <head />
       <body className={inter.className}>
         <GlobalProviders>
-          <div className="min-h-screen">
+          <div className='min-h-screen'>
             <ThemeSwitch />
             <ViewportInfo />
             <main>{children}</main>

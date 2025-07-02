@@ -17,10 +17,10 @@ export const GlobalProviders = (properties: React.PropsWithChildren) => {
   }, [])
 
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+    <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
       <QueryClientProvider client={createNewQueryClient()}>
         {children}
-        <ReactQueryDevtools buttonPosition="bottom-left" />
+        <ReactQueryDevtools buttonPosition='bottom-left' />
       </QueryClientProvider>
     </ThemeProvider>
   )

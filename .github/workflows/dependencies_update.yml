@@ -22,7 +22,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: 'pnpm'
+          cache: "pnpm"
 
       - name: Setup pnpm 🤖
         uses: pnpm/action-setup@v2
@@ -47,14 +47,14 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: 'chore(deps): update dependencies 🤖'
-          title: 'chore(deps): update dependencies 🤖'
+          commit-message: "chore(deps): update dependencies 🤖"
+          title: "chore(deps): update dependencies 🤖"
           body: |
             🤖 This PR contains dependency updates performed by the automated workflow.
 
             Please review the changes and merge if everything looks good.
-          branch: 'chore/dependency-updates'
-          base: 'main'
+          branch: "chore/dependency-updates"
+          base: "main"
           labels: |
             dependencies
             automated
