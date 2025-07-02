@@ -1,9 +1,8 @@
 import { fireEvent, render, screen } from '@testing-library/react'
 import { describe, expect, test, vi } from 'vitest'
 
+import { ViewportInfo } from '@/components/viewport-info/viewport-info'
 import { isDevelopment } from '@/lib/misc/environment'
-
-import { ViewportInfo } from './viewport-info'
 
 vi.mock('@/lib/misc/environment')
 

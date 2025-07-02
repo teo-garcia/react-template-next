@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event'
 import { ThemeProvider } from 'next-themes'
 import { afterEach, beforeEach, describe, expect, test } from 'vitest'
 
-import { ThemeSwitch } from './theme-switch'
+import { ThemeSwitch } from '@/components/theme-switch/theme-switch'
 
 const AllTheProviders: React.FC<{ children: React.ReactNode }> = ({
   children,
