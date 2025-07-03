@@ -24,9 +24,9 @@ describe('<ViewportInfo /> tests', () => {
       const newWidth = 800
       const newHeight = 600
 
-      window.innerWidth = newWidth
-      window.innerHeight = newHeight
-      fireEvent(window, new Event('resize'))
+      globalThis.window.innerWidth = newWidth
+      globalThis.window.innerHeight = newHeight
+      fireEvent(globalThis.window, new Event('resize'))
 
       expect(
         screen.getByText(new RegExp(`${newWidth}px - ${newHeight}px`))

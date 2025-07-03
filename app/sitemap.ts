@@ -1,4 +1,4 @@
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from 'next'
 
 const getSitemap = (): MetadataRoute.Sitemap => {
   const routes = ['/'].map((route) => ({

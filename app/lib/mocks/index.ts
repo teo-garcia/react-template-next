@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/todo-tag */
 import { isProduction } from '@/lib/misc/environment'
 
 export const setupMSWBrowser = async () => {
@@ -7,8 +8,4 @@ export const setupMSWBrowser = async () => {
 }
 
 // TODO: Implement MSW setup for Node.js
-export const setupMSWNode = async () => {
-  // if (isProduction()) return
-  // const { server } = await import('./node')
-  // server.listen({ onUnhandledRequest: 'bypass' })
-}
+export const setupMSWNode = async () => {}

@@ -1,18 +1,9 @@
 {
-  "extends": "@teo-garcia/tsconfig-shared/tsconfig.json",
+  "extends": "@teo-garcia/tsconfig-shared/next",
   "compilerOptions": {
-    "baseUrl": ".",
-    "jsx": "preserve",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "esnext",
     "paths": {
       "@/*": ["./app/*"]
     },
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
     "types": ["@vitest/browser/context"]
   },
   "include": [
@@ -21,6 +12,5 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "./jest.setup.js"
-  ],
-  "exclude": ["node_modules"]
+  ]
 }

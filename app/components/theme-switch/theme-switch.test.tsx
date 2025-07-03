@@ -1,4 +1,5 @@
-import { render, RenderOptions, screen, waitFor } from '@testing-library/react'
+import type { RenderOptions } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { ThemeProvider } from 'next-themes'
 import { afterEach, beforeEach, describe, expect, test } from 'vitest'
@@ -24,16 +25,16 @@ describe('<ThemeSwitch /> tests', () => {
   const user = userEvent.setup()
 
   beforeEach(() => {
-    window.localStorage.clear()
+    globalThis.window.localStorage.clear()
     document.documentElement.className = ''
   })
 
   afterEach(() => {
-    window.localStorage.clear()
+    globalThis.window.localStorage.clear()
   })
 
   test('It should render localStorage theme value if provided', async () => {
-    window.localStorage.setItem('theme', 'dark')
+    globalThis.window.localStorage.setItem('theme', 'dark')
     customRender(<ThemeSwitch />)
     await waitFor(() => {
       return expect
@@ -89,10 +90,10 @@ describe('<ThemeSwitch /> tests', () => {
     await user.click(
       await screen.findByLabelText(/theme switcher, current mode: system/i)
     )
-    expect(window.localStorage.getItem('theme')).toBe('light')
+    expect(globalThis.window.localStorage.getItem('theme')).toBe('light')
     await user.click(
       screen.getByLabelText(/theme switcher, current mode: light/i)
     )
-    expect(window.localStorage.getItem('theme')).toBe('dark')
+    expect(globalThis.window.localStorage.getItem('theme')).toBe('dark')
   })
 })

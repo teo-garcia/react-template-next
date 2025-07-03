@@ -7,7 +7,7 @@ export const isProduction = () => {
 }
 
 export const isServer = () => {
-  return typeof window === 'undefined'
+  return globalThis.window == undefined
 }
 
 export const isClient = () => {

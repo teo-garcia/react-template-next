@@ -20,7 +20,7 @@
     "@tailwindcss/postcss": "^4.1.11",
     "@teo-garcia/eslint-config-shared": "^0.2.5",
     "@teo-garcia/prettier-config-shared": "^0.2.1",
-    "@teo-garcia/tsconfig-shared": "^0.1.0",
+    "@teo-garcia/tsconfig-shared": "^0.1.2",
     "@teo-garcia/vitest-config-shared": "^0.1.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
