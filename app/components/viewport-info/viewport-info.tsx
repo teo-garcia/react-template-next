@@ -26,7 +26,7 @@ export const ViewportInfo = () => {
   if (!isDevelopment()) return
 
   return (
-    <aside className='fixed bottom-0 right-0 flex items-center gap-x-1 rounded-l-lg px-4 py-2 text-background bg-foreground dark:bg-foreground font-semibold'>
+    <aside className='fixed bottom-0 right-0 flex items-center gap-x-1 rounded-l-lg px-4 py-2 bg-primary text-primary-foreground font-semibold'>
       <RulerIcon className='size-5' />
       <p className='text-lg flex gap-x-2'>
         {viewportWidth}px - {viewportHeight}px -

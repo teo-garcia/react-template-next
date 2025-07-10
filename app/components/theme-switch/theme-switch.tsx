@@ -8,7 +8,7 @@ type ThemeMode = 'light' | 'dark' | 'system'
 
 export const ThemeSwitch = () => {
   const [mounted, setMounted] = useState(false)
-  const { theme, setTheme, resolvedTheme } = useTheme()
+  const { theme, setTheme } = useTheme()
 
   const getNextTheme = (): ThemeMode => {
     switch (theme) {
@@ -27,17 +27,13 @@ export const ThemeSwitch = () => {
   const getCurrentIcon = () => {
     switch (theme) {
       case 'light': {
-        return <Sun className='size-5 text-foreground' />
+        return <Sun className='size-5' />
       }
       case 'dark': {
-        return <Moon className='size-5 text-background' />
+        return <Moon className='size-5' />
       }
       default: {
-        return (
-          <Laptop
-            className={`size-5 ${resolvedTheme === 'dark' ? 'text-background' : 'text-foreground'}`}
-          />
-        )
+        return <Laptop className='size-5' />
       }
     }
   }
@@ -58,7 +54,7 @@ export const ThemeSwitch = () => {
     <button
       onClick={handleClick}
       aria-label={`Theme switcher, current mode: ${theme}`}
-      className='fixed right-4 top-4 rounded-lg border border-foreground dark:border-background p-2 md:right-8 md:top-8 transition-colors duration-200'
+      className='fixed right-4 top-4 rounded-lg border p-2 md:right-8 md:top-8 transition-colors duration-200 hover:bg-accent hover:text-accent-foreground'
       title={`Current theme: ${theme}. Click to switch to ${getNextTheme()}`}
     >
       {getCurrentIcon()}
