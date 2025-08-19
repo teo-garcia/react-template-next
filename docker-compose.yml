@@ -1,0 +1,33 @@
+services:
+  app:
+    build: .
+    command: npm run dev
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@db:5432/postgres
+      # REDIS_URL: redis://redis:6379
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+      # - redis
+    profiles: ["app"]
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    profiles: ["db"]
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+    profiles: ["redis"]
+
+volumes:
+  pgdata:

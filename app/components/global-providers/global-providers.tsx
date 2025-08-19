@@ -11,7 +11,7 @@ export const GlobalProviders = (properties: React.PropsWithChildren) => {
   const { children } = properties
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (globalThis.window != undefined) {
       import('../../lib/mocks').then(({ setupMSWBrowser }) => setupMSWBrowser())
     }
   }, [])
