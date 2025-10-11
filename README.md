@@ -1,45 +1,45 @@
-<!-- ![README.md banner](./README.png) -->
-
-![Package License](https://img.shields.io/github/license/teo-garcia/react-template-next)
-![Package Version](https://img.shields.io/github/package-json/v/teo-garcia/react-template-next)
-
 # React Template Next
 
-Start building modern web applications using React and Next.js.
+Modern Next.js application template with TypeScript, Tailwind CSS, and
+comprehensive testing setup.
 
 ## Requirements
 
-- `Node 22+`
-- `Git 2+`
-- `pnpm 9`
+- Node 22+
+- pnpm 9
 
 ## Installation
 
-1. Get the template using `npx degit`:
-
 ```bash
-  npx degit teo-garcia/react-template-next my_project
+npx degit teo-garcia/react-template-next my-app
+cd my-app
+pnpm install
+pnpm dev
 ```
 
-2. Install the dependencies:
+## Features
+
+- **Next.js** - Server-side rendering and static site generation
+- **React** - Component-based UI library
+- **Tailwind CSS** - Utility-first styling
+- **TypeScript** - Static type checking
+- **Vitest** - Unit testing with Testing Library
+- **MSW** - API mocking
+- **ESLint + Prettier** - Code quality and formatting
+- **Husky + Lint Staged** - Pre-commit hooks
+
+## Scripts
 
 ```bash
-  pnpm install
+pnpm dev          # Start development server
+pnpm build        # Production build
+pnpm start        # Run production build
+pnpm test         # Run unit tests
+pnpm lint:es      # ESLint check
+pnpm lint:ts      # TypeScript type check
+pnpm format       # Format code with Prettier
 ```
 
-3. Run the project:
+## License
 
-```bash
-  pnpm dev
-```
-
-## Tools
-
-- Next for server-side rendering and static site generation.
-- React for building user interfaces.
-- Tailwind for utility-first CSS.
-- Typescript for static type checking.
-- ESLint for linting and Prettier for code formatting.
-- Husky for Git hooks and Lint Staged for running linters on staged files.
-- Vitest for unit testing with Testing Library React for components.
-- MSW for API mocking.
+MIT
