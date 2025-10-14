@@ -14,6 +14,9 @@ importers:
       '@tanstack/react-query-devtools':
         specifier: ^5.90.2
         version: 5.90.2(@tanstack/react-query@5.90.2(react@19.2.0))(react@19.2.0)
+      '@teo-garcia/react-shared':
+        specifier: 0.1.1
+        version: 0.1.1(lucide-react@0.545.0(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       client-only:
         specifier: ^0.0.1
         version: 0.0.1
@@ -1052,6 +1055,14 @@ packages:
     engines: {node: '>=20.11'}
     peerDependencies:
       prettier: ^3.0.0
+
+  '@teo-garcia/react-shared@0.1.1':
+    resolution: {integrity: sha512-Khx89dcE0mCkx1G7NPNsvcK0DpLZXXzkBGGDWHh4xZHo58TpuXNnD3Fupji2XbcMrnvQRddXHAYgVMhjQD+h6w==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      lucide-react: ^0.400.0
+      react: ^19.0.0
+      react-dom: ^19.0.0
 
   '@teo-garcia/tsconfig-shared@0.1.2':
     resolution: {integrity: sha512-Op01gzTkeYwZ8jtmyIP/kLlQyfB5Eh7htWxPb6Xe0ind+fVbZtaHlcYT2w+WfraJT/Yw3IjDMiapJN+VVd938A==}
@@ -4085,6 +4096,12 @@ snapshots:
   '@teo-garcia/prettier-config-shared@0.2.1(prettier@3.6.2)':
     dependencies:
       prettier: 3.6.2
+
+  '@teo-garcia/react-shared@0.1.1(lucide-react@0.545.0(react@19.2.0))(react-dom@19.2.0(react@19.2.0))(react@19.2.0)':
+    dependencies:
+      lucide-react: 0.545.0(react@19.2.0)
+      react: 19.2.0
+      react-dom: 19.2.0(react@19.2.0)
 
   '@teo-garcia/tsconfig-shared@0.1.2': {}
 

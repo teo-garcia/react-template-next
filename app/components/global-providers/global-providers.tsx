@@ -2,6 +2,11 @@
 
 import { QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import {
+  nextEnvironmentAdapter,
+  useNextThemesAdapter,
+} from '@teo-garcia/react-shared/adapters'
+import { ThemeSwitch, ViewportInfo } from '@teo-garcia/react-shared/components'
 import { ThemeProvider } from 'next-themes'
 import { useEffect } from 'react'
 
@@ -19,9 +24,21 @@ export const GlobalProviders = (properties: React.PropsWithChildren) => {
   return (
     <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
       <QueryClientProvider client={createNewQueryClient()}>
-        {children}
+        <ThemeProviderContent>{children}</ThemeProviderContent>
         <ReactQueryDevtools buttonPosition='bottom-left' />
       </QueryClientProvider>
     </ThemeProvider>
+  )
+}
+
+const ThemeProviderContent = ({ children }: React.PropsWithChildren) => {
+  const themeAdapter = useNextThemesAdapter()
+
+  return (
+    <>
+      {children}
+      <ThemeSwitch themeAdapter={themeAdapter} />
+      <ViewportInfo environmentAdapter={nextEnvironmentAdapter} />
+    </>
   )
 }

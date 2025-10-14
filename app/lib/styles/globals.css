@@ -1,6 +1,11 @@
 @import 'tailwindcss';
 
 /* ------------------------------------------------------------------
+   Content sources - tell Tailwind where to scan for classes
+------------------------------------------------------------------ */
+@source '../../../node_modules/@teo-garcia/react-shared/dist';
+
+/* ------------------------------------------------------------------
    Custom variants
 ------------------------------------------------------------------ */
 @custom-variant dark (&:where(.dark, .dark *));
