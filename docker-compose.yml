@@ -13,7 +13,7 @@ services:
     profiles: ["app"]
 
   db:
-    image: postgres:15
+    image: postgres:18
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
@@ -24,7 +24,7 @@ services:
     profiles: ["db"]
 
   redis:
-    image: redis:7
+    image: redis:8
     ports:
       - "6379:6379"
     profiles: ["redis"]

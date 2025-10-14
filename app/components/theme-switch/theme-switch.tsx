@@ -2,16 +2,16 @@
 
 import { Laptop, Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react'
 
 type ThemeMode = 'light' | 'dark' | 'system'
 
 export const ThemeSwitch = () => {
-  const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
 
+  const activeTheme: ThemeMode = (theme ?? 'system') as ThemeMode
+
   const getNextTheme = (): ThemeMode => {
-    switch (theme) {
+    switch (activeTheme) {
       case 'light': {
         return 'dark'
       }
@@ -25,7 +25,7 @@ export const ThemeSwitch = () => {
   }
 
   const getCurrentIcon = () => {
-    switch (theme) {
+    switch (activeTheme) {
       case 'light': {
         return <Sun className='size-5' />
       }
@@ -42,20 +42,12 @@ export const ThemeSwitch = () => {
     setTheme(getNextTheme())
   }
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted) {
-    return
-  }
-
   return (
     <button
       onClick={handleClick}
-      aria-label={`Theme switcher, current mode: ${theme}`}
+      aria-label={`Theme switcher, current mode: ${activeTheme}`}
       className='fixed right-4 top-4 rounded-lg border p-2 md:right-8 md:top-8 transition-colors duration-200 hover:bg-accent hover:text-accent-foreground'
-      title={`Current theme: ${theme}. Click to switch to ${getNextTheme()}`}
+      title={`Current theme: ${activeTheme}. Click to switch to ${getNextTheme()}`}
     >
       {getCurrentIcon()}
     </button>
