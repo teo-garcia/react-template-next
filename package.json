@@ -18,7 +18,7 @@
     "@eslint/js": "^9.37.0",
     "@next/eslint-plugin-next": "15.5.4",
     "@tailwindcss/postcss": "^4.1.14",
-    "@teo-garcia/eslint-config-shared": "^0.2.11",
+    "@teo-garcia/eslint-config-shared": "^0.3.0",
     "@teo-garcia/prettier-config-shared": "^0.2.1",
     "@teo-garcia/tsconfig-shared": "^0.1.2",
     "@teo-garcia/vitest-config-shared": "^0.1.0",
