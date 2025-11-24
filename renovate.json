@@ -13,7 +13,7 @@
       "matchPackagePatterns": [".*"],
       "excludePackagePatterns": ["^@teo-garcia/"],
       "groupName": "all dependencies",
-      "schedule": ["on the first day of the month"],
+      "schedule": ["every 2 months"],
       "automerge": false
     }
   ],
