@@ -7,17 +7,17 @@
     "client-only": "^0.0.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.554.0",
-    "next": "^15.5.4",
+    "next": "^16.0.0",
     "next-themes": "^0.4.6",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "server-only": "^0.0.1"
   },
   "devDependencies": {
-    "@eslint/compat": "^1.4.0",
+    "@eslint/compat": "^2.0.0",
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^9.37.0",
-    "@next/eslint-plugin-next": "15.5.6",
+    "@next/eslint-plugin-next": "16.0.4",
     "@tailwindcss/postcss": "^4.1.14",
     "@teo-garcia/eslint-config-shared": "^0.3.0",
     "@teo-garcia/prettier-config-shared": "^0.2.1",
@@ -32,7 +32,7 @@
     "@typescript-eslint/eslint-plugin": "^8.46.0",
     "@typescript-eslint/parser": "^8.46.0",
     "@vitejs/plugin-react": "^5.0.4",
-    "@vitest/browser": "^3.2.4",
+    "@vitest/browser": "^4.0.0",
     "concurrently": "^9.2.1",
     "eslint": "9.39.1",
     "eslint-config-prettier": "^10.1.8",
@@ -41,7 +41,7 @@
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.0.0",
     "eslint-plugin-sonarjs": "^3.0.5",
-    "eslint-plugin-unicorn": "^61.0.2",
+    "eslint-plugin-unicorn": "^62.0.0",
     "globals": "^16.4.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.3",
@@ -53,7 +53,7 @@
     "tailwindcss": "^4.1.14",
     "typescript": "^5",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^3.2.4"
+    "vitest": "^4.0.0"
   },
   "engines": {
     "node": ">=22"
