@@ -1,20 +1,19 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
+  "extends": ["config:recommended"],
   "packageRules": [
     {
-      "matchPackagePatterns": ["^@teo-garcia/"],
       "groupName": "teo-garcia shared configs",
       "schedule": ["every weekend"],
       "automerge": false,
-      "reviewers": ["teo-garcia"]
+      "reviewers": ["teo-garcia"],
+      "matchPackageNames": ["/^@teo-garcia//"]
     },
     {
-      "matchPackagePatterns": [".*"],
-      "excludePackagePatterns": ["^@teo-garcia/"],
       "groupName": "all dependencies",
       "schedule": ["every 2 months"],
-      "automerge": false
+      "automerge": false,
+      "matchPackageNames": ["/.*/", "!/^@teo-garcia//"]
     }
   ],
   "dependencyDashboard": true,
