@@ -3,7 +3,7 @@
   "dependencies": {
     "@tanstack/react-query": "^5.90.2",
     "@tanstack/react-query-devtools": "^5.90.2",
-    "@teo-garcia/react-shared": "0.1.1",
+    "@teo-garcia/react-shared": "0.1.2",
     "client-only": "^0.0.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.556.0",
@@ -19,10 +19,10 @@
     "@eslint/js": "^9.37.0",
     "@next/eslint-plugin-next": "16.0.8",
     "@tailwindcss/postcss": "^4.1.14",
-    "@teo-garcia/eslint-config-shared": "^0.3.0",
+    "@teo-garcia/eslint-config-shared": "^0.3.1",
     "@teo-garcia/prettier-config-shared": "^0.2.1",
     "@teo-garcia/tsconfig-shared": "^0.1.2",
-    "@teo-garcia/vitest-config-shared": "^0.1.0",
+    "@teo-garcia/vitest-config-shared": "^0.1.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^14.6.1",
@@ -63,7 +63,7 @@
     "workerDirectory": "public"
   },
   "name": "react-template-next",
-  "private": false,
+  "private": true,
   "scripts": {
     "build": "pnpm build:web",
     "build:web": "next build",
