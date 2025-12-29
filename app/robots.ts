@@ -1,5 +1,7 @@
 import type { MetadataRoute } from 'next'
 
+import { env } from './lib/env'
+
 const getRobots = (): MetadataRoute.Robots => {
   return {
     rules: {
@@ -7,7 +9,7 @@ const getRobots = (): MetadataRoute.Robots => {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: `${process.env.NEXT_PUBLIC_URL}/sitemap.xml`,
+    sitemap: `${env.publicUrl}/sitemap.xml`,
   }
 }
 

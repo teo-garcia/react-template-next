@@ -1,8 +1,10 @@
 import type { MetadataRoute } from 'next'
 
+import { env } from './lib/env'
+
 const getSitemap = (): MetadataRoute.Sitemap => {
   const routes = ['/'].map((route) => ({
-    url: `${process.env.NEXT_PUBLIC_URL}${route}`,
+    url: `${env.publicUrl}${route}`,
     lastModified: new Date().toISOString(),
   }))
 

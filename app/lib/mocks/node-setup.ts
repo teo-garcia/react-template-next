@@ -1,7 +1,8 @@
+import { env, isProduction } from '../env'
 import { server } from './node'
 
 export const setupMSWNode = () => {
-  if (process.env.NODE_ENV === 'production') {
+  if (isProduction) {
     return null
   }
 
@@ -9,7 +10,9 @@ export const setupMSWNode = () => {
     server.listen({ onUnhandledRequest: 'bypass' })
     return server
   } catch (error) {
-    console.error('Failed to start MSW Node server:', error)
+    console.error('Failed to start MSW Node server:', error, {
+      env: env.nodeEnv,
+    })
     return null
   }
 }
