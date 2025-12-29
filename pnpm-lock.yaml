@@ -14,9 +14,6 @@ importers:
       '@tanstack/react-query-devtools':
         specifier: ^5.90.2
         version: 5.91.1(@tanstack/react-query@5.90.12(react@19.2.1))(react@19.2.1)
-      '@teo-garcia/react-shared':
-        specifier: 0.1.1
-        version: 0.1.1(lucide-react@0.556.0(react@19.2.1))(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       client-only:
         specifier: ^0.0.1
         version: 0.0.1
@@ -58,7 +55,7 @@ importers:
         specifier: ^4.1.14
         version: 4.1.17
       '@teo-garcia/eslint-config-shared':
-        specifier: ^0.3.0
+        specifier: ^0.3.1
         version: 0.3.1(31d674eec0ab76d0d2281712bb0dc15d)
       '@teo-garcia/prettier-config-shared':
         specifier: ^0.2.1
@@ -67,7 +64,7 @@ importers:
         specifier: ^0.1.2
         version: 0.1.2
       '@teo-garcia/vitest-config-shared':
-        specifier: ^0.1.0
+        specifier: ^0.1.1
         version: 0.1.1(@vitejs/plugin-react@5.1.2(vite@7.2.7(@types/node@24.10.2)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.1)))(@vitest/browser@4.0.15(msw@2.12.4(@types/node@24.10.2)(typescript@5.9.3))(vite@7.2.7(@types/node@24.10.2)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.1))(vitest@4.0.15(@types/node@24.10.2)(jiti@2.6.1)(jsdom@24.1.3)(lightningcss@1.30.2)(msw@2.12.4(@types/node@24.10.2)(typescript@5.9.3))(yaml@2.8.1)))(playwright-core@1.57.0)(vite-tsconfig-paths@5.1.4(typescript@5.9.3)(vite@7.2.7(@types/node@24.10.2)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.1)))(vitest@4.0.15(@types/node@24.10.2)(jiti@2.6.1)(jsdom@24.1.3)(lightningcss@1.30.2)(msw@2.12.4(@types/node@24.10.2)(typescript@5.9.3))(yaml@2.8.1))
       '@testing-library/jest-dom':
         specifier: ^6.9.1
@@ -1071,14 +1068,6 @@ packages:
     engines: {node: '>=20.11'}
     peerDependencies:
       prettier: ^3.0.0
-
-  '@teo-garcia/react-shared@0.1.1':
-    resolution: {integrity: sha512-Khx89dcE0mCkx1G7NPNsvcK0DpLZXXzkBGGDWHh4xZHo58TpuXNnD3Fupji2XbcMrnvQRddXHAYgVMhjQD+h6w==}
-    engines: {node: '>=20'}
-    peerDependencies:
-      lucide-react: ^0.400.0
-      react: ^19.0.0
-      react-dom: ^19.0.0
 
   '@teo-garcia/tsconfig-shared@0.1.2':
     resolution: {integrity: sha512-Op01gzTkeYwZ8jtmyIP/kLlQyfB5Eh7htWxPb6Xe0ind+fVbZtaHlcYT2w+WfraJT/Yw3IjDMiapJN+VVd938A==}
@@ -3239,6 +3228,7 @@ packages:
   whatwg-encoding@3.1.1:
     resolution: {integrity: sha512-6qN4hJdMwfYBtE3YBTTHhoeuUrDBPZmbQaxWAqSALV/MeEnR5z1xd8UKud2RAkFoPkmB+hli1TZSnyi84xz1vQ==}
     engines: {node: '>=18'}
+    deprecated: Use @exodus/bytes instead for a more spec-conformant and faster implementation
 
   whatwg-mimetype@4.0.0:
     resolution: {integrity: sha512-QaKxh0eNIi2mE9p2vEdzfagOKHCcj1pJ56EEHGQOVxp8r9/iszLUUV7v89x9O1p/T+NlTM5W7jW6+cz4Fq1YVg==}
@@ -4052,12 +4042,6 @@ snapshots:
   '@teo-garcia/prettier-config-shared@0.2.1(prettier@3.7.4)':
     dependencies:
       prettier: 3.7.4
-
-  '@teo-garcia/react-shared@0.1.1(lucide-react@0.556.0(react@19.2.1))(react-dom@19.2.1(react@19.2.1))(react@19.2.1)':
-    dependencies:
-      lucide-react: 0.556.0(react@19.2.1)
-      react: 19.2.1
-      react-dom: 19.2.1(react@19.2.1)
 
   '@teo-garcia/tsconfig-shared@0.1.2': {}
 
