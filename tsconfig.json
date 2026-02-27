@@ -4,13 +4,7 @@
     "paths": {
       "@/*": ["./app/*"]
     },
-    "types": ["@vitest/browser/context"]
+    "types": ["vitest/globals", "@vitest/browser-playwright"]
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-    "./jest.setup.js"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"]
 }
