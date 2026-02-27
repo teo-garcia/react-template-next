@@ -51,12 +51,15 @@ importers:
       '@next/eslint-plugin-next':
         specifier: 16.1.6
         version: 16.1.6
+      '@playwright/test':
+        specifier: ^1.50.0
+        version: 1.53.1
       '@tailwindcss/postcss':
         specifier: ^4.1.14
         version: 4.1.18
       '@teo-garcia/eslint-config-shared':
-        specifier: ^0.3.1
-        version: 0.3.1(6d61fd3907997116c5a687803e4f5f97)
+        specifier: file:../eslint-config-shared
+        version: file:../eslint-config-shared(0d2bedd0faa85d74130799efd415e4f6)
       '@teo-garcia/prettier-config-shared':
         specifier: ^0.2.1
         version: 0.2.1(prettier@3.8.1)
@@ -64,8 +67,8 @@ importers:
         specifier: ^0.1.2
         version: 0.1.2
       '@teo-garcia/vitest-config-shared':
-        specifier: file:../vitest-config-shared
-        version: file:../vitest-config-shared(@vitejs/plugin-react@5.1.3(vite@7.3.1(@types/node@24.10.10)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.1)))(@vitest/browser-playwright@4.0.18)(vite-tsconfig-paths@6.0.5(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.10)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.1)))(vitest@4.0.18)
+        specifier: 0.3.0
+        version: 0.3.0(@vitejs/plugin-react@5.1.3(vite@7.3.1(@types/node@24.10.10)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.1)))(@vitest/browser-playwright@4.0.18)(vite-tsconfig-paths@6.0.5(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.10)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.1)))(vitest@4.0.18)
       '@testing-library/jest-dom':
         specifier: ^6.9.1
         version: 6.9.1
@@ -111,6 +114,9 @@ importers:
       eslint-plugin-jsx-a11y:
         specifier: ^6.10.2
         version: 6.10.2(eslint@9.39.2(jiti@2.6.1))
+      eslint-plugin-playwright:
+        specifier: ^2.4.0
+        version: 2.8.0(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-react:
         specifier: ^7.37.5
         version: 7.37.5(eslint@9.39.2(jiti@2.6.1))
@@ -135,9 +141,6 @@ importers:
       msw:
         specifier: ^2.11.4
         version: 2.12.8(@types/node@24.10.10)(typescript@5.9.3)
-      playwright-core:
-        specifier: ^1.56.0
-        version: 1.58.1
       postcss:
         specifier: ^8.5.6
         version: 8.5.6
@@ -1099,8 +1102,8 @@ packages:
     peerDependencies:
       react: ^18 || ^19
 
-  '@teo-garcia/eslint-config-shared@0.3.1':
-    resolution: {integrity: sha512-6ZNqyGmdydBJ1oLDoYCQbV62WK/O6j785O+MHyEiguWjE1sOh9sdXwq3TQSR9IkvhjZAxzIWU9FGUCvlVZWpRQ==}
+  '@teo-garcia/eslint-config-shared@file:../eslint-config-shared':
+    resolution: {directory: ../eslint-config-shared, type: directory}
     engines: {node: '>=21'}
     peerDependencies:
       '@eslint/compat': ^1.3.1
@@ -1144,8 +1147,8 @@ packages:
   '@teo-garcia/tsconfig-shared@0.1.2':
     resolution: {integrity: sha512-Op01gzTkeYwZ8jtmyIP/kLlQyfB5Eh7htWxPb6Xe0ind+fVbZtaHlcYT2w+WfraJT/Yw3IjDMiapJN+VVd938A==}
 
-  '@teo-garcia/vitest-config-shared@file:../vitest-config-shared':
-    resolution: {directory: ../vitest-config-shared, type: directory}
+  '@teo-garcia/vitest-config-shared@0.3.0':
+    resolution: {integrity: sha512-EOPfslWcKPtyulJe25PNW3EHE7yE0S7gnoDb/+7qlzqbGLTGw+QpDrwD8YOyhXeKPfkDjqmukDszp1G9W2xLJA==}
     peerDependencies:
       '@vitejs/plugin-react': ^5.0.4
       '@vitest/browser-playwright': ^4.0.0
@@ -1790,9 +1793,9 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9
 
-  eslint-plugin-playwright@2.2.0:
-    resolution: {integrity: sha512-qSQpAw7RcSzE3zPp8FMGkthaCWovHZ/BsXtpmnGax9vQLIovlh1bsZHEa2+j2lv9DWhnyeLM/qZmp7ffQZfQvg==}
-    engines: {node: '>=16.6.0'}
+  eslint-plugin-playwright@2.8.0:
+    resolution: {integrity: sha512-BRCXbnX20l/ZPOOi1jEqNvqU/UjXpkZRJaghQxSM2kjAvsDph8+osn9u1iMmvoa9Cegbp9d0Skh7vro7242t+Q==}
+    engines: {node: '>=16.9.0'}
     peerDependencies:
       eslint: '>=8.40.0'
 
@@ -1997,10 +2000,6 @@ packages:
   glob-parent@6.0.2:
     resolution: {integrity: sha512-XxwI8EOhVQgWp6iDL+3b0r86f4d6AX6zSU55HfB4ydCEuXLXc5FcYeOu+nnGftS4TEju/11rt4KJPTMgbfmv4A==}
     engines: {node: '>=10.13.0'}
-
-  globals@13.24.0:
-    resolution: {integrity: sha512-AhO5QUcj8llrbG09iWhPU2B204J1xnPeL8kQmVorSsy+Sjj1sk8gIyh6cUocGmH4L0UuhAJy+hJMRA4mgA4mFQ==}
-    engines: {node: '>=8'}
 
   globals@14.0.0:
     resolution: {integrity: sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ==}
@@ -2637,11 +2636,6 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  playwright-core@1.58.1:
-    resolution: {integrity: sha512-bcWzOaTxcW+VOOGBCQgnaKToLJ65d6AqfLVKEWvexyS3AS6rbXl+xdpYRMGSRBClPvyj44njOWoxjNdL/H9UNg==}
-    engines: {node: '>=18'}
-    hasBin: true
-
   playwright@1.53.1:
     resolution: {integrity: sha512-LJ13YLr/ocweuwxyGf1XNFWIU4M2zUSo149Qbp+A4cpwDjsxRPj7k6H25LBrEHiEwxvRbD8HdwvQmRMSvquhYw==}
     engines: {node: '>=18'}
@@ -3140,10 +3134,6 @@ packages:
   type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
     engines: {node: '>= 0.8.0'}
-
-  type-fest@0.20.2:
-    resolution: {integrity: sha512-Ne+eE4r0/iWnpAxD852z3A+N0Bt5RN//NjJwRd2VFHEmrywxf5vsZlh4R6lixl6B+wz/8d+maTSAkN1FIkI3LQ==}
-    engines: {node: '>=10'}
 
   type-fest@5.4.3:
     resolution: {integrity: sha512-AXSAQJu79WGc79/3e9/CR77I/KQgeY1AhNvcShIH4PTcGYyC4xv6H4R4AUOwkPS5799KlVDAu8zExeCrkGquiA==}
@@ -4016,7 +4006,6 @@ snapshots:
   '@playwright/test@1.53.1':
     dependencies:
       playwright: 1.53.1
-    optional: true
 
   '@polka/url@1.0.0-next.29': {}
 
@@ -4189,7 +4178,7 @@ snapshots:
       '@tanstack/query-core': 5.90.20
       react: 19.2.4
 
-  '@teo-garcia/eslint-config-shared@0.3.1(6d61fd3907997116c5a687803e4f5f97)':
+  '@teo-garcia/eslint-config-shared@file:../eslint-config-shared(0d2bedd0faa85d74130799efd415e4f6)':
     dependencies:
       '@eslint/compat': 2.0.2(eslint@9.39.2(jiti@2.6.1))
       '@eslint/eslintrc': 3.3.3
@@ -4205,7 +4194,7 @@ snapshots:
       globals: 17.3.0
     optionalDependencies:
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.39.2(jiti@2.6.1))
-      eslint-plugin-playwright: 2.2.0(eslint@9.39.2(jiti@2.6.1))
+      eslint-plugin-playwright: 2.8.0(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-react: 7.37.5(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-react-hooks: 7.0.1(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-react-refresh: 0.4.20(eslint@9.39.2(jiti@2.6.1))
@@ -4217,7 +4206,7 @@ snapshots:
 
   '@teo-garcia/tsconfig-shared@0.1.2': {}
 
-  '@teo-garcia/vitest-config-shared@file:../vitest-config-shared(@vitejs/plugin-react@5.1.3(vite@7.3.1(@types/node@24.10.10)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.1)))(@vitest/browser-playwright@4.0.18)(vite-tsconfig-paths@6.0.5(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.10)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.1)))(vitest@4.0.18)':
+  '@teo-garcia/vitest-config-shared@0.3.0(@vitejs/plugin-react@5.1.3(vite@7.3.1(@types/node@24.10.10)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.1)))(@vitest/browser-playwright@4.0.18)(vite-tsconfig-paths@6.0.5(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.10)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.1)))(vitest@4.0.18)':
     dependencies:
       '@vitejs/plugin-react': 5.1.3(vite@7.3.1(@types/node@24.10.10)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.1))
       '@vitest/browser-playwright': 4.0.18(msw@2.12.8(@types/node@24.10.10)(typescript@5.9.3))(playwright@1.53.1)(vite@7.3.1(@types/node@24.10.10)(jiti@2.6.1)(lightningcss@1.30.2)(yaml@2.8.1))(vitest@4.0.18)
@@ -5051,11 +5040,10 @@ snapshots:
       safe-regex-test: 1.1.0
       string.prototype.includes: 2.0.1
 
-  eslint-plugin-playwright@2.2.0(eslint@9.39.2(jiti@2.6.1)):
+  eslint-plugin-playwright@2.8.0(eslint@9.39.2(jiti@2.6.1)):
     dependencies:
       eslint: 9.39.2(jiti@2.6.1)
-      globals: 13.24.0
-    optional: true
+      globals: 17.3.0
 
   eslint-plugin-react-hooks@7.0.1(eslint@9.39.2(jiti@2.6.1)):
     dependencies:
@@ -5336,11 +5324,6 @@ snapshots:
   glob-parent@6.0.2:
     dependencies:
       is-glob: 4.0.3
-
-  globals@13.24.0:
-    dependencies:
-      type-fest: 0.20.2
-    optional: true
 
   globals@14.0.0: {}
 
@@ -5966,8 +5949,6 @@ snapshots:
 
   playwright-core@1.53.1: {}
 
-  playwright-core@1.58.1: {}
-
   playwright@1.53.1:
     dependencies:
       playwright-core: 1.53.1
@@ -6488,9 +6469,6 @@ snapshots:
   type-check@0.4.0:
     dependencies:
       prelude-ls: 1.2.1
-
-  type-fest@0.20.2:
-    optional: true
 
   type-fest@5.4.3:
     dependencies:
