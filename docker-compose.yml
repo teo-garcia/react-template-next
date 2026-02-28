@@ -1,33 +1,67 @@
 services:
   app:
-    build: .
-    command: npm run dev
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.dev
+    container_name: next_app
+    restart: unless-stopped
     environment:
-      DATABASE_URL: postgres://postgres:postgres@db:5432/postgres
-      # REDIS_URL: redis://redis:6379
+      NODE_ENV: development
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/postgres?schema=public
     ports:
-      - "${APP_PORT:-3000}:3000"
+      - "${PORT:-3000}:3000"
+    volumes:
+      - ./app:/app/app
+      - ./public:/app/public
+      - ./next.config.ts:/app/next.config.ts
     depends_on:
-      - db
-      # - redis
-    profiles: ["app"]
+      db:
+        condition: service_healthy
+    networks:
+      - next-network
 
   db:
-    image: postgres:18
+    image: postgres:18-alpine
+    container_name: next_db
+    restart: unless-stopped
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: ${DATABASE_USER:-postgres}
+      POSTGRES_PASSWORD: ${DATABASE_PASSWORD:-postgres}
+      POSTGRES_DB: ${DATABASE_NAME:-postgres}
     ports:
       - "${DATABASE_PORT:-5432}:5432"
     volumes:
-      - pgdata:/var/lib/postgresql/data
-    profiles: ["db"]
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DATABASE_USER:-postgres}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    networks:
+      - next-network
 
   redis:
-    image: redis:8
+    image: redis:8-alpine
+    container_name: next_redis
+    restart: unless-stopped
     ports:
       - "${REDIS_PORT:-6379}:6379"
-    profiles: ["redis"]
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 5s
+    networks:
+      - next-network
 
 volumes:
-  pgdata:
+  postgres_data:
+  redis_data:
+
+networks:
+  next-network:
+    driver: bridge
