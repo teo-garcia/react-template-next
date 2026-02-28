@@ -1,0 +1,71 @@
+name: Security Scan
+
+on:
+  schedule:
+    - cron: "0 9 1-7 * 1"
+  workflow_dispatch:
+
+jobs:
+  trivy-scan:
+    name: Trivy Vulnerability Scan
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      security-events: write
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Run Trivy vulnerability scanner in fs mode
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: "fs"
+          scan-ref: "."
+          format: "sarif"
+          output: "trivy-fs-results.sarif"
+          severity: "CRITICAL,HIGH"
+
+      - name: Upload Trivy results to GitHub Security
+        uses: github/codeql-action/upload-sarif@v4
+        if: always()
+        with:
+          sarif_file: "trivy-fs-results.sarif"
+          category: "trivy-fs"
+
+      - name: Run Trivy config scanner on Dockerfile
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: "config"
+          scan-ref: "./docker/Dockerfile"
+          format: "sarif"
+          output: "trivy-docker-results.sarif"
+          severity: "CRITICAL,HIGH"
+
+      - name: Upload Docker scan results
+        uses: github/codeql-action/upload-sarif@v4
+        if: always()
+        with:
+          sarif_file: "trivy-docker-results.sarif"
+          category: "trivy-docker"
+
+  npm-audit:
+    name: NPM Audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run npm audit
+        run: pnpm audit --audit-level=high
+        continue-on-error: true
