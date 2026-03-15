@@ -65,7 +65,7 @@ importers:
         version: 4.2.1
       '@teo-garcia/eslint-config-shared':
         specifier: ^0.3.8
-        version: 0.3.8(bf77393038084eb26ff0a22f5075f5e2)
+        version: 0.3.8(f9a6086e6dc7c28efedf735cfa09e2ca)
       '@teo-garcia/prettier-config-shared':
         specifier: ^0.2.8
         version: 0.2.8(prettier@3.8.1)
@@ -122,7 +122,7 @@ importers:
         version: 6.10.2(eslint@9.39.4(jiti@2.6.1))
       eslint-plugin-playwright:
         specifier: ^2.4.0
-        version: 2.9.0(eslint@9.39.4(jiti@2.6.1))
+        version: 2.10.0(eslint@9.39.4(jiti@2.6.1))
       eslint-plugin-react:
         specifier: ^7.37.5
         version: 7.37.5(eslint@9.39.4(jiti@2.6.1))
@@ -143,7 +143,7 @@ importers:
         version: 9.1.7
       lint-staged:
         specifier: ^16.2.3
-        version: 16.3.3
+        version: 16.4.0
       msw:
         specifier: ^2.11.4
         version: 2.12.10(@types/node@24.12.0)(typescript@5.9.3)
@@ -1983,8 +1983,8 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9
 
-  eslint-plugin-playwright@2.9.0:
-    resolution: {integrity: sha512-k3xrG6YzrallWNFMoGUjMNeu3SFFKXN79KJQBD2PkM4PasJegqV2Up+mPY5od2UmPKQGT+MeIhCmWH8r5eYuQQ==}
+  eslint-plugin-playwright@2.10.0:
+    resolution: {integrity: sha512-PByRBp5LhCUd3pd2dxQ7vq6p9iJRPCYgIDakYYkCAPJUPUuKA8/NxyFZVLf0FYYc7s4c+85BqLk+f8LeO0g6aw==}
     engines: {node: '>=16.9.0'}
     peerDependencies:
       eslint: '>=8.40.0'
@@ -2616,8 +2616,8 @@ packages:
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
-  lint-staged@16.3.3:
-    resolution: {integrity: sha512-RLq2koZ5fGWrx7tcqx2tSTMQj4lRkfNJaebO/li/uunhCJbtZqwTuwPHpgIimAHHi/2nZIiGrkCHDCOeR1onxA==}
+  lint-staged@16.4.0:
+    resolution: {integrity: sha512-lBWt8hujh/Cjysw5GYVmZpFHXDCgZzhrOm8vbcUdobADZNOK/bRshr2kM3DfgrrtR1DQhfupW9gnIXOfiFi+bw==}
     engines: {node: '>=20.17'}
     hasBin: true
 
@@ -3338,6 +3338,10 @@ packages:
 
   tinyexec@1.0.2:
     resolution: {integrity: sha512-W/KYk+NFhkmsYpuHq5JykngiOCnxeVL8v8dFnqxSD8qEEdRfXk1SDM6JzNqcERbcGYj9tMrDQBYV9cjgnunFIg==}
+    engines: {node: '>=18'}
+
+  tinyexec@1.0.4:
+    resolution: {integrity: sha512-u9r3uZC0bdpGOXtlxUIdwf9pkmvhqJdrVCH9fapQtgy/OeTTMZ1nqH7agtvEfmGui6e1XxjcdrlxvxJvc3sMqw==}
     engines: {node: '>=18'}
 
   tinyglobby@0.2.15:
@@ -4579,7 +4583,7 @@ snapshots:
       '@tanstack/query-core': 5.90.20
       react: 19.2.4
 
-  '@teo-garcia/eslint-config-shared@0.3.8(bf77393038084eb26ff0a22f5075f5e2)':
+  '@teo-garcia/eslint-config-shared@0.3.8(f9a6086e6dc7c28efedf735cfa09e2ca)':
     dependencies:
       '@eslint/compat': 2.0.3(eslint@9.39.4(jiti@2.6.1))
       '@eslint/eslintrc': 3.3.5
@@ -4595,7 +4599,7 @@ snapshots:
       globals: 17.4.0
     optionalDependencies:
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.39.4(jiti@2.6.1))
-      eslint-plugin-playwright: 2.9.0(eslint@9.39.4(jiti@2.6.1))
+      eslint-plugin-playwright: 2.10.0(eslint@9.39.4(jiti@2.6.1))
       eslint-plugin-react: 7.37.5(eslint@9.39.4(jiti@2.6.1))
       eslint-plugin-react-hooks: 7.0.1(eslint@9.39.4(jiti@2.6.1))
       eslint-plugin-react-refresh: 0.4.20(eslint@9.39.4(jiti@2.6.1))
@@ -5498,7 +5502,7 @@ snapshots:
       safe-regex-test: 1.1.0
       string.prototype.includes: 2.0.1
 
-  eslint-plugin-playwright@2.9.0(eslint@9.39.4(jiti@2.6.1)):
+  eslint-plugin-playwright@2.10.0(eslint@9.39.4(jiti@2.6.1)):
     dependencies:
       eslint: 9.39.4(jiti@2.6.1)
       globals: 17.4.0
@@ -6172,13 +6176,13 @@ snapshots:
 
   lines-and-columns@1.2.4: {}
 
-  lint-staged@16.3.3:
+  lint-staged@16.4.0:
     dependencies:
       commander: 14.0.3
       listr2: 9.0.5
-      micromatch: 4.0.8
+      picomatch: 4.0.3
       string-argv: 0.3.2
-      tinyexec: 1.0.2
+      tinyexec: 1.0.4
       yaml: 2.8.2
 
   listr2@9.0.5:
@@ -6927,6 +6931,8 @@ snapshots:
   tinybench@2.9.0: {}
 
   tinyexec@1.0.2: {}
+
+  tinyexec@1.0.4: {}
 
   tinyglobby@0.2.15:
     dependencies:
