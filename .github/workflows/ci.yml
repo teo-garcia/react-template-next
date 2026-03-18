@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [main]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 jobs:
   ci:
     runs-on: ubuntu-latest
@@ -22,10 +26,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Security audit
-        run: pnpm audit --audit-level=high
-        continue-on-error: true
-
       - name: Lint
         run: pnpm lint:es:check
 
@@ -35,11 +35,16 @@ jobs:
       - name: Format check
         run: pnpm format:check
 
-      - name: Install Playwright browsers
-        run: pnpm exec playwright install chromium
+      - name: Coverage
+        run: pnpm coverage
 
-      - name: Test
-        run: pnpm test -- --run
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: coverage-report
+          path: coverage/
+          retention-days: 7
 
       - name: Build
         run: pnpm build

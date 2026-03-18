@@ -7,6 +7,10 @@ on:
       - completed
     branches: [main]
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.workflow_run.head_branch }}
+  cancel-in-progress: true
+
 jobs:
   deploy:
     if: github.event.workflow_run.conclusion == 'success'

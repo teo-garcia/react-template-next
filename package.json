@@ -35,6 +35,7 @@
     "@typescript-eslint/parser": "^8.46.0",
     "@vitejs/plugin-react": "^5.0.4",
     "@vitest/browser-playwright": "^4.0.0",
+    "@vitest/coverage-v8": "^4.1.0",
     "concurrently": "^9.2.1",
     "eslint": "9.39.4",
     "eslint-config-prettier": "^10.1.8",
@@ -70,6 +71,7 @@
   "scripts": {
     "build": "pnpm build:web",
     "build:web": "next build",
+    "check": "pnpm lint:es:check && pnpm lint:ts && pnpm format:check && pnpm test -- --run",
     "commitlint": "commitlint --edit",
     "coverage": "vitest run --coverage",
     "dev": "pnpm dev:web",
