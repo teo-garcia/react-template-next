@@ -5,7 +5,7 @@
 **Production-ready Next.js starter with TypeScript, Tailwind CSS, and modern
 testing**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE.md)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Node](https://img.shields.io/badge/Node-22+-339933?logo=node.js&logoColor=white)](https://nodejs.org)
 [![pnpm](https://img.shields.io/badge/pnpm-9+-F69220?logo=pnpm&logoColor=white)](https://pnpm.io)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org)
@@ -44,11 +44,19 @@ cd my-app
 # Install dependencies
 pnpm install
 
+# Configure environment
+cp .env.example .env
+
 # Start development server
 pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to see your app.
+
+## Environment Setup
+
+The template ships with a root `.env.example`. Copy it to `.env` before local
+development and adjust values as needed for your environment.
 
 ## Project Structure
 
@@ -72,6 +80,8 @@ app/
 | `pnpm start`         | Run production server                   |
 | `pnpm test`          | Run unit tests                          |
 | `pnpm test:browser`  | Run browser tests                       |
+| `pnpm coverage`      | Run tests with coverage output          |
+| `pnpm check`         | Run lint, typecheck, format, and tests  |
 | `pnpm lint:es`       | Lint and fix with ESLint                |
 | `pnpm lint:es:check` | Check ESLint without fixing             |
 | `pnpm lint:ts`       | TypeScript type checking                |
