@@ -1,22 +1,20 @@
-# Ticket: #000
+## Summary
 
-## Description:
+<!-- Describe the change and its intent -->
 
-<!--- Describe your changes in detail -->
+## Testing
 
-## Type of change:
+<!-- List the checks you ran locally -->
 
-- [ ] Client 💅
-- [ ] Server ⚡️
-- [ ] Unit Testing 🧪
-- [ ] E2E Testing 🤖
-- [ ] Tooling 🛠
-- [ ] Config 📚
+- [ ] Relevant checks pass locally
+- [ ] Docs/config updated if needed
 
-## How to test it (If required):
+## Checklist
 
-<!--- Explain how to test this feature -->
+- [ ] Scope is focused and intentional
+- [ ] Breaking changes are documented
+- [ ] Screenshots or logs attached when useful
 
-## Images (If required):
+## Related Issues
 
-<!--- Attach images of this feature -->
+Closes #
