@@ -10,9 +10,16 @@
       "matchPackageNames": ["/^@teo-garcia//"]
     },
     {
+      "groupName": "expo and react-native",
+      "schedule": ["every weekend"],
+      "automerge": false,
+      "matchPackagePatterns": ["expo", "expo-*", "react-native"]
+    },
+    {
       "groupName": "all dependencies",
       "schedule": ["every 2 months"],
-      "automerge": false,
+      "automerge": true,
+      "matchUpdateTypes": ["minor", "patch"],
       "matchPackageNames": ["/.*/", "!/^@teo-garcia//"]
     }
   ],
