@@ -15,8 +15,8 @@ importers:
         specifier: ^5.90.2
         version: 5.95.0(@tanstack/react-query@5.95.0(react@19.2.4))(react@19.2.4)
       '@teo-garcia/react-shared':
-        specifier: ^1.2.0
-        version: 1.2.0(@tanstack/react-query@5.95.0(react@19.2.4))(@testing-library/react@16.3.2(@testing-library/dom@10.4.0)(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: ^1.2.1
+        version: 1.2.1(@tanstack/react-query@5.95.0(react@19.2.4))(@testing-library/react@16.3.2(@testing-library/dom@10.4.0)(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       client-only:
         specifier: ^0.0.1
         version: 0.0.1
@@ -1290,8 +1290,8 @@ packages:
     peerDependencies:
       prettier: ^3.0.0
 
-  '@teo-garcia/react-shared@1.2.0':
-    resolution: {integrity: sha512-XtZOqx08V2Za0wYFhCMtzSlq4hdKoS0s35dC+Vifel0oKI3lgKHsqAgy2lKI3w77N48KpB/1tAWX3QQnl98cDQ==}
+  '@teo-garcia/react-shared@1.2.1':
+    resolution: {integrity: sha512-GFNcFy5lQ+AqyP9BLkvyRXmw4fdAjtXHvqtIvjv1IGCo+NW5WUnXBnDsnV066saGgjrYrf2/7jso7qM8F40J6g==}
     engines: {node: '>=24'}
     peerDependencies:
       '@tanstack/react-query': ^5.0.0
@@ -4691,7 +4691,7 @@ snapshots:
     dependencies:
       prettier: 3.8.1
 
-  '@teo-garcia/react-shared@1.2.0(@tanstack/react-query@5.95.0(react@19.2.4))(@testing-library/react@16.3.2(@testing-library/dom@10.4.0)(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@teo-garcia/react-shared@1.2.1(@tanstack/react-query@5.95.0(react@19.2.4))(@testing-library/react@16.3.2(@testing-library/dom@10.4.0)(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       clsx: 2.1.1
       react: 19.2.4
