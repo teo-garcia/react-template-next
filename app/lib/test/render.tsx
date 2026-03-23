@@ -1,22 +1,18 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { createWrapper } from '@teo-garcia/react-shared/test-utils'
 import { render as tlRender, type RenderOptions } from '@testing-library/react'
 import { ThemeProvider } from 'next-themes'
 
-import { ThemeSwitch } from '@/components/theme-switch/theme-switch'
-import { ViewportInfo } from '@/components/viewport-info/viewport-info'
-
-const createTestQueryClient = () =>
-  new QueryClient({ defaultOptions: { queries: { retry: false } } })
+// QueryClient + provider is handled by createWrapper from react-shared.
+// AllProviders composes it with the Next.js-specific ThemeProvider.
+const QueryWrapper = createWrapper()
 
 const AllProviders = ({ children }: React.PropsWithChildren) => (
   <ThemeProvider attribute='class' defaultTheme='light'>
-    <QueryClientProvider client={createTestQueryClient()}>
+    <QueryWrapper>
       <div className='min-h-screen'>
         <main>{children}</main>
       </div>
-      <ThemeSwitch />
-      <ViewportInfo />
-    </QueryClientProvider>
+    </QueryWrapper>
   </ThemeProvider>
 )
 

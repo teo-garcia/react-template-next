@@ -14,12 +14,12 @@ importers:
       '@tanstack/react-query-devtools':
         specifier: ^5.90.2
         version: 5.91.3(@tanstack/react-query@5.90.21(react@19.2.4))(react@19.2.4)
+      '@teo-garcia/react-shared':
+        specifier: ^1.2.0
+        version: 1.2.0(@tanstack/react-query@5.90.21(react@19.2.4))(@testing-library/react@16.3.2(@testing-library/dom@10.4.0)(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       client-only:
         specifier: ^0.0.1
         version: 0.0.1
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
       lucide-react:
         specifier: ^0.577.0
         version: 0.577.0(react@19.2.4)
@@ -1285,6 +1285,20 @@ packages:
     engines: {node: '>=20.11'}
     peerDependencies:
       prettier: ^3.0.0
+
+  '@teo-garcia/react-shared@1.2.0':
+    resolution: {integrity: sha512-XtZOqx08V2Za0wYFhCMtzSlq4hdKoS0s35dC+Vifel0oKI3lgKHsqAgy2lKI3w77N48KpB/1tAWX3QQnl98cDQ==}
+    engines: {node: '>=24'}
+    peerDependencies:
+      '@tanstack/react-query': ^5.0.0
+      '@testing-library/react': ^16.0.0
+      react: ^19.0.0
+      react-dom: ^19.0.0
+    peerDependenciesMeta:
+      '@tanstack/react-query':
+        optional: true
+      '@testing-library/react':
+        optional: true
 
   '@teo-garcia/tsconfig-shared@0.1.9':
     resolution: {integrity: sha512-PPCJ5VGZRh/QyPffvhgovnItMm9QDLJHSx4KOkgdxA7zwJx4++kWwHyjvMkrAfyokoixNg2SI+090/QgZZ7V1w==}
@@ -3370,6 +3384,9 @@ packages:
     resolution: {integrity: sha512-yEFYrVhod+hdNyx7g5Bnkkb0G6si8HJurOoOEgC8B/O0uXLHlaey/65KRv6cuWBNhBgHKAROVpc7QyYqE5gFng==}
     engines: {node: '>=20'}
 
+  tailwind-merge@3.5.0:
+    resolution: {integrity: sha512-I8K9wewnVDkL1NTGoqWmVEIlUcB9gFriAEkXkfCjX5ib8ezGxtR3xD7iZIxrfArjEsH7F1CHD4RFUtxefdqV/A==}
+
   tailwindcss@4.2.1:
     resolution: {integrity: sha512-/tBrSQ36vCleJkAOsy9kbNTgaxvGbyOamC30PRePTQe/o1MFwEKHQk4Cn7BNGaPtjp+PuUrByJehM1hgxfq4sw==}
 
@@ -4650,6 +4667,16 @@ snapshots:
   '@teo-garcia/prettier-config-shared@0.2.8(prettier@3.8.1)':
     dependencies:
       prettier: 3.8.1
+
+  '@teo-garcia/react-shared@1.2.0(@tanstack/react-query@5.90.21(react@19.2.4))(@testing-library/react@16.3.2(@testing-library/dom@10.4.0)(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+    dependencies:
+      clsx: 2.1.1
+      react: 19.2.4
+      react-dom: 19.2.4(react@19.2.4)
+      tailwind-merge: 3.5.0
+    optionalDependencies:
+      '@tanstack/react-query': 5.90.21(react@19.2.4)
+      '@testing-library/react': 16.3.2(@testing-library/dom@10.4.0)(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
 
   '@teo-garcia/tsconfig-shared@0.1.9': {}
 
@@ -7014,6 +7041,8 @@ snapshots:
     optional: true
 
   tagged-tag@1.0.0: {}
+
+  tailwind-merge@3.5.0: {}
 
   tailwindcss@4.2.1: {}
 

@@ -1,5 +1,6 @@
 import '@/lib/styles/globals.css'
 
+import { SkipLink } from '@teo-garcia/react-shared/components/skip-link'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
@@ -23,9 +24,10 @@ const RootLayout = async (properties: React.PropsWithChildren) => {
     <html lang='en' suppressHydrationWarning>
       <head />
       <body className={inter.className}>
+        <SkipLink href='#main-content' />
         <GlobalProviders>
           <div className='min-h-screen'>
-            <main>{children}</main>
+            <main id='main-content'>{children}</main>
           </div>
         </GlobalProviders>
       </body>

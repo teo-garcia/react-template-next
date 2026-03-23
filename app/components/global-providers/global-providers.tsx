@@ -2,11 +2,11 @@
 
 import { QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { DevPanel } from '@teo-garcia/react-shared/components/dev-panel'
 import { ThemeProvider } from 'next-themes'
 import { useEffect } from 'react'
 
 import { ThemeSwitch } from '@/components/theme-switch/theme-switch'
-import { ViewportInfo } from '@/components/viewport-info/viewport-info'
 import { createNewQueryClient } from '@/lib/misc/react-query'
 
 export const GlobalProviders = (properties: React.PropsWithChildren) => {
@@ -32,6 +32,6 @@ const ThemeProviderContent = ({ children }: React.PropsWithChildren) => (
   <>
     {children}
     <ThemeSwitch />
-    <ViewportInfo />
+    <DevPanel />
   </>
 )
