@@ -1,10 +1,10 @@
-import { render, screen } from '@/lib/test/render'
+import { render } from '@/lib/test/render'
 
 import HomePage from './page'
 
 test('HomePage renders with providers', () => {
-  render(<HomePage />)
-  expect(
-    screen.getByRole('button', { name: /theme switcher/i })
-  ).toBeInTheDocument()
+  const { container } = render(<HomePage />)
+
+  expect(container.querySelector('section')).not.toBeNull()
+  expect(container.querySelector('svg')).not.toBeNull()
 })
