@@ -36,6 +36,7 @@
     "@vitejs/plugin-react": "^5.0.4",
     "@vitest/browser-playwright": "^4.0.0",
     "@vitest/coverage-v8": "^4.1.0",
+    "axe-core": "^4.11.1",
     "concurrently": "^9.2.1",
     "eslint": "9.39.4",
     "eslint-config-prettier": "^10.1.8",
