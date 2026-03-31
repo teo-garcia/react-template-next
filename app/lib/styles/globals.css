@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@source "../../../../node_modules/@teo-garcia/react-shared/dist";
 
 /* ------------------------------------------------------------------
    Custom variants
