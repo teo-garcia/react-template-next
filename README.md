@@ -83,13 +83,13 @@ The app starts on `http://localhost:3000`.
 
 ## Shared Governance
 
-| Area               | Tooling                                              |
-| ------------------ | ---------------------------------------------------- |
-| Dependency updates | Renovate                                             |
-| Issue intake       | GitHub issue templates                               |
-| Change review      | Pull request template                                |
-| CI                 | GitHub Actions for lint, typecheck, test, and build  |
-| Delivery           | Vercel deployment workflow                           |
+| Area               | Tooling                                             |
+| ------------------ | --------------------------------------------------- |
+| Dependency updates | Renovate                                            |
+| Issue intake       | GitHub issue templates                              |
+| Change review      | Pull request template                               |
+| CI                 | GitHub Actions for lint, typecheck, test, and build |
+| Delivery           | Vercel deployment workflow                          |
 
 ---
 
