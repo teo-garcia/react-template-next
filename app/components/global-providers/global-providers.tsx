@@ -4,23 +4,27 @@ import { QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { DevPanel } from '@teo-garcia/react-shared/components/dev-panel'
 import { ThemeProvider } from 'next-themes'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 import { ThemeSwitch } from '@/components/theme-switch/theme-switch'
-import { createNewQueryClient } from '@/lib/misc/react-query'
+import { env } from '@/lib/env'
+import { createQueryClient } from '@/lib/query-client'
 
 export const GlobalProviders = (properties: React.PropsWithChildren) => {
   const { children } = properties
+  const [queryClient] = useState(createQueryClient)
 
   useEffect(() => {
-    if (globalThis.window != undefined) {
-      import('../../lib/mocks').then(({ setupMSWBrowser }) => setupMSWBrowser())
+    if (!env.isDevelopment || globalThis.window == undefined) {
+      return
     }
+
+    import('../../lib/mocks').then(({ setupMSWBrowser }) => setupMSWBrowser())
   }, [])
 
   return (
     <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
-      <QueryClientProvider client={createNewQueryClient()}>
+      <QueryClientProvider client={queryClient}>
         <ThemeProviderContent>{children}</ThemeProviderContent>
         <ReactQueryDevtools buttonPosition='bottom-left' />
       </QueryClientProvider>
