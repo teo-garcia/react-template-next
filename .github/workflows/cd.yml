@@ -33,7 +33,7 @@ jobs:
           fi
 
       - if: steps.vercel-token.outputs.present == 'true'
-        uses: pnpm/action-setup@v4
+        uses: pnpm/action-setup@v5
 
       - if: steps.vercel-token.outputs.present == 'true'
         uses: actions/setup-node@v6
