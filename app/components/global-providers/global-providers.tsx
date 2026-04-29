@@ -2,7 +2,6 @@
 
 import { QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-import { DevPanel } from '@teo-garcia/react-shared/components/dev-panel'
 import { ThemeProvider } from 'next-themes'
 import { useEffect, useState } from 'react'
 
@@ -36,6 +35,5 @@ const ThemeProviderContent = ({ children }: React.PropsWithChildren) => (
   <>
     {children}
     <ThemeSwitch />
-    <DevPanel />
   </>
 )

@@ -1,9 +1,21 @@
-import { createWrapper } from '@teo-garcia/react-shared/test-utils'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { render as tlRender, type RenderOptions } from '@testing-library/react'
 import { ThemeProvider } from 'next-themes'
+import { createElement, type ReactNode } from 'react'
 
-// QueryClient + provider is handled by createWrapper from react-shared.
-// AllProviders composes it with the Next.js-specific ThemeProvider.
+const createWrapper = (
+  queryClient = new QueryClient({
+    defaultOptions: {
+      mutations: { retry: false },
+      queries: { gcTime: 0, retry: false },
+    },
+  })
+) => {
+  return function Wrapper({ children }: { children: ReactNode }) {
+    return createElement(QueryClientProvider, { client: queryClient }, children)
+  }
+}
+
 const QueryWrapper = createWrapper()
 
 const AllProviders = ({ children }: React.PropsWithChildren) => (
