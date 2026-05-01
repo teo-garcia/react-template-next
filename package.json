@@ -17,6 +17,7 @@
     "@eslint/compat": "^2.0.0",
     "@eslint/eslintrc": "^3.3.1",
     "@eslint/js": "^10.0.0",
+    "@next/bundle-analyzer": "^16.2.4",
     "@next/eslint-plugin-next": "16.2.4",
     "@playwright/test": "^1.50.0",
     "@tailwindcss/postcss": "^4.1.14",
@@ -69,6 +70,7 @@
   "name": "react-template-next",
   "private": true,
   "scripts": {
+    "analyze": "ANALYZE=true next build --webpack",
     "build": "next build",
     "check": "pnpm lint:es:check && pnpm lint:ts && pnpm format:check && pnpm test -- --run",
     "commitlint": "commitlint --edit",
