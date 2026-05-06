@@ -64,17 +64,17 @@ importers:
         specifier: ^4.1.14
         version: 4.2.4
       '@teo-garcia/eslint-config-shared':
-        specifier: ^0.4.0
-        version: 0.4.0(7b58802724ca535bee5de949f06c35e5)
+        specifier: ^0.4.1
+        version: 0.4.1(ad6f1dcb15f544dac7951b67224dab01)
       '@teo-garcia/prettier-config-shared':
-        specifier: ^0.2.9
-        version: 0.2.9(prettier@3.8.3)
+        specifier: ^0.2.10
+        version: 0.2.10(prettier@3.8.3)
       '@teo-garcia/tsconfig-shared':
-        specifier: ^0.2.0
-        version: 0.2.0
+        specifier: ^0.2.1
+        version: 0.2.1
       '@teo-garcia/vitest-config-shared':
-        specifier: ^0.3.7
-        version: 0.3.7(@vitejs/plugin-react@5.2.0(vite@7.3.1(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3)))(@vitest/browser-playwright@4.1.5)(vite-tsconfig-paths@6.1.1(typescript@6.0.3)(vite@7.3.1(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3)))(vitest@4.1.5)
+        specifier: ^0.3.9
+        version: 0.3.9(@vitejs/plugin-react@5.2.0(vite@7.3.1(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3)))(@vitest/browser-playwright@4.1.5)(vite-tsconfig-paths@6.1.1(typescript@6.0.3)(vite@7.3.1(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3)))(vitest@4.1.5)
       '@testing-library/jest-dom':
         specifier: ^6.9.1
         version: 6.9.1
@@ -135,6 +135,9 @@ importers:
       eslint-plugin-react-hooks:
         specifier: ^7.0.0
         version: 7.1.1(eslint@10.2.1(jiti@2.6.1))
+      eslint-plugin-react-refresh:
+        specifier: ^0.5.2
+        version: 0.5.2(eslint@10.2.1(jiti@2.6.1))
       eslint-plugin-sonarjs:
         specifier: ^4.0.0
         version: 4.0.3(eslint@10.2.1(jiti@2.6.1))
@@ -1193,29 +1196,29 @@ packages:
     peerDependencies:
       react: ^18 || ^19
 
-  '@teo-garcia/eslint-config-shared@0.4.0':
-    resolution: {integrity: sha512-KEMwKXUWV6Y5b4nDXJ4OqH5+KScjKsEzVrETLtaW2onlaLBLl2MSPyFp3OVn6tk/lBPADPVMx4ZJG5sJ69ccQA==}
+  '@teo-garcia/eslint-config-shared@0.4.1':
+    resolution: {integrity: sha512-D110dXzV4okdlXZ995t0midTUWMVp44l2yC2qab31Uu0crdyZM3pseTH/0LBGneNn5o6u4bmszfbzDoNO0zX5A==}
     engines: {node: '>=24'}
     peerDependencies:
-      '@eslint/compat': ^1.3.1
+      '@eslint/compat': ^2.0.3
       '@eslint/eslintrc': ^3.3.1
-      '@eslint/js': ^9.0.0
-      '@typescript-eslint/eslint-plugin': ^8.0.0
-      '@typescript-eslint/parser': ^8.0.0
-      eslint: ^9.0.0
+      '@eslint/js': ^10.0.0
+      '@typescript-eslint/eslint-plugin': ^8.58.0
+      '@typescript-eslint/parser': ^8.58.0
+      eslint: ^10.0.0
       eslint-config-prettier: ^10.1.5
       eslint-plugin-import: ^2.32.0
       eslint-plugin-jsx-a11y: ^6.10.2
-      eslint-plugin-playwright: ^2.2.0
+      eslint-plugin-playwright: ^2.10.1
       eslint-plugin-react: ^7.37.5
       eslint-plugin-react-hooks: ^7.0.0
-      eslint-plugin-react-native: ^4.1.0
-      eslint-plugin-react-refresh: ^0.4.9
-      eslint-plugin-simple-import-sort: ^12.1.1
-      eslint-plugin-sonarjs: ^3.0.4
-      eslint-plugin-testing-library: ^7.0.0
-      eslint-plugin-unicorn: ^61.0.0
-      globals: ^16.0.0
+      eslint-plugin-react-native: ^4.1.0 || ^5.0.0
+      eslint-plugin-react-refresh: ^0.5.2
+      eslint-plugin-simple-import-sort: ^12.1.1 || ^13.0.0
+      eslint-plugin-sonarjs: ^4.0.2
+      eslint-plugin-testing-library: ^7.16.2
+      eslint-plugin-unicorn: ^64.0.0
+      globals: ^17.4.0
     peerDependenciesMeta:
       eslint-plugin-jsx-a11y:
         optional: true
@@ -1232,19 +1235,21 @@ packages:
       eslint-plugin-testing-library:
         optional: true
 
-  '@teo-garcia/prettier-config-shared@0.2.9':
-    resolution: {integrity: sha512-G1X4yBPxe+Fn1XBB9N+6DPZM+0+n+Ec1ofoXcAbqfzOPaDdJKo7LAzhf87HiWyfSbMzgclJDyvAhO4fWQ2LPrQ==}
+  '@teo-garcia/prettier-config-shared@0.2.10':
+    resolution: {integrity: sha512-obCS5hxBBtQ/we0Czk9iiStU6ddtJLWTthDrwcTIRNFCSECLbvqrjabviaW+l7uVp972x3JQUyZAOopaapV2Lg==}
     engines: {node: '>=24'}
     peerDependencies:
       prettier: ^3.0.0
 
-  '@teo-garcia/tsconfig-shared@0.2.0':
-    resolution: {integrity: sha512-HIhMuGDzoqd2JNXfmzG4HQZWpPOs7kFsxo2XwIOUZg0uN8/iGEopTMDcX0fHjivgH1WJqHp1j+hh17hNa/Dwqw==}
+  '@teo-garcia/tsconfig-shared@0.2.1':
+    resolution: {integrity: sha512-ypVxJWCc45BLvvXKjGpqHG2qw9qyGqPt42iQLFDA+hehJGE1dnnLIOKsyKX4v15n4FJ4THMiUFaHBKF1z+mNdw==}
+    engines: {node: '>=24'}
 
-  '@teo-garcia/vitest-config-shared@0.3.7':
-    resolution: {integrity: sha512-wgSEDujy2gwqcpjGa/6I3tVqUAckj1WarU7xmI3/c/ZumrY8/LqkTv4w/LJZhW9MHp1GPeuAB7rGJzCyVnyR3w==}
+  '@teo-garcia/vitest-config-shared@0.3.9':
+    resolution: {integrity: sha512-u08FKb5rq/9vFPc/nmZzb2elgYI/GJwq/CBxtsTG2gcn0ZD3xvkJxrW2mLmiDXpnuzYXR0ci3Ia1A0QUHjbPvA==}
+    engines: {node: '>=24'}
     peerDependencies:
-      '@vitejs/plugin-react': ^5.0.4
+      '@vitejs/plugin-react': ^5.0.4 || ^6.0.0
       '@vitest/browser-playwright': ^4.0.0
       vite-tsconfig-paths: ^6.0.0
       vitest: ^4.0.0
@@ -1981,10 +1986,10 @@ packages:
     peerDependencies:
       eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0 || ^10.0.0
 
-  eslint-plugin-react-refresh@0.4.20:
-    resolution: {integrity: sha512-XpbHQ2q5gUF8BGOX4dHe+71qoirYMhApEPZ7sfhF/dNnOF1UXnCMGZf79SFTBO7Bz5YEIT4TMieSlJBWhP9WBA==}
+  eslint-plugin-react-refresh@0.5.2:
+    resolution: {integrity: sha512-hmgTH57GfzoTFjVN0yBwTggnsVUF2tcqi7RJZHqi9lIezSs4eFyAMktA68YD4r5kNw1mxyY4dmkyoFDb3FIqrA==}
     peerDependencies:
-      eslint: '>=8.40'
+      eslint: ^9 || ^10
 
   eslint-plugin-react@7.37.5:
     resolution: {integrity: sha512-Qteup0SqU15kdocexFNAJMvCJEfa2xUKNV4CC1xsVMrIIqEy3SQ/rqyxCWNzfrd3/ldy6HMlD2e0JDVpDg2qIA==}
@@ -2001,12 +2006,6 @@ packages:
     resolution: {integrity: sha512-5drkJKLC9qQddIiaATV0e8+ygbUc7b0Ti6VB7M2d3jmKNh3X0RaiIJYTs3dr9xnlhlrxo+/s1FoO3Jgv6O/c7g==}
     peerDependencies:
       eslint: ^8.0.0 || ^9.0.0 || ^10.0.0
-
-  eslint-plugin-testing-library@7.5.3:
-    resolution: {integrity: sha512-sZk5hIrx0p1ehvdS2qHefKwXHiEysiQN+FMGCzES6xRNUgwI3q4KdWMeAwpPDP9u0RDkNzJpebRUnNch1sJh+A==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0, pnpm: ^9.14.0}
-    peerDependencies:
-      eslint: ^8.57.0 || ^9.0.0
 
   eslint-plugin-unicorn@64.0.0:
     resolution: {integrity: sha512-rNZwalHh8i0UfPlhNwg5BTUO1CMdKNmjqe+TgzOTZnpKoi8VBgsW7u9qCHIdpxEzZ1uwrJrPF0uRb7l//K38gA==}
@@ -4524,7 +4523,7 @@ snapshots:
       '@tanstack/query-core': 5.100.6
       react: 19.2.5
 
-  '@teo-garcia/eslint-config-shared@0.4.0(7b58802724ca535bee5de949f06c35e5)':
+  '@teo-garcia/eslint-config-shared@0.4.1(ad6f1dcb15f544dac7951b67224dab01)':
     dependencies:
       '@eslint/compat': 2.0.5(eslint@10.2.1(jiti@2.6.1))
       '@eslint/eslintrc': 3.3.5
@@ -4543,16 +4542,15 @@ snapshots:
       eslint-plugin-playwright: 2.10.2(eslint@10.2.1(jiti@2.6.1))
       eslint-plugin-react: 7.37.5(eslint@10.2.1(jiti@2.6.1))
       eslint-plugin-react-hooks: 7.1.1(eslint@10.2.1(jiti@2.6.1))
-      eslint-plugin-react-refresh: 0.4.20(eslint@10.2.1(jiti@2.6.1))
-      eslint-plugin-testing-library: 7.5.3(eslint@10.2.1(jiti@2.6.1))(typescript@6.0.3)
+      eslint-plugin-react-refresh: 0.5.2(eslint@10.2.1(jiti@2.6.1))
 
-  '@teo-garcia/prettier-config-shared@0.2.9(prettier@3.8.3)':
+  '@teo-garcia/prettier-config-shared@0.2.10(prettier@3.8.3)':
     dependencies:
       prettier: 3.8.3
 
-  '@teo-garcia/tsconfig-shared@0.2.0': {}
+  '@teo-garcia/tsconfig-shared@0.2.1': {}
 
-  '@teo-garcia/vitest-config-shared@0.3.7(@vitejs/plugin-react@5.2.0(vite@7.3.1(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3)))(@vitest/browser-playwright@4.1.5)(vite-tsconfig-paths@6.1.1(typescript@6.0.3)(vite@7.3.1(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3)))(vitest@4.1.5)':
+  '@teo-garcia/vitest-config-shared@0.3.9(@vitejs/plugin-react@5.2.0(vite@7.3.1(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3)))(@vitest/browser-playwright@4.1.5)(vite-tsconfig-paths@6.1.1(typescript@6.0.3)(vite@7.3.1(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3)))(vitest@4.1.5)':
     dependencies:
       '@vitejs/plugin-react': 5.2.0(vite@7.3.1(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3))
       '@vitest/browser-playwright': 4.1.5(msw@2.13.6(@types/node@24.12.2)(typescript@6.0.3))(playwright@1.59.1)(vite@7.3.1(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(yaml@2.8.3))(vitest@4.1.5)
@@ -5495,10 +5493,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-react-refresh@0.4.20(eslint@10.2.1(jiti@2.6.1)):
+  eslint-plugin-react-refresh@0.5.2(eslint@10.2.1(jiti@2.6.1)):
     dependencies:
       eslint: 10.2.1(jiti@2.6.1)
-    optional: true
 
   eslint-plugin-react@7.37.5(eslint@10.2.1(jiti@2.6.1)):
     dependencies:
@@ -5541,16 +5538,6 @@ snapshots:
       semver: 7.7.4
       ts-api-utils: 2.5.0(typescript@6.0.3)
       typescript: 6.0.3
-
-  eslint-plugin-testing-library@7.5.3(eslint@10.2.1(jiti@2.6.1))(typescript@6.0.3):
-    dependencies:
-      '@typescript-eslint/scope-manager': 8.59.1
-      '@typescript-eslint/utils': 8.59.1(eslint@10.2.1(jiti@2.6.1))(typescript@6.0.3)
-      eslint: 10.2.1(jiti@2.6.1)
-    transitivePeerDependencies:
-      - supports-color
-      - typescript
-    optional: true
 
   eslint-plugin-unicorn@64.0.0(eslint@10.2.1(jiti@2.6.1)):
     dependencies:
