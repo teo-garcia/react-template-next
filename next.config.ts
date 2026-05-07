@@ -8,9 +8,6 @@ const withBundleAnalyzer = bundleAnalyzer({
 const nextConfig: NextConfig = {
   output: 'standalone',
   reactStrictMode: true,
-  images: {
-    domains: [],
-  },
 }
 
 export default withBundleAnalyzer(nextConfig)
