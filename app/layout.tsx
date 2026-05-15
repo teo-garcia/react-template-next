@@ -1,7 +1,7 @@
 import '@/lib/styles/globals.css'
 
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Geist } from 'next/font/google'
 
 import { GlobalProviders } from './components/global-providers/global-providers'
 
@@ -12,9 +12,8 @@ export const metadata: Metadata = {
   },
 }
 
-const inter = Inter({
+const geist = Geist({
   subsets: ['latin'],
-  weight: ['400', '600', '700'],
 })
 
 const RootLayout = async (properties: React.PropsWithChildren) => {
@@ -22,7 +21,7 @@ const RootLayout = async (properties: React.PropsWithChildren) => {
   return (
     <html lang='en' suppressHydrationWarning>
       <head />
-      <body className={inter.className} suppressHydrationWarning>
+      <body className={geist.className} suppressHydrationWarning>
         <GlobalProviders>
           <div className='min-h-screen'>
             <main id='main-content'>{children}</main>

@@ -158,6 +158,7 @@
   /* Global colours & transitions ---------------------------------- */
   html,
   body {
+    font-family: 'Geist', sans-serif;
     @apply bg-background text-foreground;
     @apply transition-colors duration-100;
 
