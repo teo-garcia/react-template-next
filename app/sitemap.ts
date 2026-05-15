@@ -1,10 +1,10 @@
 import type { MetadataRoute } from 'next'
 
-import { env } from './lib/env'
+import { getCanonicalUrl } from './lib/seo'
 
 const getSitemap = (): MetadataRoute.Sitemap => {
   const routes = ['/'].map((route) => ({
-    url: `${env.publicUrl}${route}`,
+    url: getCanonicalUrl(route),
     lastModified: new Date().toISOString(),
   }))
 

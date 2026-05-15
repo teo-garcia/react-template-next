@@ -1,8 +1,24 @@
 import { Zap } from 'lucide-react'
 import type { Metadata } from 'next'
 
+import { getCanonicalUrl, siteMetadata } from './lib/seo'
+
 export const metadata: Metadata = {
-  title: 'Home | RTN',
+  alternates: {
+    canonical: '/',
+  },
+  description: siteMetadata.description,
+  openGraph: {
+    description: siteMetadata.description,
+    title: siteMetadata.name,
+    url: getCanonicalUrl(),
+  },
+  title: 'Home',
+  twitter: {
+    card: 'summary',
+    description: siteMetadata.description,
+    title: siteMetadata.name,
+  },
 }
 
 const HomePage = () => {

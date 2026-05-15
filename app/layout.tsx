@@ -4,11 +4,30 @@ import type { Metadata } from 'next'
 import { Geist } from 'next/font/google'
 
 import { GlobalProviders } from './components/global-providers/global-providers'
+import { getCanonicalUrl, siteMetadata } from './lib/seo'
 
 export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+  description: siteMetadata.description,
+  metadataBase: new URL(siteMetadata.url),
+  openGraph: {
+    description: siteMetadata.description,
+    locale: 'en_US',
+    siteName: siteMetadata.name,
+    title: siteMetadata.name,
+    type: 'website',
+    url: getCanonicalUrl(),
+  },
   title: {
-    default: 'Home',
-    template: '%s | RTN',
+    default: siteMetadata.name,
+    template: `%s | ${siteMetadata.shortName}`,
+  },
+  twitter: {
+    card: 'summary',
+    description: siteMetadata.description,
+    title: siteMetadata.name,
   },
 }
 

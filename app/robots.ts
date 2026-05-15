@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 
-import { env } from './lib/env'
+import { getCanonicalUrl } from './lib/seo'
 
 const getRobots = (): MetadataRoute.Robots => {
   return {
@@ -9,7 +9,7 @@ const getRobots = (): MetadataRoute.Robots => {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: `${env.publicUrl}/sitemap.xml`,
+    sitemap: getCanonicalUrl('/sitemap.xml'),
   }
 }
 

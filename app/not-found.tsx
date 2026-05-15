@@ -1,8 +1,15 @@
 import { Info } from 'lucide-react'
 import type { Metadata } from 'next'
 
+import { siteMetadata } from './lib/seo'
+
 export const metadata: Metadata = {
-  title: 'Not Found - RTN',
+  description: `The requested page could not be found in ${siteMetadata.name}.`,
+  robots: {
+    follow: false,
+    index: false,
+  },
+  title: 'Not Found',
 }
 
 const NotFoundPage = () => {
