@@ -22,7 +22,7 @@ const RootLayout = async (properties: React.PropsWithChildren) => {
   return (
     <html lang='en' suppressHydrationWarning>
       <head />
-      <body className={inter.className}>
+      <body className={inter.className} suppressHydrationWarning>
         <GlobalProviders>
           <div className='min-h-screen'>
             <main id='main-content'>{children}</main>

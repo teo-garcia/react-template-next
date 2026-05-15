@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { render as tlRender, type RenderOptions } from '@testing-library/react'
-import { ThemeProvider } from 'next-themes'
+import { ThemeProvider } from 'better-themes/rsc'
 import { createElement, type ReactNode } from 'react'
 
 const createWrapper = (

@@ -2,7 +2,7 @@
 
 import { QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
-import { ThemeProvider } from 'next-themes'
+import { ThemeProvider } from 'better-themes/rsc'
 import { useEffect, useState } from 'react'
 
 import { ThemeSwitch } from '@/components/theme-switch/theme-switch'
