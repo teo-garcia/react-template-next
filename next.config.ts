@@ -17,6 +17,7 @@ const nextConfig: NextConfig = {
     ]
   },
   output: 'standalone',
+  reactCompiler: true,
   reactStrictMode: true,
 }
 
