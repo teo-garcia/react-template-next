@@ -20,18 +20,17 @@ const ErrorPage = (properties: ErrorProps) => {
     console.error(error)
   }, [error])
 
-  useEffect(() => {
-    document.title = `Something went wrong | ${siteMetadata.shortName}`
-  }, [])
-
   return (
-    <RouteState
-      actions={<RouteStateButton onClick={reset}>Try again</RouteStateButton>}
-      description='The current route failed to render. You can retry without leaving the page.'
-      details={error.digest ? `Digest: ${error.digest}` : undefined}
-      title='Something went wrong'
-      variant='error'
-    />
+    <>
+      <title>{`Something went wrong | ${siteMetadata.shortName}`}</title>
+      <RouteState
+        actions={<RouteStateButton onClick={reset}>Try again</RouteStateButton>}
+        description='The current route failed to render. You can retry without leaving the page.'
+        details={error.digest ? `Digest: ${error.digest}` : undefined}
+        title='Something went wrong'
+        variant='error'
+      />
+    </>
   )
 }
 

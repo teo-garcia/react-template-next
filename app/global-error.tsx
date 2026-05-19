@@ -20,12 +20,11 @@ const GlobalErrorBoundary = (properties: GlobalErrorProperties) => {
     console.error(error)
   }, [error])
 
-  useEffect(() => {
-    document.title = `Application error | ${siteMetadata.shortName}`
-  }, [])
-
   return (
     <html lang='en'>
+      <head>
+        <title>{`Application error | ${siteMetadata.shortName}`}</title>
+      </head>
       <body>
         <RouteState
           actions={
