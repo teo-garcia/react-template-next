@@ -155,15 +155,13 @@
    Base layer – emitted first so nothing can override it by accident
 ------------------------------------------------------------------ */
 @layer base {
-  /* Global colours & transitions ---------------------------------- */
   html,
   body {
     font-family: 'Geist', sans-serif;
-    @apply bg-background text-foreground;
-    @apply transition-colors duration-100;
+    @apply bg-background text-foreground transition-[background-color] duration-100 ease-out motion-reduce:transition-none;
+  }
 
-    @media (prefers-color-scheme: dark) {
-      color-scheme: dark;
-    }
+  .dark {
+    color-scheme: dark;
   }
 }
