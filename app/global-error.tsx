@@ -6,6 +6,7 @@ import {
   RouteState,
   RouteStateButton,
 } from './components/route-state/route-state'
+import { siteMetadata } from './lib/seo'
 
 export interface GlobalErrorProperties {
   error: Error & { digest?: string }
@@ -18,6 +19,10 @@ const GlobalErrorBoundary = (properties: GlobalErrorProperties) => {
   useEffect(() => {
     console.error(error)
   }, [error])
+
+  useEffect(() => {
+    document.title = `Application error | ${siteMetadata.shortName}`
+  }, [])
 
   return (
     <html lang='en'>

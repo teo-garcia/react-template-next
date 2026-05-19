@@ -6,6 +6,7 @@ import {
   RouteState,
   RouteStateButton,
 } from './components/route-state/route-state'
+import { siteMetadata } from './lib/seo'
 
 export interface ErrorProps {
   error: Error & { digest?: string }
@@ -18,6 +19,10 @@ const ErrorPage = (properties: ErrorProps) => {
   useEffect(() => {
     console.error(error)
   }, [error])
+
+  useEffect(() => {
+    document.title = `Something went wrong | ${siteMetadata.shortName}`
+  }, [])
 
   return (
     <RouteState
