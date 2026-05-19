@@ -2,6 +2,11 @@
 
 import { useEffect } from 'react'
 
+import {
+  RouteState,
+  RouteStateButton,
+} from './components/route-state/route-state'
+
 export interface ErrorProps {
   error: Error & { digest?: string }
   reset: () => void
@@ -15,12 +20,13 @@ const ErrorPage = (properties: ErrorProps) => {
   }, [error])
 
   return (
-    <html lang='en'>
-      <body>
-        <h2>Something went wrong!</h2>
-        <button onClick={() => reset()}>Try again</button>
-      </body>
-    </html>
+    <RouteState
+      actions={<RouteStateButton onClick={reset}>Try again</RouteStateButton>}
+      description='The current route failed to render. You can retry without leaving the page.'
+      details={error.digest ? `Digest: ${error.digest}` : undefined}
+      title='Something went wrong'
+      variant='error'
+    />
   )
 }
 

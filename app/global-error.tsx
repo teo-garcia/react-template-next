@@ -2,6 +2,11 @@
 
 import { useEffect } from 'react'
 
+import {
+  RouteState,
+  RouteStateButton,
+} from './components/route-state/route-state'
+
 export interface GlobalErrorProperties {
   error: Error & { digest?: string }
   reset: () => void
@@ -17,8 +22,15 @@ const GlobalErrorBoundary = (properties: GlobalErrorProperties) => {
   return (
     <html lang='en'>
       <body>
-        <h2>Something went wrong!</h2>
-        <button onClick={() => reset()}>Try again</button>
+        <RouteState
+          actions={
+            <RouteStateButton onClick={reset}>Try again</RouteStateButton>
+          }
+          description='The application shell failed to render. Retry after the root boundary resets.'
+          details={error.digest ? `Digest: ${error.digest}` : undefined}
+          title='Application error'
+          variant='error'
+        />
       </body>
     </html>
   )

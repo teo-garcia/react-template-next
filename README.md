@@ -80,6 +80,20 @@ The app starts on `http://localhost:3000`.
 
 ---
 
+## Route States
+
+Next.js App Router conventions own route-state wiring:
+
+| File                                     | Purpose                         |
+| ---------------------------------------- | ------------------------------- |
+| `app/loading.tsx`                        | Route loading fallback          |
+| `app/error.tsx`                          | Segment-level error boundary    |
+| `app/global-error.tsx`                   | Root application error boundary |
+| `app/not-found.tsx`                      | Unmatched route UI              |
+| `app/components/route-state/route-state` | Shared local state UI           |
+
+---
+
 ## Shared Governance
 
 | Area               | Tooling                                             |
