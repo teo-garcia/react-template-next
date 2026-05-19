@@ -39,7 +39,6 @@ const RootLayout = async (properties: React.PropsWithChildren) => {
   const { children } = properties
   return (
     <html lang='en' suppressHydrationWarning>
-      <head />
       <body className={geist.className} suppressHydrationWarning>
         <GlobalProviders>
           <div className='min-h-screen'>
