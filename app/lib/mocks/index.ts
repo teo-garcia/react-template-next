@@ -1,7 +1,5 @@
 export const setupMSWBrowser = async () => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const nodeEnv = (globalThis as any).process?.env?.NODE_ENV
-  if (nodeEnv === 'production') {
+  if (process.env.NODE_ENV === 'production') {
     return
   }
 

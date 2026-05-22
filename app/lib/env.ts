@@ -14,7 +14,7 @@ export const env = {
   appEnv: nodeEnv,
   isDevelopment: nodeEnv === 'development',
   isProduction: nodeEnv === 'production',
-  isServer: !('window' in globalThis),
+  isServer: typeof window === 'undefined',
   nodeEnv: nodeEnv satisfies NodeEnvironment,
   publicUrl: process.env.NEXT_PUBLIC_URL ?? 'http://localhost:3000',
   isDev: nodeEnv === 'development',

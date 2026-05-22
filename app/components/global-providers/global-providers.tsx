@@ -14,7 +14,7 @@ export const GlobalProviders = (properties: React.PropsWithChildren) => {
   const [queryClient] = useState(createQueryClient)
 
   useEffect(() => {
-    if (!env.isDevelopment || globalThis.window == undefined) {
+    if (!env.isDevelopment || typeof window === 'undefined') {
       return
     }
 
