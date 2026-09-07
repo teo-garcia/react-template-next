@@ -19,51 +19,19 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  trivy-scan:
-    name: Trivy Vulnerability Scan
-    runs-on: ubuntu-latest
+  shared-security:
+    name: Shared security policy
     permissions:
       contents: read
       security-events: write
-
-    steps:
-      - uses: actions/checkout@v6
-
-      - name: Run Trivy vulnerability scanner in fs mode
-        uses: aquasecurity/trivy-action@v0.36.0
-        with:
-          scan-type: "fs"
-          scan-ref: "."
-          format: "sarif"
-          output: "trivy-fs-results.sarif"
-          severity: "CRITICAL,HIGH"
-
-      - name: Upload Trivy results to GitHub Security
-        uses: github/codeql-action/upload-sarif@v4
-        if: always()
-        with:
-          sarif_file: "trivy-fs-results.sarif"
-          category: "trivy-fs"
-
-      - name: Run Trivy config scanner on Dockerfile
-        uses: aquasecurity/trivy-action@v0.36.0
-        with:
-          scan-type: "config"
-          scan-ref: "./docker/Dockerfile"
-          format: "sarif"
-          output: "trivy-docker-results.sarif"
-          severity: "CRITICAL,HIGH"
-
-      - name: Upload Docker scan results
-        uses: github/codeql-action/upload-sarif@v4
-        if: always()
-        with:
-          sarif_file: "trivy-docker-results.sarif"
-          category: "trivy-docker"
+    uses: teo-garcia/templates/.github/workflows/reusable-security.yml@e0aa52f1d25edeac907bf1dcf2243af4d958e5e0 # delivery-v0.2.0
 
   npm-audit:
     name: NPM Audit
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@v6
 
