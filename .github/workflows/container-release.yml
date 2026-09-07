@@ -1,0 +1,26 @@
+name: Container Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    name: Verify production image
+    permissions:
+      contents: read
+    uses: teo-garcia/templates/.github/workflows/reusable-container-verification.yml@e0aa52f1d25edeac907bf1dcf2243af4d958e5e0 # delivery-v0.2.0
+
+  publish:
+    name: Publish production image
+    needs: verify
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+      attestations: write
+    uses: teo-garcia/templates/.github/workflows/reusable-container-release.yml@e0aa52f1d25edeac907bf1dcf2243af4d958e5e0 # delivery-v0.2.0
+
